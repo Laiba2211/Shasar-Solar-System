@@ -1,0 +1,2550 @@
+/* ==========================================================
+   PRICING SECTION
+   PHASE 10.5.1
+   FOUNDATION + TYPOGRAPHY + THEMES
+==========================================================*/
+
+/* ==========================================================
+   SECTION
+==========================================================*/
+
+.pricing-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+    transition:all .35s ease;
+
+}
+
+/* ---------- Light Mode ---------- */
+
+[data-theme="light"] .pricing-section{
+
+    background:#f8fafc;
+
+}
+
+/* ---------- Dark Mode ---------- */
+
+[data-theme="dark"] .pricing-section{
+
+    background:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   HEADER
+==========================================================*/
+
+.pricing-header{
+
+    max-width:760px;
+
+    margin-bottom:70px;
+
+}
+
+/* ==========================================================
+   BADGE
+==========================================================*/
+
+.pricing-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    transition:.35s;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+    border:1px solid rgba(255,178,0,.25);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+    border:1px solid rgba(255,178,0,.18);
+
+}
+
+/* ==========================================================
+   TITLE
+==========================================================*/
+
+.pricing-title{
+
+    font-size:clamp(2.2rem,4vw,3.3rem);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    margin-top:22px;
+
+    margin-bottom:24px;
+
+    transition:.35s;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-title{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-title{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.pricing-description{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:1.02rem;
+
+    line-height:1.9;
+
+    font-weight:400;
+
+    transition:.35s;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-description{
+
+    color:#64748b;
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-description{
+
+    color:rgba(255,255,255,.72);
+
+}
+
+/* ==========================================================
+   DISCLAIMER
+==========================================================*/
+
+.pricing-disclaimer{
+
+    max-width:900px;
+
+    margin:55px auto 0;
+
+}
+
+.pricing-disclaimer p{
+
+    margin:0;
+
+    padding:18px 24px;
+
+    border-radius:16px;
+
+    font-size:.94rem;
+
+    line-height:1.8;
+
+    transition:.35s;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-disclaimer p{
+
+    background:#ffffff;
+
+    color:#64748b;
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:0 12px 35px rgba(15,23,42,.06);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-disclaimer p{
+
+    background:rgba(255,255,255,.04);
+
+    color:rgba(255,255,255,.75);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ==========================================================
+   SECTION DECORATION
+==========================================================*/
+
+.pricing-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    top:-140px;
+
+    right:-140px;
+
+    background:rgba(255,178,0,.08);
+
+    filter:blur(40px);
+
+    pointer-events:none;
+
+}
+
+.pricing-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+    left:-120px;
+
+    background:rgba(255,178,0,.05);
+
+    filter:blur(40px);
+
+    pointer-events:none;
+
+}
+/* ==========================================================
+   PRICING SECTION
+   PHASE 10.5.2
+   PRICING CARDS
+==========================================================*/
+
+/* ==========================================================
+   CARD
+==========================================================*/
+
+.pricing-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    border:1px solid transparent;
+
+    transition:all .35s ease;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-card{
+
+    background:#ffffff;
+
+    border-color:rgba(15,23,42,.08);
+
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-card{
+
+    background:rgba(255,255,255,.04);
+
+    border-color:rgba(255,255,255,.08);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   FEATURED PLAN
+==========================================================*/
+
+.featured-plan{
+
+    transform:scale(1.04);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .featured-plan{
+
+    border:2px solid rgb(255,178,0);
+
+    box-shadow:
+        0 24px 55px rgba(255,178,0,.20);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .featured-plan{
+
+    border:2px solid rgb(255,178,0);
+
+    box-shadow:
+        0 24px 55px rgba(255,178,0,.16);
+
+}
+
+/* ==========================================================
+   BADGE
+==========================================================*/
+
+.pricing-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+    z-index:5;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-card .pricing-badge{
+
+    background:rgb(255,178,0);
+
+    color:#111827;
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-card .pricing-badge{
+
+    background:rgb(255,178,0);
+
+    color:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   CARD BODY
+==========================================================*/
+
+.pricing-card .card-body{
+
+    padding:42px 34px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+/* ==========================================================
+   PLAN NAME
+==========================================================*/
+
+.pricing-plan-name{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-plan-name{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-plan-name{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.pricing-plan-description{
+
+    font-size:.96rem;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-plan-description{
+
+    color:#64748b;
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-plan-description{
+
+    color:rgba(255,255,255,.70);
+
+}
+
+/* ==========================================================
+   PRICE
+==========================================================*/
+
+.pricing-price-wrapper{
+
+    margin-bottom:30px;
+
+}
+
+.pricing-duration{
+
+    display:block;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+    color:rgb(255,178,0);
+
+}
+
+.pricing-price{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin:0;
+
+    line-height:1;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-price{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-price{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   SERVICES
+==========================================================*/
+
+.pricing-services{
+
+    margin:0;
+
+    padding:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    flex-grow:1;
+
+}
+
+.pricing-service-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    font-size:.96rem;
+
+    line-height:1.7;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-service-item{
+
+    color:#475569;
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-service-item{
+
+    color:rgba(255,255,255,.82);
+
+}
+
+/* ==========================================================
+   CHECK ICON
+==========================================================*/
+
+.pricing-check-icon{
+
+    color:rgb(255,178,0);
+
+    margin-top:2px;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================================
+   BUTTON
+==========================================================*/
+
+.pricing-btn{
+
+    margin-top:34px;
+
+    width:100%;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 26px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-btn{
+
+    background:rgb(255,178,0);
+
+    color:oklab(0.269649 0 0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-btn{
+
+    background:rgb(255,178,0);
+
+    color:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   BUTTON HOVER
+==========================================================*/
+
+.pricing-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 28px rgba(255,178,0,.30);
+
+}
+
+/* ==========================================================
+   BUTTON ICON
+==========================================================*/
+
+.pricing-btn svg{
+
+    transition:transform .35s ease;
+
+}
+
+.pricing-btn:hover svg{
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================================
+   PRICING SECTION
+   PHASE 10.5.3
+   PREMIUM ANIMATIONS
+==========================================================*/
+
+/* ==========================================================
+   CARD TRANSITION
+==========================================================*/
+
+.pricing-card{
+
+    will-change:transform;
+
+}
+
+/* ==========================================================
+   CARD HOVER
+==========================================================*/
+
+.pricing-card:hover{
+
+    transform:translateY(-14px);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-card:hover{
+
+    border-color:rgba(255,178,0,.25);
+
+    box-shadow:
+        0 28px 65px rgba(15,23,42,.14);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-card:hover{
+
+    border-color:rgba(255,178,0,.28);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.55);
+
+}
+
+/* ==========================================================
+   FEATURED CARD
+==========================================================*/
+
+.featured-plan{
+
+    z-index:5;
+
+}
+
+.featured-plan:hover{
+
+    transform:translateY(-16px) scale(1.05);
+
+}
+
+/* ==========================================================
+   GOLD TOP LINE
+==========================================================*/
+
+.pricing-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:rgb(255,178,0);
+
+    transition:.45s ease;
+
+}
+
+.pricing-card:hover::before{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   PLAN NAME
+==========================================================*/
+
+.pricing-plan-name{
+
+    transition:color .35s ease;
+
+}
+
+.pricing-card:hover
+.pricing-plan-name{
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   PRICE
+==========================================================*/
+
+.pricing-price{
+
+    transition:transform .35s ease;
+
+}
+
+.pricing-card:hover
+.pricing-price{
+
+    transform:scale(1.04);
+
+}
+
+/* ==========================================================
+   SERVICE ITEMS
+==========================================================*/
+
+.pricing-service-item{
+
+    transition:transform .3s ease;
+
+}
+
+.pricing-card:hover
+.pricing-service-item{
+
+    transform:translateX(3px);
+
+}
+
+/* ==========================================================
+   CHECK ICON
+==========================================================*/
+
+.pricing-check-icon{
+
+    transition:transform .35s ease;
+
+}
+
+.pricing-card:hover
+.pricing-check-icon{
+
+    transform:scale(1.18);
+
+}
+
+/* ==========================================================
+   BADGE
+==========================================================*/
+
+.pricing-card .pricing-badge{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.pricing-card:hover
+.pricing-badge{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 24px rgba(255,178,0,.35);
+
+}
+
+/* ==========================================================
+   BUTTON
+==========================================================*/
+
+.pricing-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+   BUTTON SHIMMER
+==========================================================*/
+
+.pricing-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.pricing-btn:hover::before{
+
+    left:150%;
+
+}
+
+/* ==========================================================
+   BUTTON HOVER
+==========================================================*/
+
+.pricing-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .pricing-btn:hover{
+
+    background:oklab(0.269649 0 0);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .pricing-btn:hover{
+
+    background:#ffffff;
+
+    color:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   BUTTON ICON
+==========================================================*/
+
+.pricing-btn svg{
+
+    transition:transform .35s ease;
+
+}
+
+.pricing-btn:hover svg{
+
+    transform:translateX(7px);
+
+}
+
+/* ==========================================================
+   CLEANING TABLE
+==========================================================*/
+/* ==========================================================
+   SOLAR CLEANING SECTION
+   PHASE 10.6.2
+   PREMIUM CARD DESIGN
+==========================================================*/
+
+/* ==========================================================
+   SECTION
+==========================================================*/
+
+.cleaning-section{
+
+    margin-top:90px;
+
+    position:relative;
+
+}
+
+.cleaning-header{
+
+    max-width:760px;
+
+    margin:0 auto 55px;
+
+}
+
+/* ==========================================================
+   BADGE
+==========================================================*/
+
+.cleaning-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-size:.80rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+[data-theme="light"] .cleaning-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+    border:1px solid rgba(255,178,0,.20);
+
+}
+
+[data-theme="dark"] .cleaning-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+    border:1px solid rgba(255,178,0,.18);
+
+}
+
+/* ==========================================================
+   TITLE
+==========================================================*/
+
+.cleaning-title{
+
+    margin-top:22px;
+
+    margin-bottom:18px;
+
+    font-size:clamp(2rem,4vw,2.8rem);
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+[data-theme="light"] .cleaning-title{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+[data-theme="dark"] .cleaning-title{
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.cleaning-description{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+[data-theme="light"] .cleaning-description{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .cleaning-description{
+
+    color:rgba(255,255,255,.72);
+
+}
+
+/* ==========================================================
+   CARD
+==========================================================*/
+
+.cleaning-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    padding:38px 32px;
+
+    border-radius:26px;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .cleaning-card{
+
+    background:#fff;
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:0 18px 40px rgba(15,23,42,.08);
+
+}
+
+[data-theme="dark"] .cleaning-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   GOLD LINE
+==========================================================*/
+
+.cleaning-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   FEATURED
+==========================================================*/
+
+.featured-cleaning-card{
+
+    transform:scale(1.03);
+
+}
+
+[data-theme="light"] .featured-cleaning-card{
+
+    border:2px solid rgb(255,178,0);
+
+}
+
+[data-theme="dark"] .featured-cleaning-card{
+
+    border:2px solid rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   PLAN BADGE
+==========================================================*/
+
+.cleaning-plan-badge{
+
+    align-self:flex-start;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    margin-bottom:26px;
+
+    text-transform:uppercase;
+
+}
+
+[data-theme="light"] .cleaning-plan-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+}
+
+[data-theme="dark"] .cleaning-plan-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   ICON
+==========================================================*/
+
+.cleaning-icon{
+
+    width:74px;
+
+    height:74px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    margin-bottom:24px;
+
+}
+
+[data-theme="light"] .cleaning-icon{
+
+    background:rgba(255,178,0,.10);
+
+    color:rgb(255,178,0);
+
+}
+
+[data-theme="dark"] .cleaning-icon{
+
+    background:rgba(255,178,0,.10);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   TEXT
+==========================================================*/
+
+.cleaning-capacity{
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+}
+
+[data-theme="light"] .cleaning-capacity{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+[data-theme="dark"] .cleaning-capacity{
+
+    color:#fff;
+
+}
+
+.cleaning-price{
+
+    font-size:2.8rem;
+
+    font-weight:800;
+
+    color:rgb(255,178,0);
+
+    margin-bottom:18px;
+
+}
+
+.cleaning-card-description{
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+[data-theme="light"] .cleaning-card-description{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .cleaning-card-description{
+
+    color:rgba(255,255,255,.72);
+
+}
+
+/* ==========================================================
+   SERVICES
+==========================================================*/
+
+.cleaning-services{
+
+    margin:0;
+
+    padding:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    flex:1;
+
+}
+
+.cleaning-services li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    line-height:1.6;
+
+}
+
+[data-theme="light"] .cleaning-services li{
+
+    color:#475569;
+
+}
+
+[data-theme="dark"] .cleaning-services li{
+
+    color:rgba(255,255,255,.82);
+
+}
+
+.cleaning-check{
+
+    color:rgb(255,178,0);
+
+    flex-shrink:0;
+
+    margin-top:2px;
+
+}
+
+/* ==========================================================
+   BUTTON
+==========================================================*/
+
+.cleaning-btn{
+
+    margin-top:34px;
+
+    width:100%;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .cleaning-btn{
+
+    background:rgb(255,178,0);
+
+    color:oklab(0.269649 0 0);
+
+}
+
+[data-theme="dark"] .cleaning-btn{
+
+    background:rgb(255,178,0);
+
+    color:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   NOTICE
+==========================================================*/
+
+.cleaning-note{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+    padding:24px 30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+[data-theme="light"] .cleaning-note{
+
+    background:#fff;
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:0 15px 35px rgba(15,23,42,.06);
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .cleaning-note{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:rgba(255,255,255,.75);
+
+}
+/* ==========================================================
+   SOLAR CLEANING SECTION
+   PHASE 10.6.3
+   PREMIUM HOVER EFFECTS
+==========================================================*/
+
+/* ==========================================================
+   CARD HOVER
+==========================================================*/
+
+.cleaning-card{
+
+    will-change:transform;
+
+}
+
+.cleaning-card:hover{
+
+    transform:translateY(-14px);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .cleaning-card:hover{
+
+    border-color:rgba(255,178,0,.28);
+
+    box-shadow:
+        0 30px 70px rgba(15,23,42,.14);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .cleaning-card:hover{
+
+    border-color:rgba(255,178,0,.30);
+
+    box-shadow:
+        0 32px 75px rgba(0,0,0,.55);
+
+}
+
+/* ==========================================================
+   FEATURED CARD
+==========================================================*/
+
+.featured-cleaning-card{
+
+    z-index:5;
+
+}
+
+.featured-cleaning-card:hover{
+
+    transform:
+        translateY(-16px)
+        scale(1.04);
+
+}
+
+/* ==========================================================
+   BACKGROUND GLOW
+==========================================================*/
+
+.cleaning-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    top:-90px;
+
+    right:-90px;
+
+    background:
+
+    radial-gradient(
+
+        rgba(255,178,0,.18),
+
+        transparent 70%
+
+    );
+
+    opacity:0;
+
+    transition:.45s ease;
+
+    pointer-events:none;
+
+}
+
+.cleaning-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   ICON
+==========================================================*/
+
+.cleaning-icon{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-icon{
+
+    transform:
+        rotate(-8deg)
+        scale(1.08);
+
+    box-shadow:
+
+        0 15px 35px rgba(255,178,0,.25);
+
+}
+
+/* ==========================================================
+   CAPACITY
+==========================================================*/
+
+.cleaning-capacity{
+
+    transition:color .35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-capacity{
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   PRICE
+==========================================================*/
+
+.cleaning-price{
+
+    transition:
+        transform .35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-price{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.cleaning-card-description{
+
+    transition:.35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-card-description{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   SERVICES
+==========================================================*/
+
+.cleaning-services li{
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-services li{
+
+    transform:translateX(4px);
+
+}
+
+/* ==========================================================
+   CHECK ICON
+==========================================================*/
+
+.cleaning-check{
+
+    transition:
+        transform .35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-check{
+
+    transform:scale(1.20);
+
+}
+
+/* ==========================================================
+   PLAN BADGE
+==========================================================*/
+
+.cleaning-plan-badge{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.cleaning-card:hover
+.cleaning-plan-badge{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 10px 25px rgba(255,178,0,.30);
+
+}
+
+/* ==========================================================
+   BUTTON
+==========================================================*/
+
+.cleaning-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+   BUTTON SHIMMER
+==========================================================*/
+
+.cleaning-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.75s;
+
+}
+
+.cleaning-btn:hover::before{
+
+    left:150%;
+
+}
+
+/* ==========================================================
+   BUTTON HOVER
+==========================================================*/
+
+.cleaning-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .cleaning-btn:hover{
+
+    background:oklab(0.269649 0 0);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .cleaning-btn:hover{
+
+    background:#ffffff;
+
+    color:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   BUTTON ICON
+==========================================================*/
+
+.cleaning-btn svg{
+
+    transition:transform .35s ease;
+
+}
+
+.cleaning-btn:hover svg{
+
+    transform:translateX(6px);
+
+}
+
+/* ==========================================================
+   NOTICE CARD
+==========================================================*/
+
+.cleaning-note{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.cleaning-note:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ---------- Light ---------- */
+
+[data-theme="light"] .cleaning-note:hover{
+
+    box-shadow:
+        0 22px 55px rgba(15,23,42,.12);
+
+}
+
+/* ---------- Dark ---------- */
+
+[data-theme="dark"] .cleaning-note:hover{
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.50);
+
+}
+
+/* ==========================================================
+   PERFORMANCE
+==========================================================*/
+
+.cleaning-card,
+.cleaning-btn,
+.cleaning-icon,
+.cleaning-price,
+.cleaning-capacity{
+
+    backface-visibility:hidden;
+
+    transform:translateZ(0);
+
+}
+
+/* ==========================================================
+   SOLAR CLEANING SECTION
+   PHASE 10.6.4
+   FINAL PRODUCTION POLISH
+==========================================================*/
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+==========================================================*/
+
+.cleaning-card,
+.cleaning-btn,
+.cleaning-plan-badge,
+.cleaning-icon,
+.cleaning-price,
+.cleaning-capacity,
+.cleaning-note{
+
+    transition:
+        all .35s cubic-bezier(.4,0,.2,1);
+
+}
+
+/* ==========================================================
+   FOCUS STATES
+==========================================================*/
+
+.cleaning-btn:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 4px rgba(255,178,0,.25);
+
+}
+
+.cleaning-card:focus-within{
+
+    border-color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   IMAGE SAFE (Future)
+==========================================================*/
+
+.cleaning-card img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+==========================================================*/
+
+@media (min-width:1400px){
+
+.cleaning-card{
+
+    padding:42px;
+
+}
+
+.cleaning-title{
+
+    font-size:3rem;
+
+}
+
+.cleaning-price{
+
+    font-size:3.2rem;
+
+}
+
+}
+
+/* ==========================================================
+   DESKTOP
+==========================================================*/
+
+@media (max-width:1199px){
+
+.cleaning-card{
+
+    padding:34px;
+
+}
+
+.cleaning-price{
+
+    font-size:2.5rem;
+
+}
+
+}
+
+/* ==========================================================
+   TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.featured-cleaning-card{
+
+    transform:none;
+
+}
+
+.featured-cleaning-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.cleaning-header{
+
+    margin-bottom:45px;
+
+}
+
+.cleaning-note{
+
+    margin-top:55px;
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+==========================================================*/
+
+@media (max-width:767px){
+
+.cleaning-section{
+
+    margin-top:70px;
+
+}
+
+.cleaning-card{
+
+    padding:28px;
+
+    border-radius:22px;
+
+}
+
+.cleaning-title{
+
+    font-size:2rem;
+
+}
+
+.cleaning-price{
+
+    font-size:2.3rem;
+
+}
+
+.cleaning-icon{
+
+    width:65px;
+
+    height:65px;
+
+}
+
+.cleaning-btn{
+
+    padding:14px;
+
+}
+
+.cleaning-note{
+
+    padding:22px;
+
+    font-size:.95rem;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+==========================================================*/
+
+@media (max-width:576px){
+
+.cleaning-header{
+
+    margin-bottom:35px;
+
+}
+
+.cleaning-badge{
+
+    font-size:.72rem;
+
+    padding:8px 18px;
+
+}
+
+.cleaning-title{
+
+    font-size:1.8rem;
+
+}
+
+.cleaning-description{
+
+    font-size:.95rem;
+
+}
+
+.cleaning-capacity{
+
+    font-size:1.25rem;
+
+}
+
+.cleaning-price{
+
+    font-size:2rem;
+
+}
+
+.cleaning-services{
+
+    gap:14px;
+
+}
+
+.cleaning-services li{
+
+    font-size:.94rem;
+
+}
+
+}
+
+/* ==========================================================
+   EXTRA SMALL
+==========================================================*/
+
+@media (max-width:390px){
+
+.cleaning-card{
+
+    padding:24px;
+
+}
+
+.cleaning-icon{
+
+    width:58px;
+
+    height:58px;
+
+}
+
+.cleaning-price{
+
+    font-size:1.8rem;
+
+}
+
+.cleaning-btn{
+
+    font-size:.95rem;
+
+}
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.cleaning-card,
+.cleaning-btn,
+.cleaning-icon,
+.cleaning-price,
+.cleaning-plan-badge,
+.cleaning-note{
+
+    transition:none !important;
+
+    animation:none !important;
+
+}
+
+.cleaning-card:hover,
+.cleaning-btn:hover{
+
+    transform:none;
+
+}
+
+}
+
+/* ==========================================================
+   PRINT
+==========================================================*/
+
+@media print{
+
+.cleaning-btn{
+
+    display:none;
+
+}
+
+.cleaning-card{
+
+    box-shadow:none;
+
+    border:1px solid #ccc;
+
+}
+
+}
+
+/* ==========================================================
+   FINAL VISUAL BALANCE
+==========================================================*/
+
+.cleaning-services{
+
+    margin-bottom:8px;
+
+}
+
+.cleaning-btn{
+
+    margin-top:auto;
+
+}
+
+.cleaning-card>*:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   PRICING SECTION
+   PHASE 10.5.4
+   RESPONSIVE + FINAL POLISH
+==========================================================*/
+
+/* ==========================================================
+   IMAGE / CARD CONSISTENCY
+==========================================================*/
+
+.pricing-card{
+    height:100%;
+}
+
+.pricing-card .card-body{
+    min-height:100%;
+}
+
+.pricing-services{
+    flex:1;
+}
+
+/* ==========================================================
+   BUTTON FOCUS
+==========================================================*/
+
+.pricing-btn:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 4px rgba(255,178,0,.18),
+        0 0 0 8px rgba(255,178,0,.08);
+
+}
+
+/* ==========================================================
+   TABLE
+==========================================================*/
+
+.cleaning-table th{
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.cleaning-table td{
+
+    vertical-align:middle;
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+==========================================================*/
+
+@media (min-width:1400px){
+
+    .pricing-section{
+
+        padding:140px 0;
+
+    }
+
+    .pricing-header{
+
+        margin-bottom:85px;
+
+    }
+
+}
+
+/* ==========================================================
+   LAPTOP
+==========================================================*/
+
+@media (max-width:1199px){
+
+    .pricing-title{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+    .pricing-section{
+
+        padding:100px 0;
+
+    }
+
+    .pricing-header{
+
+        margin-bottom:60px;
+
+    }
+
+    .featured-plan{
+
+        transform:none;
+
+    }
+
+    .featured-plan:hover{
+
+        transform:translateY(-10px);
+
+    }
+
+    .pricing-card .card-body{
+
+        padding:36px 28px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE LARGE
+==========================================================*/
+
+@media (max-width:767px){
+
+    .pricing-section{
+
+        padding:80px 0;
+
+    }
+
+    .pricing-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .pricing-description{
+
+        font-size:.97rem;
+
+        line-height:1.8;
+
+    }
+
+    .pricing-card{
+
+        border-radius:22px;
+
+    }
+
+    .pricing-card .card-body{
+
+        padding:30px 24px;
+
+    }
+
+    .pricing-price{
+
+        font-size:2.5rem;
+
+    }
+
+    .pricing-plan-name{
+
+        font-size:1.55rem;
+
+    }
+
+    .pricing-btn{
+
+        padding:14px 20px;
+
+    }
+
+    .cleaning-card{
+
+        padding:28px 22px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+==========================================================*/
+
+@media (max-width:576px){
+
+    .pricing-section{
+
+        padding:70px 0;
+
+    }
+
+    .pricing-title{
+
+        font-size:2rem;
+
+    }
+
+    .pricing-badge{
+
+        font-size:.72rem;
+
+        padding:9px 18px;
+
+    }
+
+    .pricing-price{
+
+        font-size:2.25rem;
+
+    }
+
+    .pricing-plan-description{
+
+        font-size:.92rem;
+
+    }
+
+    .pricing-service-item{
+
+        font-size:.90rem;
+
+    }
+
+    .pricing-disclaimer p{
+
+        padding:16px;
+
+        font-size:.88rem;
+
+    }
+
+    .cleaning-title{
+
+        font-size:1.45rem;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL DEVICES
+==========================================================*/
+
+@media (max-width:390px){
+
+    .pricing-card .card-body{
+
+        padding:24px 20px;
+
+    }
+
+    .pricing-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .pricing-price{
+
+        font-size:2rem;
+
+    }
+
+    .pricing-btn{
+
+        font-size:.90rem;
+
+    }
+
+}
+
+/* ==========================================================
+   EXTRA SMALL
+==========================================================*/
+
+@media (max-width:320px){
+
+    .pricing-title{
+
+        font-size:1.65rem;
+
+    }
+
+    .pricing-price{
+
+        font-size:1.8rem;
+
+    }
+
+    .pricing-plan-name{
+
+        font-size:1.35rem;
+
+    }
+
+    .pricing-card .card-body{
+
+        padding:22px 18px;
+
+    }
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce){
+
+    .pricing-card,
+    .pricing-btn,
+    .pricing-plan-name,
+    .pricing-price,
+    .pricing-service-item,
+    .cleaning-card{
+
+        transition:none !important;
+
+        animation:none !important;
+
+        transform:none !important;
+
+    }
+
+}

@@ -1,0 +1,38 @@
+:root {
+  --transition: 0.35s ease;
+}
+
+[data-theme="dark"] {
+  --navbar-bg: rgb(8, 28, 58);
+  --background: rgb(8, 28, 58);
+  --surface: rgb(15, 37, 73);
+
+  --primary: rgb(255, 178, 0);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255,255,255,.8);
+
+  --border-color: rgba(255,255,255,.08);
+}
+
+[data-theme="light"] {
+  --navbar-bg: oklab(0.269649 0 0);
+  --background: #ffffff;
+  --surface: #ffffff;
+
+  --primary: rgb(255, 178, 0);
+
+  --text-primary: #111111;
+  --text-secondary: #666666;
+
+  --border-color: rgba(0,0,0,.08);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  transition:
+    background var(--transition),
+    color var(--transition);
+}   

@@ -1,0 +1,208 @@
+/* =====================================================
+   PARTNER MARQUEE
+===================================================== */
+
+.partner-marquee{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    padding:32px 0;
+
+    background:var(--surface);
+
+    border-top:1px solid var(--border-color);
+
+    border-bottom:1px solid var(--border-color);
+
+}
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.marquee-wrapper{
+
+    overflow:hidden;
+
+    width:100%;
+
+}
+
+/* =====================================================
+   TRACK
+===================================================== */
+
+.marquee-track{
+
+    display:flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    animation:marqueeMove 32s linear infinite;
+
+}
+
+.partner-marquee:hover .marquee-track{
+
+    animation-play-state:paused;
+
+}
+
+/* =====================================================
+   ITEM
+===================================================== */
+
+.marquee-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-right:56px;
+
+    white-space:nowrap;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border-color);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.marquee-item:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+}
+
+.marquee-icon{
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.marquee-item span{
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    letter-spacing:.6px;
+
+    color:var(--text-primary);
+
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes marqueeMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+.marquee-track{
+
+animation-duration:26s;
+
+}
+
+.marquee-item{
+
+margin-right:36px;
+
+padding:10px 16px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.partner-marquee{
+
+padding:24px 0;
+
+}
+
+.marquee-item{
+
+margin-right:24px;
+
+padding:10px 14px;
+
+}
+
+.marquee-item span{
+
+font-size:.88rem;
+
+}
+
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+.marquee-track{
+
+animation:none;
+
+}
+
+.partner-marquee:hover .marquee-track{
+
+animation-play-state:running;
+
+}
+
+.marquee-item{
+
+transition:none;
+
+}
+
+}
