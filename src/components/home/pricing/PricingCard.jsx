@@ -18,7 +18,7 @@ const PricingCard = ({ plan }) => {
       transition={{ duration: 0.6 }}
     >
       <div
-        className={`pricing-card card h-100 w-100 ${
+        className={`pricing-card card h-80 w-100 ${
           plan.featured ? "featured-plan" : ""
         }`}
       >

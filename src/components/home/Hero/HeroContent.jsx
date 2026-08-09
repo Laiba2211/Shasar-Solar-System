@@ -7,7 +7,7 @@ const HeroContent = () => {
     <div className="hero-content">
       <HeroBadge />
 
-      <h5
+      <h6
         id="hero-heading"
         className="hero-title"
       >
@@ -16,7 +16,7 @@ const HeroContent = () => {
         <span> Smart Solar Energy </span>
 
         Solutions
-      </h5>
+      </h6>
 
       <p className="hero-description">
         Shasar Solar System delivers premium residential and

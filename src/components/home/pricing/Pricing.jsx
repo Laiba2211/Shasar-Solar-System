@@ -29,9 +29,9 @@ const Pricing = () => {
             Affordable Solar Plans
           </span>
 
-          <h2 className="pricing-title mt-3">
+          <h3 className="pricing-title mt-3">
             Choose the Right Solar Service Plan
-          </h2>
+          </h3>
 
           <p className="pricing-description mx-auto">
             Choose a professional solar maintenance plan designed for

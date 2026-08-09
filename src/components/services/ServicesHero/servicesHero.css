@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
 
-    padding: 170px 0 110px;
+    padding: 55px 0 110px;
 }
 
 /* ==========================================================
@@ -71,7 +71,7 @@
 
     pointer-events:none;
 
-    opacity:.15;
+    opacity:.20;
 
     background-image:
 
@@ -106,7 +106,7 @@
     align-items:center;
     gap:10px;
 
-    padding:12px 22px;
+    padding:010px 22px;
 
     border-radius:999px;
 
@@ -134,9 +134,10 @@
 
 .services-hero-title{
 
-    font-size:clamp(2.6rem,5vw,4.8rem);
+    font-size:clamp(2.1rem,4vw,4.1rem);
 
-    font-weight:800;
+    font-weight:650;
+ 
 
     line-height:1.15;
 
@@ -164,7 +165,7 @@
 
     margin:auto;
 
-    margin-bottom:45px;
+    margin-bottom:35px;
 
     font-size:1.1rem;
 
@@ -177,7 +178,7 @@
 
 .services-hero-buttons{
 
-    margin-bottom:70px;
+    margin-bottom:20px;
 }
 
 .services-btn-primary{
@@ -257,6 +258,7 @@
 .services-stat-card:hover{
 
     transform:translateY(-8px);
+    
 }
 
 .services-stat-card h3{

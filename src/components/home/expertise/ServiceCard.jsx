@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate(`/services/${service.slug}`);
+  const handleBtn = () => {
+    navigate("/services");
   };
 
   return (
@@ -19,73 +19,51 @@ const ServiceCard = ({ service }) => {
       whileHover={{ y: -10 }}
     >
       {/* Image */}
-
       <div className="service-image-wrapper overflow-hidden">
-
-        {/* <img
-          src={service.image}
-          alt={service.title}
-          className="service-image img-fluid"
-          loading="lazy"
-        /> */}
-
- {service.video ? (
-            <video
-               className="service-image"
-               autoPlay
-               muted
-               loop
-               playsInline
-               preload="metadata"
-              
-            >
-              <source src={service.video} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <img
-              src={service.image}
-              alt={service.title}
-              className="service-image img-fluid"
-              loading="lazy"
-            />
-          )}
-
-
-
+        {service.video ? (
+          <video
+            className="service-image"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src={service.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <img
+            src={service.image}
+            alt={service.title}
+            className="service-image img-fluid"
+            loading="lazy"
+          />
+        )}
       </div>
 
       {/* Body */}
-
       <div className="service-content d-flex flex-column">
-
         <h3 className="service-title">
-
           {service.title}
-
         </h3>
 
         <p className="service-description flex-grow-1">
-
           {service.description}
-
         </p>
 
         <button
+          type="button"
           className="service-btn mt-auto"
-          onClick={handleNavigate}
+          onClick={handleBtn}
         >
           Learn More
-
           <ArrowRight
             size={18}
             className="service-btn-icon"
           />
-
         </button>
-
       </div>
-
     </motion.article>
   );
 };

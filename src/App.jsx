@@ -1,41 +1,51 @@
+import { Routes, Route } from "react-router-dom";
 
-import AppRoutes from "./routes/AppRoutes";
-import { ThemeProvider } from "./context/ThemeContext";
-// import Navbar from "./components/layout/Navbar/Navbar";
-// import Hero from "./components/home/Hero/Hero";
-// import Marquee from "./components/home/marquee/Marquee";
-// import Stats from "./components/home/stats/Stats";
-// import OurExpertise from "./components/home/expertise/OurExpertise";
-// import WhyShasar from "./components/home/whyShasar/WhyShasar";
-// import Pricing from "./components/home/pricing/Pricing";
-// import ROICalculator from "./components/home/roiCalculator/ROICalculator";
-// import HowItWorks from "./components/home/howItWorks/HowItWorks";
-// import FeaturedProjects from "./components/home/featuredProjects/FeaturedProjects";
-// import Testimonials from "./components/home/testimonials/Testimonials";
-// import Footer from "./components/layout/footer/Footer";
+import Navbar from "./components/layout/navbar/Navbar";
+import Footer from "./components/layout/footer/Footer";
 
-import "./styles/theme.css";
+import Home from "./pages/Home/Home";
+import Projects from "./pages/Projects/Projects";
+import Services from "./pages/Services/Services";
+// import Contact from "./pages/Contact/Contact";
 
-function App() {
+const App = () => {
   return (
-    <ThemeProvider>
-      {/* <Navbar />
-      <Hero />
-      <Marquee />
-      <Stats />
-      <OurExpertise />
-      <WhyShasar />
-      <Pricing />
-      <ROICalculator />
-      <HowItWorks />
-      <FeaturedProjects />
-      <Testimonials />
-      <Footer /> */}
-       <AppRoutes />
-    </ThemeProvider>
-    
-  );
+    <>
+      {/* ==========================================
+          Navbar
+      ========================================== */}
+      <Navbar />
 
-}
+      {/* ==========================================
+          Main Content
+      ========================================== */}
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route
+            path="/services"
+            element={<Services />}
+          />
+
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
+
+          {/* <Route
+            path="/contact"
+            element={<Contact />}
+          /> */}
+        </Routes>
+      </main>
+
+      {/* ==========================================
+          Footer
+      ========================================== */}
+      <Footer />
+    </>
+  );
+};
 
 export default App;

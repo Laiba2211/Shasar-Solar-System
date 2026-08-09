@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 import "./Navbar.css";
 
 import NavbarBrand from "./NavbarBrand";
@@ -9,9 +11,23 @@ import NavbarActions from "./NavbarActions";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const navigate = useNavigate();
 
-  // Close with Escape key
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  // ==========================================
+  // Get a Quote → Contact Page
+  // ==========================================
+  const handleQuote = () => {
+    closeMenu();
+    navigate("/contact");
+  };
+
+  // ==========================================
+  // Close Mobile Menu with Escape
+  // ==========================================
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
@@ -21,11 +37,14 @@ const Navbar = () => {
 
     document.addEventListener("keydown", handleEscape);
 
-    return () =>
+    return () => {
       document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
-  // Lock body scroll
+  // ==========================================
+  // Lock Body Scroll
+  // ==========================================
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
@@ -35,25 +54,38 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <header className="navbar-wrapper">
-      <nav className="navbar custom-navbar">
-        <div className="container-fluid navbar-container">
+    <header>
+      {/* ==========================================
+          NAVBAR
+      ========================================== */}
+      <nav className="navbar">
+        <div className="container-fluid">
+
+          {/* Logo */}
           <NavbarBrand />
 
+          {/* Desktop Menu */}
           <div className="desktop-menu">
             <NavbarMenu />
           </div>
 
+          {/* Navbar Actions */}
           <NavbarActions
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
+            onQuote={handleQuote}
           />
+
         </div>
       </nav>
 
+      {/* ==========================================
+          MOBILE DRAWER
+      ========================================== */}
       <AnimatePresence>
         {menuOpen && (
           <>
+            {/* Overlay */}
             <motion.div
               className="mobile-overlay"
               onClick={closeMenu}
@@ -63,6 +95,7 @@ const Navbar = () => {
               transition={{ duration: 0.25 }}
             />
 
+            {/* Drawer */}
             <motion.aside
               className="mobile-drawer"
               initial={{ x: "100%" }}
@@ -73,14 +106,17 @@ const Navbar = () => {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
+              {/* Mobile Menu */}
               <NavbarMenu
                 mobile
                 onNavigate={closeMenu}
               />
 
+              {/* Mobile Get a Quote */}
               <button
+                type="button"
                 className="mobile-quote-btn"
-                onClick={closeMenu}
+                onClick={handleQuote}
               >
                 Get a Quote
               </button>

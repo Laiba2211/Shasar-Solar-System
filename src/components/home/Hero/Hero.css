@@ -11,7 +11,7 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 20vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -151,7 +151,7 @@
 
   background: rgba(255,178,0,.08);
 
-  font-weight: 600;
+  font-weight: 500;
 
   letter-spacing: .3px;
 
@@ -171,9 +171,9 @@
 
 .hero-title{
 
-    font-size: clamp(3rem,5vw,5.8rem);
+    font-size: clamp(1rem,5vw,3.8rem);
 
-    font-weight: 800;
+    font-weight: 850;
 
     line-height: 1.05;
 
@@ -231,7 +231,7 @@
 
   flex-wrap: wrap;
 
-  margin-bottom: 55px;
+  margin-bottom: 45px;
 
 }
 
@@ -253,7 +253,7 @@
 
   border-radius: 999px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   transition:
       transform .35s ease,
@@ -494,7 +494,7 @@
 
     left:0;
 
-    width:4px;
+    width:12px;
 
     height:100%;
 
@@ -504,9 +504,9 @@
 
 .hero-stat-icon{
 
-    width:52px;
+    width:40px;  
 
-    height:52px;
+    height:40px;
 
     border-radius:14px;
 

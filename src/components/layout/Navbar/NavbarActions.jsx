@@ -1,34 +1,75 @@
 import { Moon, Sun, Menu, X } from "lucide-react";
 import useTheme from "../../../hooks/useTheme";
 
-const NavbarActions = ({ menuOpen, setMenuOpen }) => {
+const NavbarActions = ({
+  menuOpen,
+  setMenuOpen,
+  onQuote,
+}) => {
   const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className="navbar-actions">
-      {/* Theme Toggle */}
+
+      {/* ==========================================
+          Theme Toggle
+      ========================================== */}
       <button
-        className="theme-btn"
+        type="button"
+        className="theme-toggle"
         onClick={toggleTheme}
-        aria-label="Toggle theme"
+        aria-label={
+          isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode"
+        }
+        title={
+          isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode"
+        }
       >
-        {isDark ? <Sun size={20} /> : <Moon size={20} />}
+        {isDark ? (
+          <Sun size={20} />
+        ) : (
+          <Moon size={20} />
+        )}
       </button>
 
-      {/* Desktop Quote Button */}
-      <button className="quote-btn">
+
+      {/* ==========================================
+          Desktop Quote Button
+      ========================================== */}
+      <button
+        type="button"
+        className="quote-btn"
+        onClick={onQuote}
+      >
         Get a Quote
       </button>
 
-      {/* Mobile Hamburger */}
+
+      {/* ==========================================
+          Mobile Hamburger
+      ========================================== */}
       <button
+        type="button"
         className="hamburger-btn"
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle Navigation"
+        aria-label={
+          menuOpen
+            ? "Close Navigation"
+            : "Open Navigation"
+        }
         aria-expanded={menuOpen}
       >
-        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        {menuOpen ? (
+          <X size={24} />
+        ) : (
+          <Menu size={24} />
+        )}
       </button>
+
     </div>
   );
 };

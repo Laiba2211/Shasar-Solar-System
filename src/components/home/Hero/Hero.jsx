@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import "./Hero.css";
 
-import heroVideo from "../../../assets/videos/hero-video.mp4";
+// import heroVideo from "../../../assets/videos/hero-video.mp4";
+import heroVideo from "../../../assets/videos/services/installation-only.mp4";
+
 
 import HeroContent from "./HeroContent";
 

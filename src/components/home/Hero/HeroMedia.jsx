@@ -1,4 +1,5 @@
-import heroVideo from "../../../assets/videos/hero-video.mp4";
+// import heroVideo from "../../../assets/videos/hero-video.mp4";
+import heroVideo from "../../../assets/videos/services/installation-only.mp4";
 
 const HeroMedia = () => {
   return (
