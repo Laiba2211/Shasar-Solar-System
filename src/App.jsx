@@ -6,42 +6,60 @@ import Footer from "./components/layout/footer/Footer";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Services from "./pages/Services/Services";
+import Pricing from "./pages/Pricing/Pricing";
 // import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   return (
     <>
       {/* ==========================================
-          Navbar
+          GLOBAL NAVBAR
       ========================================== */}
       <Navbar />
 
       {/* ==========================================
-          Main Content
+          MAIN CONTENT
       ========================================== */}
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
 
+          {/* HOME */}
+          <Route
+            path="/"
+            element={<Home />}
+          />
+
+          {/* SERVICES */}
           <Route
             path="/services"
             element={<Services />}
           />
 
+          {/* PROJECTS */}
           <Route
             path="/projects"
             element={<Projects />}
           />
 
-          {/* <Route
+          {/* PRICING */}
+          <Route
+            path="/pricing"
+            element={<Pricing />}
+          />
+
+          {/* CONTACT */}
+          {/* 
+          <Route
             path="/contact"
             element={<Contact />}
-          /> */}
+          />
+          */}
+
         </Routes>
       </main>
 
       {/* ==========================================
-          Footer
+          GLOBAL FOOTER
       ========================================== */}
       <Footer />
     </>

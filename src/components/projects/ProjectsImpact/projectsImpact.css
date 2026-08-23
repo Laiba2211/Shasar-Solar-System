@@ -1,0 +1,1179 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   PROJECTS IMPACT
+   Premium Light + Dark Theme
+========================================================== */
+
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
+.projects-impact {
+  position: relative;
+  isolation: isolate;
+
+  overflow: hidden;
+
+  padding: 120px 0 125px;
+
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(255, 178, 0, 0.055),
+      transparent 30%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ==========================================================
+   DECORATIVE ORBS
+========================================================== */
+
+.projects-impact__orb {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+
+  opacity: 0.45;
+
+  z-index: -2;
+}
+
+.projects-impact__orb--one {
+  top: -220px;
+  right: -180px;
+
+  background: rgba(255, 178, 0, 0.11);
+}
+
+.projects-impact__orb--two {
+  bottom: -250px;
+  left: -220px;
+
+  background: rgba(255, 178, 0, 0.075);
+}
+
+
+/* ==========================================================
+   GRID BACKGROUND
+========================================================== */
+
+.projects-impact__grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  opacity: 0.28;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 178, 0, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 178, 0, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.projects-impact__header {
+  max-width: 850px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.projects-impact__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: var(--accent-color);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.projects-impact__eyebrow-line {
+  width: 34px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: var(--accent-color);
+
+  box-shadow:
+    0 0 12px rgba(255, 178, 0, 0.3);
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.projects-impact__title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(
+    2.1rem,
+    4vw,
+    3.65rem
+  );
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+}
+
+.projects-impact__title span {
+  color: var(--accent-color);
+}
+
+
+/* ==========================================================
+   INTRO
+========================================================== */
+
+.projects-impact__intro {
+  max-width: 690px;
+
+  margin: 22px auto 0;
+
+  color: var(--text-secondary);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   MAIN PANEL
+========================================================== */
+
+.projects-impact__panel {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 45px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--surface-primary),
+      var(--surface-secondary)
+    );
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.09);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* ==========================================================
+   PANEL DECORATION
+========================================================== */
+
+.projects-impact__panel::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -170px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 178, 0, 0.14),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.projects-impact__panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 75%;
+
+  top: 12.5%;
+  left: 50%;
+
+  background:
+    linear-gradient(
+      transparent,
+      var(--border-color),
+      transparent
+    );
+
+  opacity: 0.4;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.projects-impact__content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 510px;
+
+  padding: 15px 15px 15px 5px;
+}
+
+
+/* ==========================================================
+   MAIN ICON
+========================================================== */
+
+.projects-impact__main-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 23px;
+
+  border: 1px solid rgba(255, 178, 0, 0.3);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 178, 0, 0.18),
+      rgba(255, 178, 0, 0.055)
+    );
+
+  color: var(--accent-color);
+
+  box-shadow:
+    0 14px 35px rgba(255, 178, 0, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projects-impact__main-icon:hover {
+  transform: translateY(-4px) rotate(4deg);
+
+  box-shadow:
+    0 18px 40px rgba(255, 178, 0, 0.17);
+}
+
+
+/* ==========================================================
+   CONTENT LABEL
+========================================================== */
+
+.projects-impact__content-label {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--accent-color);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* ==========================================================
+   CONTENT TITLE
+========================================================== */
+
+.projects-impact__content-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(
+    1.65rem,
+    2.5vw,
+    2.35rem
+  );
+
+  line-height: 1.17;
+
+  font-weight: 750;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* ==========================================================
+   CONTENT DESCRIPTION
+========================================================== */
+
+.projects-impact__content-description {
+  margin: 18px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   IMPACT POINTS
+========================================================== */
+
+.projects-impact__points {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin-top: 25px;
+}
+
+.projects-impact__point {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.projects-impact__point-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  flex: 0 0 22px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.1);
+
+  color: var(--accent-color);
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.projects-impact__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding: 7px 8px 7px 18px;
+
+  border: 1px solid var(--accent-color);
+
+  border-radius: 999px;
+
+  background: var(--accent-color);
+
+  color: #081c3a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 12px 30px rgba(255, 178, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.projects-impact__cta:hover {
+  background: #ffc329;
+
+  color: #081c3a;
+
+  box-shadow:
+    0 17px 40px rgba(255, 178, 0, 0.3);
+}
+
+.projects-impact__cta-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: rgba(8, 28, 58, 0.12);
+
+  color: #081c3a;
+}
+
+
+/* ==========================================================
+   STATISTICS GRID
+========================================================== */
+
+.projects-impact__stats {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+/* ==========================================================
+   STAT CARD
+========================================================== */
+
+.projects-impact__stat {
+  position: relative;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  padding: 24px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--surface-primary),
+      var(--surface-secondary)
+    );
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.055);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.projects-impact__stat::before {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -70px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 178, 0, 0.13),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.projects-impact__stat:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(255, 178, 0, 0.35);
+
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================================================
+   STAT TOP
+========================================================== */
+
+.projects-impact__stat-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+/* ==========================================================
+   STAT ICON
+========================================================== */
+
+.projects-impact__stat-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid rgba(255, 178, 0, 0.25);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 178, 0, 0.09);
+
+  color: var(--accent-color);
+}
+
+
+/* ==========================================================
+   STAT INDEX
+========================================================== */
+
+.projects-impact__stat-index {
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  opacity: 0.65;
+}
+
+
+/* ==========================================================
+   STAT VALUE
+========================================================== */
+
+.projects-impact__stat-value {
+  color: var(--accent-color);
+
+  font-size: clamp(
+    2rem,
+    3.5vw,
+    3.1rem
+  );
+
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* ==========================================================
+   STAT TITLE
+========================================================== */
+
+.projects-impact__stat-title {
+  margin: 8px 0 0;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+
+/* ==========================================================
+   STAT DESCRIPTION
+========================================================== */
+
+.projects-impact__stat-description {
+  min-height: 42px;
+
+  margin: 9px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   STAT LINE
+========================================================== */
+
+.projects-impact__stat-line {
+  position: relative;
+
+  width: 100%;
+  height: 2px;
+
+  margin-top: 20px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    var(--border-color);
+}
+
+.projects-impact__stat-line span {
+  display: block;
+
+  width: 35%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--accent-color);
+
+  transition:
+    width 0.5s ease;
+}
+
+.projects-impact__stat:hover
+.projects-impact__stat-line span {
+  width: 70%;
+}
+
+
+/* ==========================================================
+   BOTTOM STRIP
+========================================================== */
+
+.projects-impact__bottom {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 35px;
+
+  padding-top: 27px;
+
+  border-top: 1px solid var(--border-color);
+}
+
+.projects-impact__bottom-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 650;
+
+  text-align: center;
+}
+
+.projects-impact__bottom-item svg {
+  flex: 0 0 auto;
+
+  color: var(--accent-color);
+}
+
+.projects-impact__bottom-divider {
+  width: 1px;
+  height: 25px;
+
+  flex: 0 0 1px;
+
+  background: var(--border-color);
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+[data-theme="dark"] .projects-impact {
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(255, 178, 0, 0.065),
+      transparent 30%
+    ),
+    #081c3a;
+
+  color: #ffffff;
+}
+
+[data-theme="dark"] .projects-impact__panel {
+  border-color:
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 39, 70, 0.96),
+      rgba(9, 29, 55, 0.98)
+    );
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .projects-impact__stat {
+  border-color:
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 43, 75, 0.94),
+      rgba(10, 31, 58, 0.96)
+    );
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .projects-impact__stat:hover {
+  border-color:
+    rgba(255, 178, 0, 0.4);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .projects-impact__content-title,
+[data-theme="dark"] .projects-impact__stat-title,
+[data-theme="dark"] .projects-impact__point {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .projects-impact__intro,
+[data-theme="dark"] .projects-impact__content-description,
+[data-theme="dark"] .projects-impact__stat-description,
+[data-theme="dark"] .projects-impact__bottom-item {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .projects-impact__stat-index {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .projects-impact__cta {
+  color: #081c3a;
+}
+
+[data-theme="dark"] .projects-impact__cta:hover {
+  color: #081c3a;
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1400px) {
+  .projects-impact {
+    padding: 145px 0 140px;
+  }
+
+  .projects-impact__panel {
+    padding: 55px;
+  }
+
+  .projects-impact__content {
+    max-width: 540px;
+  }
+
+  .projects-impact__stat {
+    padding: 28px;
+  }
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width: 1199.98px) {
+  .projects-impact {
+    padding: 105px 0 110px;
+  }
+
+  .projects-impact__panel {
+    padding: 35px;
+  }
+
+  .projects-impact__stat {
+    padding: 21px;
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+  .projects-impact {
+    padding: 90px 0 95px;
+  }
+
+  .projects-impact__header {
+    margin-bottom: 45px;
+  }
+
+  .projects-impact__panel {
+    padding: 35px;
+  }
+
+  .projects-impact__content {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding: 5px;
+
+    text-align: center;
+  }
+
+  .projects-impact__main-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-impact__points {
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .projects-impact__cta {
+    margin-top: 28px;
+  }
+
+  .projects-impact__stats {
+    margin-top: 15px;
+  }
+
+  .projects-impact__panel::after {
+    display: none;
+  }
+
+  .projects-impact__bottom {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+  .projects-impact {
+    padding: 75px 0 80px;
+  }
+
+  .projects-impact__header {
+    margin-bottom: 35px;
+  }
+
+  .projects-impact__eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .projects-impact__eyebrow-line {
+    width: 25px;
+  }
+
+  .projects-impact__title {
+    font-size: clamp(
+      1.9rem,
+      8vw,
+      2.55rem
+    );
+
+    letter-spacing: -0.035em;
+  }
+
+  .projects-impact__intro {
+    margin-top: 17px;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .projects-impact__panel {
+    padding: 25px 18px;
+
+    border-radius: 24px;
+  }
+
+  .projects-impact__content {
+    padding: 0;
+  }
+
+  .projects-impact__main-icon {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+  }
+
+  .projects-impact__content-title {
+    font-size: 1.55rem;
+  }
+
+  .projects-impact__content-description {
+    font-size: 13px;
+  }
+
+  .projects-impact__point {
+    font-size: 12px;
+  }
+
+  .projects-impact__stats {
+    grid-template-columns: 1fr;
+
+    gap: 11px;
+
+    margin-top: 20px;
+  }
+
+  .projects-impact__stat {
+    padding: 20px;
+
+    border-radius: 17px;
+  }
+
+  .projects-impact__stat-top {
+    margin-bottom: 19px;
+  }
+
+  .projects-impact__stat-value {
+    font-size: 2.35rem;
+  }
+
+  .projects-impact__stat-description {
+    min-height: auto;
+  }
+
+  .projects-impact__bottom {
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 27px;
+
+    padding-top: 22px;
+  }
+
+  .projects-impact__bottom-divider {
+    width: 45px;
+    height: 1px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+  .projects-impact {
+    padding: 65px 0 70px;
+  }
+
+  .projects-impact__panel {
+    padding: 22px 14px;
+
+    border-radius: 21px;
+  }
+
+  .projects-impact__content-title {
+    font-size: 1.4rem;
+  }
+
+  .projects-impact__content-description {
+    font-size: 12.5px;
+  }
+
+  .projects-impact__point {
+    font-size: 11.5px;
+  }
+
+  .projects-impact__cta {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .projects-impact__stat {
+    padding: 18px;
+  }
+
+  .projects-impact__stat-value {
+    font-size: 2.15rem;
+  }
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.projects-impact__cta:focus-visible {
+  outline: 3px solid rgba(255, 178, 0, 0.35);
+
+  outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-impact *,
+  .projects-impact *::before,
+  .projects-impact *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}

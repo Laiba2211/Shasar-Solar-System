@@ -1,0 +1,967 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   PRICING PLANS
+   PHASE 2
+========================================================== */
+
+.pricing-plans {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 110px 0 120px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 178, 0, 0.07),
+      transparent 30%
+    ),
+    var(--bg-primary, #ffffff);
+
+  color: var(--text-primary, #081c3a);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ==========================================================
+   BACKGROUND ORBS
+========================================================== */
+
+.pricing-plans__orb {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(80px);
+
+  z-index: -1;
+}
+
+.pricing-plans__orb--one {
+  top: -220px;
+  right: -140px;
+
+  background: rgba(255, 178, 0, 0.10);
+}
+
+.pricing-plans__orb--two {
+  bottom: -260px;
+  left: -180px;
+
+  background: rgba(255, 178, 0, 0.055);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.pricing-plans__header {
+  max-width: 820px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.pricing-plans__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  margin-bottom: 20px;
+
+  color: var(--accent-color, #ffb200);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.pricing-plans__eyebrow-line {
+  width: 30px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: var(--accent-color, #ffb200);
+}
+
+.pricing-plans__title {
+  margin: 0;
+
+  color: var(--text-primary, #081c3a);
+
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+}
+
+.pricing-plans__title span {
+  display: block;
+
+  color: var(--accent-color, #ffb200);
+}
+
+.pricing-plans__intro {
+  max-width: 700px;
+
+  margin: 22px auto 0;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* ==========================================================
+   PRICING CARD
+========================================================== */
+
+.pricing-plan-card {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px 28px 27px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    var(--border-color, rgba(8, 28, 58, 0.10));
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--surface-primary, #ffffff),
+      var(--surface-secondary, #f7f9fc)
+    );
+
+  color: var(--text-primary, #081c3a);
+
+  box-shadow:
+    0 20px 55px rgba(8, 28, 58, 0.08);
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* subtle top accent */
+
+.pricing-plan-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: transparent;
+
+  transition:
+    background 0.35s ease;
+}
+
+.pricing-plan-card:hover {
+  border-color: rgba(255, 178, 0, 0.38);
+
+  box-shadow:
+    0 28px 70px rgba(8, 28, 58, 0.13);
+}
+
+.pricing-plan-card:hover::before {
+  background: var(--accent-color, #ffb200);
+}
+
+
+/* ==========================================================
+   FEATURED CARD
+========================================================== */
+
+.pricing-plan-card--featured {
+  border-color: rgba(255, 178, 0, 0.55);
+
+  box-shadow:
+    0 24px 70px rgba(255, 178, 0, 0.13);
+}
+
+.pricing-plan-card--featured::before {
+  background: var(--accent-color, #ffb200);
+}
+
+
+/* ==========================================================
+   FEATURED BADGE
+========================================================== */
+
+.pricing-plan-card__featured-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 178, 0, 0.35);
+
+  border-radius: 999px;
+
+  background: rgba(255, 178, 0, 0.10);
+
+  color: #9a6500;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.pricing-plan-card__header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding-right: 90px;
+}
+
+.pricing-plan-card__icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 178, 0, 0.25);
+
+  border-radius: 14px;
+
+  background: rgba(255, 178, 0, 0.10);
+
+  color: var(--accent-color, #ffb200);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 178, 0, 0.04);
+}
+
+.pricing-plan-card__label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.pricing-plan-card h3 {
+  margin: 0;
+
+  color: var(--text-primary, #081c3a);
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.pricing-plan-card__description {
+  min-height: 78px;
+
+  margin: 23px 0 0;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* ==========================================================
+   PRICE
+========================================================== */
+
+.pricing-plan-card__price-area {
+  margin-top: 23px;
+}
+
+.pricing-plan-card__price {
+  color: var(--text-primary, #081c3a);
+
+  font-size: clamp(1.55rem, 2.1vw, 1rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.035em;
+
+  line-height: 1.15;
+}
+
+.pricing-plan-card__price-note {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   CAPACITY
+========================================================== */
+
+.pricing-plan-card__capacity {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 20px;
+
+  padding: 11px 12px;
+
+  border: 1px solid rgba(255, 178, 0, 0.18);
+
+  border-radius: 12px;
+
+  background: rgba(255, 178, 0, 0.055);
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 11px;
+}
+
+.pricing-plan-card__capacity svg {
+  flex: 0 0 auto;
+
+  color: var(--accent-color, #ffb200);
+}
+
+.pricing-plan-card__capacity strong {
+  color: var(--text-primary, #081c3a);
+
+  font-weight: 800;
+}
+
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.pricing-plan-card__divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 23px 0;
+
+  background: var(
+    --border-color,
+    rgba(8, 28, 58, 0.10)
+  );
+}
+
+
+/* ==========================================================
+   FEATURES
+========================================================== */
+
+.pricing-plan-card__features-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 15px;
+
+  color: var(--text-primary, #081c3a);
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.pricing-plan-card__features-title svg {
+  color: var(--accent-color, #ffb200);
+}
+
+.pricing-plan-card__features ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.pricing-plan-card__features li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+.pricing-plan-card__check {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 auto;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -1px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.13);
+
+  color: var(--accent-color, #ffb200);
+}
+
+
+/* ==========================================================
+   IDEAL FOR
+========================================================== */
+
+.pricing-plan-card__ideal {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 24px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid
+    var(--border-color, rgba(8, 28, 58, 0.10));
+}
+
+.pricing-plan-card__ideal span {
+  color: var(--text-secondary, #526071);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.pricing-plan-card__ideal strong {
+  color: var(--text-primary, #081c3a);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.pricing-plan-card__button {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 25px;
+
+  padding: 6px 7px 6px 17px;
+
+  border: 1px solid
+    var(--border-color, rgba(8, 28, 58, 0.14));
+
+  border-radius: 13px;
+
+  background: transparent;
+
+  color: var(--text-primary, #081c3a);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pricing-plan-card__button:hover {
+  border-color: var(--accent-color, #ffb200);
+
+  background: var(--accent-color, #ffb200);
+
+  color: #081c3a;
+
+  transform: translateY(-2px);
+}
+
+.pricing-plan-card__button-icon {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(255, 178, 0, 0.14);
+
+  color: var(--accent-color, #ffb200);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pricing-plan-card__button:hover
+.pricing-plan-card__button-icon {
+  background: rgba(8, 28, 58, 0.14);
+
+  color: #081c3a;
+
+  transform: translateX(3px);
+}
+
+
+/* ==========================================================
+   FEATURED BUTTON
+========================================================== */
+
+.pricing-plan-card__button--featured {
+  border-color: var(--accent-color, #ffb200);
+
+  background: var(--accent-color, #ffb200);
+
+  color: #081c3a;
+
+  box-shadow:
+    0 12px 28px rgba(255, 178, 0, 0.18);
+}
+
+.pricing-plan-card__button--featured
+.pricing-plan-card__button-icon {
+  background: rgba(8, 28, 58, 0.12);
+
+  color: #081c3a;
+}
+
+.pricing-plan-card__button--featured:hover {
+  background: #ffc12a;
+
+  border-color: #ffc12a;
+
+  color: #081c3a;
+}
+
+
+/* ==========================================================
+   BOTTOM NOTE
+========================================================== */
+
+.pricing-plans__note {
+  max-width: 850px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin: 42px auto 0;
+
+  padding: 17px 20px;
+
+  border: 1px solid
+    var(--border-color, rgba(8, 28, 58, 0.10));
+
+  border-radius: 14px;
+
+  background: var(--surface-primary, #ffffff);
+
+  box-shadow:
+    0 12px 35px rgba(8, 28, 58, 0.05);
+}
+
+.pricing-plans__note svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: var(--accent-color, #ffb200);
+}
+
+.pricing-plans__note p {
+  margin: 0;
+
+  color: var(--text-secondary, #526071);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+[data-theme="dark"] .pricing-plans {
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(255, 178, 0, 0.08),
+      transparent 28%
+    ),
+    #081c3a;
+   color:#ffb200;
+  /* color: #ffffff; */
+}
+
+[data-theme="dark"] .pricing-plans__title {
+  color: #ffffff;
+  /* color: #ffb200; */
+}
+
+[data-theme="dark"] .pricing-plans__intro {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+[data-theme="dark"] .pricing-plan-card {
+  border-color: rgba(255, 255, 255, 0.10);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 40, 72, 0.98),
+      rgba(10, 30, 58, 0.98)
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .pricing-plan-card:hover {
+  border-color: rgba(255, 178, 0, 0.45);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .pricing-plan-card h3,
+[data-theme="dark"] .pricing-plan-card__price,
+[data-theme="dark"] .pricing-plan-card__ideal strong,
+[data-theme="dark"] .pricing-plan-card__capacity strong,
+[data-theme="dark"] .pricing-plan-card__features-title {
+  /* color: #ffffff; */
+  color:#ffb200;
+}
+
+[data-theme="dark"] .pricing-plan-card__label,
+[data-theme="dark"] .pricing-plan-card__description,
+[data-theme="dark"] .pricing-plan-card__price-note,
+[data-theme="dark"] .pricing-plan-card__capacity,
+[data-theme="dark"] .pricing-plan-card__features li,
+[data-theme="dark"] .pricing-plan-card__ideal span {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+[data-theme="dark"] .pricing-plan-card__divider,
+[data-theme="dark"] .pricing-plan-card__ideal {
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+[data-theme="dark"] .pricing-plan-card__button {
+  border-color: rgba(255, 255, 255, 0.14);
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+[data-theme="dark"] .pricing-plan-card__button:hover {
+  background: var(--accent-color, #ffb200);
+
+  border-color: var(--accent-color, #ffb200);
+
+  color: #081c3a;
+}
+
+[data-theme="dark"] .pricing-plan-card__featured-badge {
+  color: #ffca3a;
+
+  background: rgba(255, 178, 0, 0.11);
+
+  border-color: rgba(255, 178, 0, 0.30);
+}
+
+[data-theme="dark"] .pricing-plans__note {
+  border-color: rgba(255, 255, 255, 0.10);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+[data-theme="dark"] .pricing-plans__note p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1400px) {
+  .pricing-plans {
+    padding: 130px 0 140px;
+  }
+
+  .pricing-plan-card {
+    padding: 34px 31px 30px;
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+  .pricing-plans {
+    padding: 90px 0 100px;
+  }
+
+  .pricing-plans__header {
+    margin-bottom: 45px;
+  }
+
+  .pricing-plan-card {
+    padding: 27px 24px 25px;
+  }
+
+  .pricing-plan-card__description {
+    min-height: auto;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+  .pricing-plans {
+    padding: 75px 0 80px;
+  }
+
+  .pricing-plans__header {
+    margin-bottom: 35px;
+  }
+
+  .pricing-plans__eyebrow {
+    font-size: 9px;
+  }
+
+  .pricing-plans__eyebrow-line {
+    width: 22px;
+  }
+
+  .pricing-plans__title {
+    font-size: 2.15rem;
+
+    letter-spacing: -0.035em;
+  }
+
+  .pricing-plans__intro {
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .pricing-plan-card {
+    padding: 25px 21px 23px;
+
+    border-radius: 21px;
+  }
+
+  .pricing-plan-card__featured-badge {
+    top: 14px;
+    right: 14px;
+
+    font-size: 8px;
+  }
+
+  .pricing-plan-card__header {
+    padding-right: 75px;
+  }
+
+  .pricing-plan-card h3 {
+    font-size: 21px;
+  }
+
+  .pricing-plan-card__price {
+    font-size: 1.65rem;
+  }
+
+  .pricing-plans__note {
+    margin-top: 30px;
+
+    padding: 15px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+  .pricing-plans__title {
+    font-size: 1.9rem;
+  }
+
+  .pricing-plan-card {
+    padding: 22px 17px 20px;
+  }
+
+  .pricing-plan-card__header {
+    padding-right: 0;
+  }
+
+  .pricing-plan-card__featured-badge {
+    position: static;
+
+    width: fit-content;
+
+    margin-bottom: 14px;
+  }
+
+  .pricing-plan-card__description {
+    font-size: 12px;
+  }
+
+  .pricing-plan-card__features li {
+    font-size: 11px;
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-plans *,
+  .pricing-plans *::before,
+  .pricing-plans *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
