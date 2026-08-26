@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Services from "./pages/Services/Services";
 import Pricing from "./pages/Pricing/Pricing";
+import Team from "./pages/Team/Team";
 // import Contact from "./pages/Contact/Contact";
 
 const App = () => {
@@ -46,7 +47,11 @@ const App = () => {
             path="/pricing"
             element={<Pricing />}
           />
-
+          {/* TEAM */}
+          <Route
+            path="/team"
+            element={<Team />}
+          />
           {/* CONTACT */}
           {/* 
           <Route
