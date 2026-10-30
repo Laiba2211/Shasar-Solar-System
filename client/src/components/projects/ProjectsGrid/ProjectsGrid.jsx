@@ -13,8 +13,7 @@ import {
   FolderOpen,
 } from "lucide-react";
 
-import ProjectCard from "./projectCard";
-
+import ProjectCard from "./ProjectCard.jsx";
 import "./projectsGrid.css";
 
 // ==========================================================
