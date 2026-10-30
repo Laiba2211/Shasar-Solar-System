@@ -1,0 +1,1056 @@
+/* ==========================================================
+   SHASAR SOLAR
+   PUBLIC CLIENT REVIEW FORM
+   REVIEWFORM.CSS
+========================================================== */
+
+
+/* ==========================================================
+   ROOT WRAPPER
+========================================================== */
+
+.review-form-wrapper {
+  width: 100%;
+  position: relative;
+  padding: 42px;
+  border: 1px solid rgba(255, 178, 0, 0.16);
+  border-radius: 24px;
+  background: rgba(15, 37, 73, 0.72);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   TOP GLOW
+========================================================== */
+
+.review-form-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -150px;
+  right: -100px;
+  border-radius: 50%;
+  background: rgba(255, 178, 0, 0.09);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.review-form-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  bottom: -120px;
+  left: -80px;
+  border-radius: 50%;
+  background: rgba(255, 178, 0, 0.05);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   EMBEDDED MODE
+========================================================== */
+
+.review-form-embedded {
+  box-shadow: none;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.review-form-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 34px;
+}
+
+.review-form-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  color: rgb(255, 178, 0);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.review-form-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+
+  background: rgb(255, 178, 0);
+}
+
+.review-form-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.review-form-subtitle {
+  max-width: 650px;
+
+  margin: 12px 0 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   CLOSE BUTTON
+========================================================== */
+
+.review-form-close {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.review-form-close:hover {
+  color: #ffffff;
+  background: rgba(255, 178, 0, 0.12);
+  border-color: rgba(255, 178, 0, 0.35);
+  transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   ALERTS
+========================================================== */
+
+.review-alert {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 16px 18px;
+  margin-bottom: 26px;
+
+  border-radius: 14px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.review-alert svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.review-alert div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.review-alert strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.review-alert span {
+  font-size: 0.84rem;
+}
+
+.review-alert-success {
+  color: #d9fbe6;
+  border: 1px solid rgba(67, 211, 126, 0.25);
+  background: rgba(67, 211, 126, 0.08);
+}
+
+.review-alert-success svg {
+  color: #5be58d;
+}
+
+.review-alert-error {
+  color: #ffe0e0;
+  border: 1px solid rgba(255, 86, 86, 0.25);
+  background: rgba(255, 86, 86, 0.08);
+}
+
+.review-alert-error svg {
+  color: #ff7777;
+}
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.review-form {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ==========================================================
+   LABELS
+========================================================== */
+
+.review-label {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  margin-bottom: 9px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.review-label > span {
+  color: rgb(255, 178, 0);
+  font-weight: 700;
+}
+
+.review-label > small {
+  margin-left: 4px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.review-input {
+  min-height: 50px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 11px !important;
+
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+
+  font-size: 0.9rem;
+
+  box-shadow: none !important;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.review-input::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.review-input:hover {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.review-input:focus {
+  border-color: rgba(255, 178, 0, 0.65) !important;
+
+  background: rgba(255, 255, 255, 0.06) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 178, 0, 0.08) !important;
+}
+
+
+/* ==========================================================
+   SELECT
+========================================================== */
+
+select.review-input {
+  cursor: pointer;
+}
+
+select.review-input option {
+  color: #111827;
+  background: #ffffff;
+}
+
+
+/* ==========================================================
+   TEXTAREA
+========================================================== */
+
+.review-textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  line-height: 1.65;
+}
+
+
+/* ==========================================================
+   INPUT ERROR
+========================================================== */
+
+.review-input-error {
+  border-color: rgba(255, 83, 83, 0.65) !important;
+}
+
+.review-input-error:focus {
+  border-color: rgba(255, 83, 83, 0.8) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 83, 83, 0.08) !important;
+}
+
+.review-field-error {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #ff7777;
+
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+
+/* ==========================================================
+   HELPER TEXT
+========================================================== */
+
+.review-helper-text {
+  display: block;
+
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 0.72rem;
+}
+
+
+/* ==========================================================
+   RATING
+========================================================== */
+
+.review-rating-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 11px;
+}
+
+.review-rating-value {
+  color: rgb(255, 178, 0);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.review-star {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.review-star:hover {
+  color: rgba(255, 178, 0, 0.75);
+
+  background: rgba(255, 178, 0, 0.06);
+
+  transform: translateY(-2px);
+}
+
+.review-star.active {
+  color: rgb(255, 178, 0);
+
+  background: rgba(255, 178, 0, 0.08);
+
+  border-color: rgba(255, 178, 0, 0.12);
+}
+
+.review-star:focus-visible {
+  outline: none;
+
+  border-color: rgba(255, 178, 0, 0.6);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 178, 0, 0.08);
+}
+
+
+/* ==========================================================
+   COMMENT HEADER
+========================================================== */
+
+.review-comment-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+}
+
+.review-character-count {
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ==========================================================
+   IMAGE UPLOAD
+========================================================== */
+
+.review-upload-box {
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.review-upload-box:hover {
+  border-color: rgba(255, 178, 0, 0.5);
+
+  background: rgba(255, 178, 0, 0.045);
+
+  transform: translateY(-1px);
+}
+
+.review-upload-icon {
+  width: 46px;
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: rgb(255, 178, 0);
+  background: rgba(255, 178, 0, 0.09);
+}
+
+.review-upload-box strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.review-upload-box span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 0.72rem;
+}
+
+
+/* ==========================================================
+   IMAGE PREVIEW
+========================================================== */
+
+.review-image-preview {
+  position: relative;
+
+  width: 110px;
+  height: 110px;
+}
+
+.review-image-preview img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.review-remove-image {
+  position: absolute;
+
+  top: -9px;
+  right: -9px;
+
+  width: 28px;
+  height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #132c50;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.3);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.review-remove-image:hover {
+  color: #ffffff;
+  background: #d94848;
+
+  transform: scale(1.05);
+}
+
+
+/* ==========================================================
+   CONSENT
+========================================================== */
+
+.review-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.review-consent:focus-within {
+  border-color: rgba(255, 178, 0, 0.3);
+  background: rgba(255, 178, 0, 0.025);
+}
+
+.review-consent input {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 17px;
+
+  margin-top: 2px;
+
+  accent-color: rgb(255, 178, 0);
+
+  cursor: pointer;
+}
+
+.review-consent label {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 0.76rem;
+  line-height: 1.6;
+
+  cursor: pointer;
+}
+
+.review-consent-error {
+  border-color: rgba(255, 83, 83, 0.35);
+  background: rgba(255, 83, 83, 0.035);
+}
+
+
+/* ==========================================================
+   SUBMIT ROW
+========================================================== */
+
+.review-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 5px;
+}
+
+.review-submit-note {
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 0.72rem;
+}
+
+.review-submit-note span {
+  margin-right: 4px;
+
+  color: rgb(255, 178, 0);
+}
+
+
+/* ==========================================================
+   SUBMIT BUTTON
+========================================================== */
+
+.review-submit-button {
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 24px;
+
+  border: 1px solid rgb(255, 178, 0);
+  border-radius: 11px;
+
+  color: #101010;
+  background: rgb(255, 178, 0);
+
+  font-size: 0.84rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 28px rgba(255, 178, 0, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.review-submit-button:hover:not(:disabled) {
+  background: rgb(255, 191, 36);
+  border-color: rgb(255, 191, 36);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 34px rgba(255, 178, 0, 0.22);
+}
+
+.review-submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.review-submit-button:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 178, 0, 0.15),
+    0 10px 28px rgba(255, 178, 0, 0.14);
+}
+
+.review-submit-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+[data-theme="light"] .review-form-wrapper {
+  border-color: rgba(8, 28, 58, 0.1);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 70px rgba(8, 28, 58, 0.08),
+    0 0 0 1px rgba(8, 28, 58, 0.02);
+}
+
+[data-theme="light"] .review-form-title {
+  color: rgb(8, 28, 58);
+}
+
+[data-theme="light"] .review-form-subtitle {
+  color: rgba(8, 28, 58, 0.58);
+}
+
+[data-theme="light"] .review-form-close {
+  border-color: rgba(8, 28, 58, 0.1);
+
+  color: rgba(8, 28, 58, 0.6);
+
+  background: rgba(8, 28, 58, 0.035);
+}
+
+[data-theme="light"] .review-form-close:hover {
+  color: rgb(8, 28, 58);
+
+  border-color: rgba(255, 178, 0, 0.45);
+
+  background: rgba(255, 178, 0, 0.08);
+}
+
+[data-theme="light"] .review-label {
+  color: rgba(8, 28, 58, 0.85);
+}
+
+[data-theme="light"] .review-input {
+  border-color: rgba(8, 28, 58, 0.12) !important;
+
+  color: rgb(8, 28, 58) !important;
+
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .review-input::placeholder {
+  color: rgba(8, 28, 58, 0.35);
+}
+
+[data-theme="light"] .review-input:hover {
+  border-color: rgba(8, 28, 58, 0.2) !important;
+}
+
+[data-theme="light"] .review-input:focus {
+  border-color: rgba(255, 178, 0, 0.75) !important;
+
+  background: #ffffff !important;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 178, 0, 0.1) !important;
+}
+
+[data-theme="light"] .review-helper-text {
+  color: rgba(8, 28, 58, 0.4);
+}
+
+[data-theme="light"] .review-rating-value {
+  color: rgb(8, 28, 58);
+}
+
+[data-theme="light"] .review-star {
+  color: rgba(8, 28, 58, 0.18);
+}
+
+[data-theme="light"] .review-star:hover {
+  color: rgb(255, 178, 0);
+
+  background: rgba(255, 178, 0, 0.07);
+}
+
+[data-theme="light"] .review-star.active {
+  color: rgb(255, 178, 0);
+
+  background: rgba(255, 178, 0, 0.08);
+}
+
+[data-theme="light"] .review-character-count {
+  color: rgba(8, 28, 58, 0.4);
+}
+
+[data-theme="light"] .review-upload-box {
+  border-color: rgba(8, 28, 58, 0.14);
+
+  background: rgba(8, 28, 58, 0.018);
+}
+
+[data-theme="light"] .review-upload-box:hover {
+  border-color: rgba(255, 178, 0, 0.55);
+
+  background: rgba(255, 178, 0, 0.035);
+}
+
+[data-theme="light"] .review-upload-box strong {
+  color: rgba(8, 28, 58, 0.85);
+}
+
+[data-theme="light"] .review-upload-box span {
+  color: rgba(8, 28, 58, 0.42);
+}
+
+[data-theme="light"] .review-remove-image {
+  border-color: rgba(8, 28, 58, 0.1);
+
+  color: rgb(8, 28, 58);
+
+  background: #ffffff;
+}
+
+[data-theme="light"] .review-consent {
+  border-color: rgba(8, 28, 58, 0.08);
+
+  background: rgba(8, 28, 58, 0.018);
+}
+
+[data-theme="light"] .review-consent label {
+  color: rgba(8, 28, 58, 0.58);
+}
+
+[data-theme="light"] .review-submit-note {
+  color: rgba(8, 28, 58, 0.4);
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+  .review-form-wrapper {
+    padding: 34px;
+    border-radius: 21px;
+  }
+
+  .review-form-header {
+    margin-bottom: 28px;
+  }
+
+  .review-form-title {
+    font-size: 2.1rem;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+  .review-form-wrapper {
+    padding: 25px 20px;
+
+    border-radius: 18px;
+  }
+
+  .review-form-header {
+    gap: 15px;
+
+    margin-bottom: 25px;
+  }
+
+  .review-form-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+  }
+
+  .review-form-eyebrow::before {
+    width: 20px;
+  }
+
+  .review-form-title {
+    font-size: 1.75rem;
+  }
+
+  .review-form-subtitle {
+    margin-top: 9px;
+
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
+  .review-form-close {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+  .review-rating {
+    gap: 2px;
+  }
+
+  .review-star {
+    width: 39px;
+    height: 39px;
+  }
+
+  .review-star svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .review-submit-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .review-submit-button {
+    width: 100%;
+  }
+
+  .review-submit-note {
+    order: 2;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 420px) {
+  .review-form-wrapper {
+    padding: 21px 15px;
+  }
+
+  .review-form-header {
+    align-items: flex-start;
+  }
+
+  .review-form-title {
+    font-size: 1.55rem;
+  }
+
+  .review-form-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .review-star {
+    width: 36px;
+    height: 36px;
+  }
+
+  .review-star svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .review-upload-box {
+    padding: 15px;
+  }
+
+  .review-upload-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .review-upload-box strong {
+    font-size: 0.78rem;
+  }
+
+  .review-upload-box span {
+    font-size: 0.66rem;
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .review-form-wrapper *,
+  .review-form-wrapper *::before,
+  .review-form-wrapper *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

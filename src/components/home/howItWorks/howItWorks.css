@@ -1,0 +1,1315 @@
+/* ==========================================================
+   HOW IT WORKS
+   PHASE 8.5.1
+   SECTION FOUNDATION
+==========================================================*/
+
+/* ==========================================================
+   SECTION
+==========================================================*/
+
+.how-it-works-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================================
+   LIGHT MODE
+==========================================================*/
+
+[data-theme="light"] .how-it-works-section{
+
+    background:#ffffff;
+
+}
+
+/* ==========================================================
+   DARK MODE
+==========================================================*/
+
+[data-theme="dark"] .how-it-works-section{
+
+    background:rgb(8,28,58);
+
+}
+
+/* ==========================================================
+   DECORATIVE BACKGROUND
+==========================================================*/
+
+.how-it-works-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    top:-180px;
+
+    left:-180px;
+
+    border-radius:50%;
+
+    background:rgb(255,178,0);
+
+    opacity:.06;
+
+    filter:blur(110px);
+
+    pointer-events:none;
+
+}
+
+.how-it-works-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    bottom:-180px;
+
+    right:-180px;
+
+    border-radius:50%;
+
+    background:rgb(255,178,0);
+
+    opacity:.05;
+
+    filter:blur(100px);
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   CONTAINER
+==========================================================*/
+
+.how-it-works-section .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   BADGE
+==========================================================*/
+
+.how-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    letter-spacing:.4px;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .how-badge{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+}
+
+[data-theme="dark"] .how-badge{
+
+    background:rgba(255,178,0,.18);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   HEADING
+==========================================================*/
+
+.how-title{
+
+    margin-top:24px;
+
+    margin-bottom:20px;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .how-title{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+[data-theme="dark"] .how-title{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.how-description{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .how-description{
+
+    color:#667085;
+
+}
+
+[data-theme="dark"] .how-description{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+/* ==========================================================
+   TIMELINE WRAPPER
+==========================================================*/
+
+.timeline-wrapper{
+
+    position:relative;
+
+    margin-top:90px;
+
+    margin-bottom:90px;
+
+}
+
+/* ==========================================================
+   CTA BUTTON
+==========================================================*/
+
+.how-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .35s ease;
+
+}
+
+[data-theme="light"] .how-btn{
+
+    background:rgb(255,178,0);
+
+    color:#ffffff;
+
+    box-shadow:
+
+    0 14px 35px rgba(255,178,0,.25);
+
+}
+
+[data-theme="dark"] .how-btn{
+
+    background:rgb(255,178,0);
+
+    color:rgb(8,28,58);
+
+    box-shadow:
+
+    0 14px 35px rgba(255,178,0,.20);
+
+}
+
+.how-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+[data-theme="light"] .how-btn:hover{
+
+    box-shadow:
+
+    0 20px 40px rgba(255,178,0,.35);
+
+}
+
+[data-theme="dark"] .how-btn:hover{
+
+    box-shadow:
+
+    0 20px 40px rgba(255,178,0,.28);
+
+}
+
+/* ==========================================================
+   BUTTON SHINE
+==========================================================*/
+
+.how-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.how-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:left .8s ease;
+
+}
+
+.how-btn:hover::before{
+
+    left:140%;
+
+}
+
+/* ==========================================================
+   FOCUS
+==========================================================*/
+
+.how-btn:focus-visible{
+
+    outline:3px solid rgba(255,178,0,.35);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   TEXT SELECTION
+==========================================================*/
+
+.how-it-works-section ::selection{
+
+    background:rgb(255,178,0);
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   HOW IT WORKS
+   PHASE 8.5.2
+   PREMIUM TIMELINE
+==========================================================*/
+
+/* ==========================================================
+   TIMELINE WRAPPER
+==========================================================*/
+
+.timeline-wrapper{
+
+    position:relative;
+
+}
+
+/* ==========================================================
+   GOLD TIMELINE
+==========================================================*/
+
+.timeline-line{
+
+    position:absolute;
+
+    top:40px;
+
+    left:8%;
+
+    width:84%;
+
+    height:4px;
+
+    border-radius:50px;
+
+    transform-origin:left center;
+
+    z-index:1;
+
+}
+
+[data-theme="light"] .timeline-line{
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,178,0,.15),
+        rgb(255,178,0),
+        rgba(255,178,0,.15)
+    );
+
+}
+
+[data-theme="dark"] .timeline-line{
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,178,0,.18),
+        rgb(255,178,0),
+        rgba(255,178,0,.18)
+    );
+
+}
+
+/* ==========================================================
+   ROW
+==========================================================*/
+
+.timeline-wrapper .row{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   ITEM
+==========================================================*/
+
+.timeline-item{
+
+    position:relative;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================================================
+   CIRCLE
+==========================================================*/
+
+.timeline-circle{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    margin-bottom:28px;
+
+    transition:.35s ease;
+
+    position:relative;
+
+}
+
+[data-theme="light"] .timeline-circle{
+
+    background:#ffffff;
+
+    border:4px solid rgb(255,178,0);
+
+    box-shadow:
+
+    0 12px 35px rgba(255,178,0,.18);
+
+}
+
+[data-theme="dark"] .timeline-circle{
+
+    background:rgb(8,28,58);
+
+    border:4px solid rgb(255,178,0);
+
+    box-shadow:
+
+    0 12px 35px rgba(255,178,0,.18);
+
+}
+
+/* ==========================================================
+   NUMBER
+==========================================================*/
+
+.timeline-number{
+
+    font-size:1.4rem;
+
+    font-weight:800;
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   ICON
+==========================================================*/
+
+.timeline-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 22px;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .timeline-icon{
+
+    background:rgba(255,178,0,.10);
+
+    color:rgb(255,178,0);
+
+}
+
+[data-theme="dark"] .timeline-icon{
+
+    background:rgba(255,178,0,.12);
+
+    color:rgb(255,178,0);
+
+}
+
+/* ==========================================================
+   TITLE
+==========================================================*/
+
+.timeline-title{
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .timeline-title{
+
+    color:oklab(0.269649 0 0);
+
+}
+
+[data-theme="dark"] .timeline-title{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.timeline-description{
+
+    font-size:.96rem;
+
+    line-height:1.8;
+
+    margin:0 auto;
+
+    max-width:220px;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .timeline-description{
+
+    color:#667085;
+
+}
+
+[data-theme="dark"] .timeline-description{
+
+    color:rgba(255,255,255,.72);
+
+}
+
+/* ==========================================================
+   CONNECTOR DOT
+==========================================================*/
+
+.timeline-circle::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:rgb(255,178,0);
+
+    top:50%;
+
+    right:-34px;
+
+    transform:translateY(-50%);
+
+    z-index:5;
+
+}
+
+/* Hide last connector */
+
+.timeline-item:last-child .timeline-circle::after{
+
+    display:none;
+
+}
+
+/* ==========================================================
+   HOW IT WORKS
+   PHASE 8.5.3
+   PREMIUM HOVER & ANIMATIONS
+==========================================================*/
+
+/* ==========================================================
+   TIMELINE ITEM
+==========================================================*/
+
+.timeline-item{
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ==========================================================
+   CIRCLE HOVER
+==========================================================*/
+
+.timeline-circle{
+
+    overflow:hidden;
+
+}
+
+.timeline-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .timeline-circle::before{
+
+    box-shadow:
+        0 0 0 10px rgba(255,178,0,.08);
+
+}
+
+[data-theme="dark"] .timeline-circle::before{
+
+    box-shadow:
+        0 0 0 10px rgba(255,178,0,.12);
+
+}
+
+.timeline-item:hover .timeline-circle{
+
+    transform:scale(1.08);
+
+}
+
+.timeline-item:hover .timeline-circle::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   PULSE ANIMATION
+==========================================================*/
+
+.timeline-circle::after{
+
+    animation:timelinePulse 2.8s infinite;
+
+}
+
+@keyframes timelinePulse{
+
+    0%{
+
+        transform:translateY(-50%) scale(1);
+
+    }
+
+    50%{
+
+        transform:translateY(-50%) scale(1.25);
+
+    }
+
+    100%{
+
+        transform:translateY(-50%) scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   ICON
+==========================================================*/
+
+.timeline-icon{
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.timeline-item:hover .timeline-icon{
+
+    transform:
+        translateY(-6px)
+        rotate(-8deg)
+        scale(1.08);
+
+}
+
+[data-theme="light"] .timeline-item:hover .timeline-icon{
+
+    background:rgb(255,178,0);
+
+    color:#ffffff;
+
+    box-shadow:
+        0 18px 35px rgba(255,178,0,.28);
+
+}
+
+[data-theme="dark"] .timeline-item:hover .timeline-icon{
+
+    background:rgb(255,178,0);
+
+    color:rgb(8,28,58);
+
+    box-shadow:
+        0 18px 35px rgba(255,178,0,.25);
+
+}
+
+/* ==========================================================
+   TITLE
+==========================================================*/
+
+.timeline-title{
+
+    transition:
+        color .35s ease,
+        transform .35s ease;
+
+}
+
+.timeline-item:hover .timeline-title{
+
+    color:rgb(255,178,0);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+==========================================================*/
+
+.timeline-description{
+
+    transition:
+        color .35s ease,
+        opacity .35s ease;
+
+}
+
+[data-theme="light"] .timeline-item:hover .timeline-description{
+
+    color:#475467;
+
+}
+
+[data-theme="dark"] .timeline-item:hover .timeline-description{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   CARD DEPTH
+==========================================================*/
+
+.timeline-content{
+
+    transition:
+        transform .35s ease;
+
+}
+
+.timeline-item:hover .timeline-content{
+
+    transform:translateY(4px);
+
+}
+
+/* ==========================================================
+   GOLD SHIMMER
+==========================================================*/
+
+.timeline-circle{
+
+    position:relative;
+
+}
+
+.timeline-circle span{
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+.timeline-circle .shine{
+
+    display:none;
+
+}
+
+.timeline-circle::after{
+
+    transition:.35s ease;
+
+}
+
+.timeline-circle::before{
+
+    background:
+        linear-gradient(
+            130deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:translateX(-180%);
+
+}
+
+.timeline-item:hover .timeline-circle::before{
+
+    transform:translateX(180%);
+
+}
+
+/* ==========================================================
+   ICON FLOAT
+==========================================================*/
+
+.timeline-icon svg{
+
+    transition:transform .35s ease;
+
+}
+
+.timeline-item:hover .timeline-icon svg{
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+==========================================================*/
+
+.timeline-item:focus-within .timeline-circle{
+
+    outline:3px solid rgba(255,178,0,.35);
+
+    outline-offset:6px;
+
+}
+
+/* ==========================================================
+   REDUCE MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.timeline-item,
+.timeline-circle,
+.timeline-icon,
+.timeline-title,
+.timeline-description{
+
+    transition:none;
+
+}
+
+.timeline-circle::after{
+
+    animation:none;
+
+}
+
+}
+
+/* ==========================================================
+   HOW IT WORKS
+   PHASE 8.5.4
+   FINAL RESPONSIVE POLISH
+==========================================================*/
+
+/* ==========================================================
+   LARGE DESKTOP
+==========================================================*/
+
+@media (min-width:1400px){
+
+.timeline-description{
+
+    max-width:240px;
+
+}
+
+.how-title{
+
+    font-size:3.4rem;
+
+}
+
+}
+
+/* ==========================================================
+   DESKTOP
+==========================================================*/
+
+@media (max-width:1199px){
+
+.timeline-line{
+
+    left:7%;
+
+    width:86%;
+
+}
+
+.timeline-circle{
+
+    width:74px;
+
+    height:74px;
+
+}
+
+.timeline-number{
+
+    font-size:1.25rem;
+
+}
+
+}
+
+/* ==========================================================
+   TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.timeline-line{
+
+    display:none;
+
+}
+
+.timeline-circle::after{
+
+    display:none;
+
+}
+
+.timeline-item{
+
+    margin-bottom:55px;
+
+}
+
+.timeline-description{
+
+    max-width:100%;
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE TIMELINE
+==========================================================*/
+
+@media (max-width:767px){
+
+.how-it-works-section{
+
+    padding:90px 0;
+
+}
+
+.timeline-wrapper{
+
+    margin-top:70px;
+
+    margin-bottom:70px;
+
+}
+
+.timeline-wrapper .row{
+
+    position:relative;
+
+}
+
+.timeline-wrapper .row::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:40px;
+
+    top:10px;
+
+    bottom:10px;
+
+    width:3px;
+
+    background:rgba(255,178,0,.25);
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    text-align:left;
+
+    margin-bottom:45px;
+
+    position:relative;
+
+}
+
+.timeline-circle{
+
+    width:70px;
+
+    height:70px;
+
+    flex-shrink:0;
+
+    margin:0;
+
+    margin-right:20px;
+
+}
+
+.timeline-circle::after{
+
+    display:none;
+
+}
+
+.timeline-icon{
+
+    margin:0 0 14px 0;
+
+}
+
+.timeline-content{
+
+    flex:1;
+
+}
+
+.timeline-title{
+
+    font-size:1.2rem;
+
+}
+
+.timeline-description{
+
+    max-width:100%;
+
+    margin:0;
+
+    line-height:1.7;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+==========================================================*/
+
+@media (max-width:576px){
+
+.how-title{
+
+    font-size:2.2rem;
+
+}
+
+.how-description{
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+.how-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.timeline-circle{
+
+    width:62px;
+
+    height:62px;
+
+}
+
+.timeline-number{
+
+    font-size:1.1rem;
+
+}
+
+.timeline-icon{
+
+    width:52px;
+
+    height:52px;
+
+}
+
+.timeline-title{
+
+    font-size:1.1rem;
+
+}
+
+.timeline-description{
+
+    font-size:.92rem;
+
+}
+
+}
+
+/* ==========================================================
+   EXTRA SMALL
+==========================================================*/
+
+@media (max-width:390px){
+
+.how-title{
+
+    font-size:2rem;
+
+}
+
+.timeline-item{
+
+    margin-bottom:35px;
+
+}
+
+.timeline-circle{
+
+    width:58px;
+
+    height:58px;
+
+    margin-right:16px;
+
+}
+
+.timeline-icon{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.timeline-icon svg{
+
+    width:22px;
+
+    height:22px;
+
+}
+
+.timeline-description{
+
+    font-size:.9rem;
+
+}
+
+}
+
+/* ==========================================================
+   SECTION SPACING
+==========================================================*/
+
+.timeline-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   SMOOTH SCROLLING
+==========================================================*/
+
+.how-it-works-section{
+
+    scroll-margin-top:120px;
+
+}

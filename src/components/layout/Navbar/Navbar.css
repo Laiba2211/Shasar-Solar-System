@@ -1,0 +1,556 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   NAVBAR
+   ========================================================== */
+
+/* ==========================================================
+   GLOBAL RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   NAVBAR WRAPPER
+   ========================================================== */
+
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+
+/* ==========================================================
+   MAIN NAVBAR
+   ========================================================== */
+
+.custom-navbar {
+  width: 100%;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid var(--border-color);
+
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+
+/* ==========================================================
+   NAVBAR CONTAINER
+   ========================================================== */
+
+.navbar-container {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-inline: 40px;
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.custom-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: #111111;
+
+  flex-shrink: 0;
+}
+
+.brand-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  color: var(--text-primary);
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+
+  transition: color var(--transition);
+}
+
+.brand-subtitle {
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+/* ==========================================================
+   DESKTOP MENU
+   ========================================================== */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 36px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   DESKTOP NAV LINKS
+   ========================================================== */
+
+.navbar-menu .nav-link {
+  color: var(--text-primary);
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  position: relative;
+
+  transition:
+    color var(--transition);
+}
+
+
+/* Underline */
+
+.navbar-menu .nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--primary);
+
+  transition: width 0.35s ease;
+}
+
+
+/* Hover */
+
+.navbar-menu .nav-link:hover {
+  color: var(--primary);
+}
+
+.navbar-menu .nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* Active */
+
+.navbar-menu .active-link {
+  color: var(--primary);
+}
+
+.navbar-menu .active-link::after {
+  width: 100%;
+}
+
+
+/* ==========================================================
+   LIGHT THEME — DESKTOP MENU
+   ========================================================== */
+
+/*
+   In light mode desktop menu text should be dark.
+*/
+
+[data-theme="light"] .navbar-menu .nav-link {
+  color: #111111;
+}
+
+[data-theme="light"] .navbar-menu .nav-link:hover,
+[data-theme="light"] .navbar-menu .active-link {
+  color: var(--primary);
+}
+
+
+/* ==========================================================
+   RIGHT SIDE ACTIONS
+   ========================================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* ==========================================================
+   THEME BUTTON
+   ========================================================== */
+
+.theme-btn,
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.theme-btn:hover,
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: rotate(20deg);
+}
+
+
+/* ==========================================================
+   GET A QUOTE — DESKTOP
+   ========================================================== */
+
+.quote-btn {
+  border: none;
+
+  background: var(--primary);
+  color: #111111;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.quote-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(255, 178, 0, 0.35);
+}
+
+
+/* ==========================================================
+   HAMBURGER
+   ========================================================== */
+
+.hamburger-btn {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==========================================================
+   MOBILE OVERLAY
+   ========================================================== */
+
+.mobile-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  z-index: 1040;
+}
+
+
+/* ==========================================================
+   MOBILE DRAWER
+   ========================================================== */
+
+.mobile-drawer {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: min(320px, 85vw);
+  height: 100vh;
+
+  background: var(--navbar-bg);
+
+  border-left: 1px solid var(--border-color);
+
+  padding: 110px 28px 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1050;
+
+  box-shadow:
+    -12px 0 40px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+
+/* ==========================================================
+   MOBILE MENU
+   ========================================================== */
+
+.mobile-menu {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu li {
+  margin-bottom: 12px;
+}
+
+
+/* ==========================================================
+   MOBILE MENU LINKS
+   ========================================================== */
+
+/*
+   IMPORTANT:
+   Mobile menu text stays WHITE in BOTH themes.
+*/
+
+.mobile-menu .nav-link {
+  display: block;
+
+  padding: 14px 0;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+
+/* Mobile hover = Yellow */
+
+.mobile-menu .nav-link:hover {
+  color: var(--primary);
+
+  padding-left: 5px;
+}
+
+
+/* Mobile active = Yellow */
+
+.mobile-menu .active-link {
+  color: var(--primary);
+}
+
+
+/* ==========================================================
+   MOBILE GET A QUOTE
+   ========================================================== */
+
+.mobile-quote-btn {
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: #111111;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mobile-quote-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(255, 178, 0, 0.3);
+}
+
+
+/* ==========================================================
+   DESKTOP ONLY
+   ========================================================== */
+
+@media (min-width: 992px) {
+  .mobile-overlay,
+  .mobile-drawer {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+
+/* ==========================================================
+   TABLET + MOBILE
+   ========================================================== */
+
+@media (max-width: 991.98px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+
+    width: 46px;
+    height: 46px;
+  }
+
+  /* Hide desktop quote button */
+  .quote-btn {
+    display: none;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 575.98px) {
+  .navbar-container {
+    height: 72px;
+
+    padding-inline: 20px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-subtitle {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .theme-btn,
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hamburger-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-drawer {
+    width: min(320px, 88vw);
+
+    padding:
+      100px
+      24px
+      28px;
+  }
+}

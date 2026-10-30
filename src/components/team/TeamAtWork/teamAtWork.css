@@ -1,0 +1,919 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   TEAM AT WORK
+   Premium Continuous Media Slider
+========================================================== */
+
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
+.team-at-work {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 115px 0 105px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 178, 0, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(255, 178, 0, 0.045),
+      transparent 28%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ==========================================================
+   DECORATIVE GLOWS
+========================================================== */
+
+.team-at-work__glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+
+  z-index: -1;
+}
+
+.team-at-work__glow--one {
+  top: -250px;
+  right: -160px;
+
+  background: rgba(255, 178, 0, 0.09);
+}
+
+.team-at-work__glow--two {
+  bottom: -280px;
+  left: -180px;
+
+  background: rgba(255, 178, 0, 0.06);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.team-at-work__header {
+  max-width: 820px;
+
+  margin: 0 auto 58px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.team-at-work__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 19px;
+
+  color: var(--accent-color);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.team-at-work__eyebrow-line {
+  width: 32px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--accent-color);
+
+  box-shadow:
+    0 0 12px rgba(255, 178, 0, 0.35);
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.team-at-work__title {
+  margin: 0;
+
+  font-size: clamp(
+    2.25rem,
+    4.2vw,
+    4rem
+  );
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+
+  color: var(--text-primary);
+}
+
+.team-at-work__title span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--accent-color);
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.team-at-work__description {
+  max-width: 680px;
+
+  margin: 20px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+}
+
+
+/* ==========================================================
+   SLIDER WRAPPER
+========================================================== */
+
+.team-at-work__slider-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 12px 0 25px;
+}
+
+
+/* ==========================================================
+   SIDE FADE
+========================================================== */
+
+.team-at-work__slider-wrapper::before,
+.team-at-work__slider-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 120px;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.team-at-work__slider-wrapper::before {
+  left: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg-primary),
+      transparent
+    );
+}
+
+.team-at-work__slider-wrapper::after {
+  right: 0;
+
+  background:
+    linear-gradient(
+      270deg,
+      var(--bg-primary),
+      transparent
+    );
+}
+
+
+/* ==========================================================
+   SLIDER
+========================================================== */
+
+.team-at-work__slider {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   CONTINUOUS TRACK
+========================================================== */
+
+.team-at-work__track {
+  display: flex;
+
+  align-items: stretch;
+
+  width: max-content;
+
+  gap: 22px;
+
+  animation:
+    teamWorkMarquee 48s linear infinite;
+
+  will-change: transform;
+}
+
+
+/* ==========================================================
+   CONTINUOUS ANIMATION
+========================================================== */
+
+@keyframes teamWorkMarquee {
+
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      calc(-50% - 11px),
+      0,
+      0
+    );
+  }
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.team-at-work__card {
+  position: relative;
+
+  flex: 0 0 clamp(
+    280px,
+    28vw,
+    430px
+  );
+
+  height: clamp(
+    370px,
+    38vw,
+    510px
+  );
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 25px;
+
+  background: var(--surface-primary);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.10);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.35s ease;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   CARD HOVER
+========================================================== */
+
+.team-at-work__card:hover {
+  transform: translateY(-9px);
+
+  border-color:
+    rgba(255, 178, 0, 0.45);
+
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 178, 0, 0.08);
+}
+
+
+/* ==========================================================
+   MEDIA
+========================================================== */
+
+.team-at-work__media {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: var(--surface-secondary);
+}
+
+
+/* ==========================================================
+   IMAGE / VIDEO
+========================================================== */
+
+.team-at-work__media-element {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s
+      cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.team-at-work__card:hover
+.team-at-work__media-element {
+  transform: scale(1.06);
+}
+
+
+/* ==========================================================
+   IMAGE OVERLAY
+========================================================== */
+
+.team-at-work__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 28, 58, 0.10) 0%,
+      rgba(8, 28, 58, 0.02) 38%,
+      rgba(8, 28, 58, 0.82) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   TOP BADGE
+========================================================== */
+
+.team-at-work__badge {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 999px;
+
+  background:
+    rgba(8, 28, 58, 0.58);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   VIDEO ICON
+========================================================== */
+
+.team-at-work__badge-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: var(--accent-color);
+
+  color: #081c3a;
+}
+
+
+/* ==========================================================
+   LIVE DOT
+========================================================== */
+
+.team-at-work__live-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent-color);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(255, 178, 0, 0.14),
+
+    0 0 12px
+    rgba(255, 178, 0, 0.45);
+}
+
+
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
+
+.team-at-work__card-footer {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 17px 17px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 17px;
+
+  background:
+    rgba(8, 28, 58, 0.66);
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   FOOTER LABEL
+========================================================== */
+
+.team-at-work__card-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.10em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.team-at-work__card-footer h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.team-at-work__arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 auto;
+
+  border: 1px solid
+    rgba(255, 178, 0, 0.38);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 178, 0, 0.12);
+
+  color: var(--accent-color);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.team-at-work__card:hover
+.team-at-work__arrow {
+  transform: translate(
+    3px,
+    -3px
+  );
+
+  background:
+    rgba(255, 178, 0, 0.22);
+}
+
+
+/* ==========================================================
+   BOTTOM MESSAGE
+========================================================== */
+
+.team-at-work__bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-top: 38px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.team-at-work__bottom-line {
+  width: 42px;
+  height: 1px;
+
+  background:
+    var(--border-color);
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+[data-theme="dark"] .team-at-work {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 178, 0, 0.085),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(255, 178, 0, 0.055),
+      transparent 28%
+    ),
+    var(--bg-primary);
+}
+
+
+[data-theme="dark"]
+.team-at-work__card {
+  border-color:
+    rgba(255, 255, 255, 0.10);
+
+  background:
+    rgba(15, 35, 64, 0.92);
+
+  box-shadow:
+    0 24px 60px
+    rgba(0, 0, 0, 0.32);
+}
+
+
+[data-theme="dark"]
+.team-at-work__card:hover {
+  border-color:
+    rgba(255, 178, 0, 0.45);
+
+  box-shadow:
+    0 30px 75px
+    rgba(0, 0, 0, 0.48);
+}
+
+
+/* ==========================================================
+   LIGHT MODE REFINEMENT
+========================================================== */
+
+[data-theme="light"]
+.team-at-work__card {
+  background: #ffffff;
+
+  border-color:
+    rgba(8, 28, 58, 0.10);
+
+  box-shadow:
+    0 18px 45px
+    rgba(8, 28, 58, 0.09);
+}
+
+
+[data-theme="light"]
+.team-at-work__card:hover {
+  border-color:
+    rgba(255, 178, 0, 0.45);
+
+  box-shadow:
+    0 28px 65px
+    rgba(8, 28, 58, 0.15);
+}
+
+
+/* ==========================================================
+   HOVER PAUSE
+   Optional UX improvement.
+========================================================== */
+
+.team-at-work__slider-wrapper:hover
+.team-at-work__track {
+  animation-play-state: paused;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+
+  .team-at-work {
+    padding: 95px 0 90px;
+  }
+
+  .team-at-work__header {
+    margin-bottom: 45px;
+  }
+
+  .team-at-work__card {
+    flex-basis: 330px;
+
+    height: 450px;
+  }
+
+  .team-at-work__track {
+    gap: 18px;
+
+    animation-duration: 43s;
+  }
+
+  .team-at-work__slider-wrapper::before,
+  .team-at-work__slider-wrapper::after {
+    width: 70px;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+
+  .team-at-work {
+    padding: 80px 0 75px;
+  }
+
+  .team-at-work__header {
+    padding: 0 18px;
+
+    margin-bottom: 38px;
+  }
+
+  .team-at-work__eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+
+    gap: 9px;
+  }
+
+  .team-at-work__eyebrow-line {
+    width: 23px;
+  }
+
+  .team-at-work__title {
+    font-size: clamp(
+      2rem,
+      9vw,
+      2.8rem
+    );
+
+    letter-spacing: -0.035em;
+  }
+
+  .team-at-work__description {
+    margin-top: 16px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .team-at-work__card {
+    flex-basis: min(
+      82vw,
+      360px
+    );
+
+    height: min(
+      120vw,
+      470px
+    );
+
+    border-radius: 21px;
+  }
+
+  .team-at-work__track {
+    gap: 14px;
+
+    animation-duration: 36s;
+  }
+
+  .team-at-work__badge {
+    top: 14px;
+    left: 14px;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+  }
+
+  .team-at-work__card-footer {
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+  }
+
+  .team-at-work__card-footer h3 {
+    font-size: 14px;
+  }
+
+  .team-at-work__arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .team-at-work__bottom {
+    margin-top: 25px;
+
+    padding: 0 20px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.10em;
+  }
+
+  .team-at-work__bottom-line {
+    width: 25px;
+  }
+
+  .team-at-work__slider-wrapper::before,
+  .team-at-work__slider-wrapper::after {
+    width: 35px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .team-at-work {
+    padding-top: 70px;
+  }
+
+  .team-at-work__card {
+    flex-basis: 84vw;
+
+    height: 410px;
+  }
+
+  .team-at-work__track {
+    animation-duration: 33s;
+  }
+
+  .team-at-work__card-label {
+    font-size: 8px;
+  }
+
+  .team-at-work__card-footer h3 {
+    font-size: 13px;
+  }
+
+  .team-at-work__bottom {
+    gap: 9px;
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .team-at-work__track {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .team-at-work__card,
+  .team-at-work__media-element,
+  .team-at-work__arrow {
+    transition: none !important;
+  }
+}

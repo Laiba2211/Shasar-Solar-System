@@ -1,0 +1,852 @@
+/* ==========================================================
+   FOOTER
+   PHASE 12.5.2
+   PREMIUM FOOTER DESIGN
+==========================================================*/
+
+
+/* ==========================================================
+   MAIN FOOTER
+==========================================================*/
+
+.footer-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+[data-theme="light"] .footer-section{
+
+    background:#ffffff;
+
+    border-top:1px solid rgba(15,23,42,.08);
+
+}
+
+[data-theme="dark"] .footer-section{
+
+    background:linear-gradient(
+        180deg,
+        #071729 0%,
+        #081c3a 100%
+    );
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================================================
+   FOOTER TOP
+==========================================================*/
+
+.footer-top{
+
+    padding:90px 0 70px;
+
+}
+
+
+/* ==========================================================
+   FOOTER WIDGET
+==========================================================*/
+
+.footer-widget{
+
+    height:100%;
+
+}
+
+.footer-widget-title{
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+    padding-bottom:14px;
+
+}
+
+.footer-widget-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:55px;
+
+    height:3px;
+
+    background:#FFB200;
+
+    border-radius:10px;
+
+}
+
+[data-theme="light"] .footer-widget-title{
+
+    color:#0f172a;
+
+}
+
+[data-theme="dark"] .footer-widget-title{
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   COMPANY
+==========================================================*/
+
+.footer-logo{
+
+    margin-bottom:20px;
+
+}
+
+.footer-logo-text{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:4px;
+
+}
+
+[data-theme="light"] .footer-logo-text{
+
+    color:#0f172a;
+
+}
+
+[data-theme="dark"] .footer-logo-text{
+
+    color:#ffffff;
+
+}
+
+.footer-tagline{
+
+    color:#FFB200;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    font-size:.95rem;
+
+}
+
+.footer-description{
+
+    margin:28px 0;
+
+    line-height:1.9;
+
+    font-size:.98rem;
+
+}
+
+[data-theme="light"] .footer-description{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .footer-description{
+
+    color:rgba(255,255,255,.74);
+
+}
+
+
+/* ==========================================================
+   FOOTER LINKS
+==========================================================*/
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+    font-weight:500;
+
+}
+
+[data-theme="light"] .footer-link{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .footer-link{
+
+    color:rgba(255,255,255,.74);
+
+}
+
+.footer-link:hover{
+
+    color:#FFB200;
+
+    transform:translateX(6px);
+
+}
+
+.footer-link-icon{
+
+    color:#FFB200;
+
+}
+
+
+/* ==========================================================
+   CONTACT
+==========================================================*/
+
+.footer-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin:0;
+
+    font-style:normal;
+
+}
+
+.footer-contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    line-height:1.7;
+
+}
+
+.footer-contact-item svg{
+
+    color:#FFB200;
+
+    margin-top:3px;
+
+    flex-shrink:0;
+
+}
+
+[data-theme="light"] .footer-contact-item{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .footer-contact-item{
+
+    color:rgba(255,255,255,.74);
+
+}
+
+
+/* ==========================================================
+   SOCIAL
+==========================================================*/
+
+.footer-social{
+
+    gap:14px;
+
+    margin-top:28px;
+
+}
+
+.footer-social-link{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    border-radius:50%;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .footer-social-link{
+
+    background:#f8fafc;
+
+    color:#FFB200;
+
+    border:1px solid rgba(15,23,42,.08);
+
+}
+
+[data-theme="dark"] .footer-social-link{
+
+    background:rgba(255,255,255,.05);
+
+    color:#FFB200;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-social-link:hover{
+
+    background:#FFB200;
+
+    color:#ffffff;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 30px rgba(255,178,0,.25);
+
+}
+
+
+/* ==========================================================
+   FOOTER BOTTOM
+==========================================================*/
+
+.footer-bottom{
+
+    border-top:1px solid rgba(148,163,184,.15);
+
+    padding:24px 0;
+
+}
+
+.footer-copyright,
+.footer-developer{
+
+    font-size:.94rem;
+
+    margin:0;
+
+}
+
+[data-theme="light"] .footer-copyright,
+[data-theme="light"] .footer-developer{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .footer-copyright,
+[data-theme="dark"] .footer-developer{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.footer-bottom-nav{
+
+    gap:28px;
+
+}
+
+.footer-bottom-link{
+
+    text-decoration:none;
+
+    font-size:.94rem;
+
+    transition:.35s ease;
+
+}
+
+[data-theme="light"] .footer-bottom-link{
+
+    color:#64748b;
+
+}
+
+[data-theme="dark"] .footer-bottom-link{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.footer-bottom-link:hover{
+
+    color:#FFB200;
+
+}
+
+/* ==========================================================
+   FOOTER
+   PHASE 12.5.3
+   RESPONSIVE + FINAL POLISH
+==========================================================*/
+
+
+/* ==========================================================
+   COMPANY LOGO ANIMATION
+==========================================================*/
+
+.footer-logo-text{
+    transition:all .35s ease;
+}
+
+.footer-logo-text:hover{
+    color:#FFB200;
+}
+
+.footer-tagline{
+    display:block;
+}
+
+
+/* ==========================================================
+   LINK MICRO ANIMATIONS
+==========================================================*/
+
+.footer-link{
+    position:relative;
+}
+
+.footer-link::before{
+
+    content:"";
+
+    width:0;
+
+    height:2px;
+
+    background:#FFB200;
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    transition:width .35s ease;
+
+}
+
+.footer-link:hover::before{
+
+    width:22px;
+
+}
+
+
+/* ==========================================================
+   CONTACT ITEM
+==========================================================*/
+
+.footer-contact-item{
+
+    transition:all .35s ease;
+
+}
+
+.footer-contact-item:hover{
+
+    transform:translateX(5px);
+
+}
+
+
+/* ==========================================================
+   SOCIAL ICON IMPROVEMENT
+==========================================================*/
+
+.footer-social{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-social-link{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.footer-social-link::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:rgba(255,178,0,.08);
+
+    transform:scale(0);
+
+    transition:.35s;
+
+}
+
+.footer-social-link:hover::before{
+
+    transform:scale(1.4);
+
+}
+
+.footer-social-link svg{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   FOOTER BOTTOM
+==========================================================*/
+
+.footer-bottom{
+
+    backdrop-filter:blur(10px);
+
+}
+
+.footer-bottom-link{
+
+    position:relative;
+
+}
+
+.footer-bottom-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-4px;
+
+    width:0;
+
+    height:2px;
+
+    background:#FFB200;
+
+    transition:.35s;
+
+}
+
+.footer-bottom-link:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   FOCUS STATES
+==========================================================*/
+
+.footer-link:focus-visible,
+.footer-bottom-link:focus-visible,
+.footer-social-link:focus-visible{
+
+    outline:2px solid #FFB200;
+
+    outline-offset:4px;
+
+    border-radius:8px;
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+==========================================================*/
+
+@media (min-width:1400px){
+
+.footer-top{
+
+    padding:110px 0 80px;
+
+}
+
+.footer-description{
+
+    max-width:360px;
+
+}
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+==========================================================*/
+
+@media (max-width:1199px){
+
+.footer-widget-title{
+
+    font-size:1.15rem;
+
+}
+
+.footer-logo-text{
+
+    font-size:1.8rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.footer-top{
+
+    padding:80px 0 60px;
+
+}
+
+.footer-widget{
+
+    margin-bottom:20px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+}
+
+.footer-bottom-nav{
+
+    justify-content:center;
+
+    margin:10px 0;
+
+}
+
+.footer-developer{
+
+    text-align:center;
+
+}
+
+}
+
+
+/* ==========================================================
+   MOBILE
+==========================================================*/
+
+@media (max-width:767px){
+
+.footer-top{
+
+    padding:70px 0 50px;
+
+}
+
+.footer-widget-title{
+
+    margin-bottom:22px;
+
+}
+
+.footer-description{
+
+    margin:20px 0;
+
+}
+
+.footer-social{
+
+    justify-content:flex-start;
+
+}
+
+.footer-social-link{
+
+    width:44px;
+
+    height:44px;
+
+}
+
+.footer-bottom-nav{
+
+    gap:18px;
+
+}
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+==========================================================*/
+
+@media (max-width:575px){
+
+.footer-top{
+
+    padding:60px 0 45px;
+
+}
+
+.footer-logo-text{
+
+    font-size:1.6rem;
+
+}
+
+.footer-widget-title{
+
+    font-size:1.05rem;
+
+}
+
+.footer-contact{
+
+    gap:14px;
+
+}
+
+.footer-bottom{
+
+    padding:20px 0;
+
+}
+
+.footer-bottom-nav{
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.footer-copyright,
+.footer-developer{
+
+    font-size:.88rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL DEVICES
+==========================================================*/
+
+@media (max-width:390px){
+
+.footer-social{
+
+    gap:10px;
+
+}
+
+.footer-social-link{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+.footer-logo-text{
+
+    font-size:1.45rem;
+
+}
+
+.footer-description{
+
+    font-size:.92rem;
+
+}
+
+.footer-widget-title{
+
+    font-size:1rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.footer-link,
+.footer-social-link,
+.footer-contact-item,
+.footer-bottom-link,
+.footer-logo-text{
+
+    transition:none !important;
+
+}
+
+}
