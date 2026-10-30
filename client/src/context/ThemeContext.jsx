@@ -1,12 +1,12 @@
+
 import { createContext, useEffect, useMemo, useState } from "react";
 
 export const ThemeContext = createContext(null);
-
-const STORAGE_KEY = "shasar-theme";
+const STORAGE_KEY = "shasar-theme-v2";
 
 export const ThemeProvider = ({ children }) => {
   const getInitialTheme = () => {
-    return localStorage.getItem(STORAGE_KEY) || "dark";
+    return localStorage.getItem(STORAGE_KEY) || "light";
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
