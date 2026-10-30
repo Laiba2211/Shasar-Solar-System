@@ -1,0 +1,1397 @@
+/* ==========================================================
+   SHASAR SOLAR
+   SERVICES GRID
+   PREMIUM LIGHT + DARK THEME
+   BOOTSTRAP 5 + CUSTOM CSS
+   ========================================================== */
+
+/* ==========================================================
+   SECTION
+   ========================================================== */
+
+.services-grid-section {
+  position: relative;
+  width: 100%;
+
+  padding: 90px 0 100px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 178, 0, 0.055),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(255, 178, 0, 0.045),
+      transparent 30%
+    ),
+    var(--services-section-bg, #f7f9fc);
+
+  color: var(--services-text-primary, #172033);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* ==========================================================
+   SECTION HEADER
+   ========================================================== */
+
+.services-grid-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-bottom: 16px;
+  padding: 7px 15px;
+
+  border: 1px solid rgba(255, 178, 0, 0.25);
+  border-radius: 999px;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  color: #c88700;
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.services-grid-heading {
+  margin: 0 0 16px;
+
+  color: var(--services-heading, #101828);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+}
+
+.services-grid-description-text {
+  max-width: 780px;
+
+  margin: 10px 10px 40px 20px;
+
+  color: var(--services-text-secondary, #667085);
+
+  font-size: 0.98rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   GRID
+   ========================================================== */
+
+.services-grid-section .row.g-4 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+.services-grid-section
+  .row.g-4
+  > [class*="col-"] {
+  display: flex;
+  align-items: stretch;
+}
+
+/* ==========================================================
+   MAIN CARD
+   ========================================================== */
+
+.service-grid-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+
+  height: auto;
+  min-height: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(16, 24, 40, 0.075);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+  box-shadow:
+    0 10px 35px rgba(16, 24, 40, 0.055),
+    0 2px 8px rgba(16, 24, 40, 0.035);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background-color 0.35s ease;
+}
+
+.service-grid-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(255, 178, 0, 0.28);
+
+  box-shadow:
+    0 25px 55px rgba(16, 24, 40, 0.105),
+    0 8px 20px rgba(255, 178, 0, 0.075);
+}
+
+/* ==========================================================
+   EXPANDED CARD
+   ========================================================== */
+
+.service-grid-card--expanded {
+  transform: translateY(0);
+
+  border-color: rgba(255, 178, 0, 0.32);
+
+  box-shadow:
+    0 25px 60px rgba(16, 24, 40, 0.12),
+    0 10px 25px rgba(255, 178, 0, 0.08);
+}
+
+.service-grid-card--expanded:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   MEDIA
+   ========================================================== */
+
+.service-grid-image {
+  position: relative;
+
+  width: 100%;
+  height: 245px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #152238,
+      #0a1d38
+    );
+}
+
+.service-grid-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: auto 0 0 0;
+
+  height: 45%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0)
+    );
+}
+
+/* ==========================================================
+   IMAGE / VIDEO
+   ========================================================== */
+
+.service-grid-image .service-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.service-grid-card:hover
+  .service-grid-image
+  .service-image {
+  transform: scale(1.055);
+}
+
+.service-grid-image video {
+  background: #0b1c34;
+}
+
+/* ==========================================================
+   MEDIA PLACEHOLDER
+   ========================================================== */
+
+.service-grid-media-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255, 178, 0, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #102846,
+      #081c3a
+    );
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================
+   CATEGORY
+   ========================================================== */
+
+.service-grid-category {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+
+  max-width: calc(100% - 75px);
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+
+  background: rgba(8, 28, 58, 0.78);
+
+  color: #ffffff;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ==========================================================
+   MEDIA ARROW
+   ========================================================== */
+
+.service-grid-media-arrow {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+
+  background: rgba(8, 28, 58, 0.72);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.service-grid-card:hover
+  .service-grid-media-arrow {
+  transform: rotate(45deg);
+
+  background: #ffb200;
+
+  color: #081c3a;
+}
+
+.service-grid-media-arrow--expanded {
+  transform: rotate(0deg) !important;
+
+  background: #ffb200;
+
+  color: #081c3a;
+}
+
+/* ==========================================================
+   CARD BODY
+   ========================================================== */
+
+.service-grid-card .card-body {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  min-width: 0;
+
+  height: auto;
+
+  padding: 24px 24px 22px;
+}
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
+.service-grid-title {
+  margin: 0 0 11px;
+
+  color: var(--services-card-heading, #101828);
+
+  font-size: 1.28rem;
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.025em;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   DESCRIPTION WRAPPER
+   ========================================================== */
+
+.service-grid-description-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   DESCRIPTION
+   ========================================================== */
+
+.service-grid-description {
+  margin: 0 0 18px;
+
+  color: var(--services-card-description, #667085);
+
+  font-size: 0.87rem;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  white-space: pre-line;
+}
+
+/* Collapsed description */
+
+.service-grid-card--collapsed
+  .service-grid-description {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* Expanded description */
+
+.service-grid-card--expanded
+  .service-grid-description-wrapper {
+  overflow: visible;
+}
+
+.service-grid-card--expanded
+  .service-grid-description {
+  display: block;
+
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+
+  overflow: visible;
+
+  max-height: none;
+
+  white-space: pre-line;
+}
+
+/* ==========================================================
+   META
+   ========================================================== */
+
+.service-grid-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px 18px;
+
+  margin-bottom: 18px;
+}
+
+.service-grid-meta-item {
+  display: inline-flex;
+  align-items: center;
+
+  min-width: 0;
+
+  gap: 7px;
+
+  color: var(--services-meta-text, #475467);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.service-grid-meta-item svg {
+  flex-shrink: 0;
+
+  color: #e5a000;
+}
+
+.service-grid-meta-item span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   SUITABLE FOR
+   ========================================================== */
+
+.service-grid-suitable {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.service-grid-suitable--expanded {
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+.service-grid-suitable-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--services-label, #667085);
+
+  font-size: 0.69rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.service-grid-suitable-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  gap: 6px;
+}
+
+.service-grid-suitable-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(16, 24, 40, 0.09);
+  border-radius: 7px;
+
+  background: rgba(16, 24, 40, 0.035);
+
+  color: var(--services-tag-text, #475467);
+
+  font-size: 0.68rem;
+  font-weight: 650;
+
+  line-height: 1.15;
+
+  white-space: normal;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-grid-card:hover
+  .service-grid-suitable-tag {
+  border-color: rgba(255, 178, 0, 0.2);
+
+  background: rgba(255, 178, 0, 0.075);
+
+  color: #9a6a00;
+}
+
+/* ==========================================================
+   COLLAPSED +N
+   ========================================================== */
+
+.service-grid-suitable-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  background: rgba(255, 178, 0, 0.11);
+
+  color: #b27700;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* ==========================================================
+   EXPANDED CONTENT
+   ========================================================== */
+
+.service-grid-expanded-content {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+/*
+ * IMPORTANT:
+ * No overflow-y:auto here.
+ * No internal scrollbar.
+ */
+
+.service-grid-card--expanded
+  .service-grid-expanded-content {
+  overflow: visible;
+}
+
+/* ==========================================================
+   EXTRA INFORMATION
+   ========================================================== */
+
+.service-grid-extra-info {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 0 0 20px;
+}
+
+.service-grid-extra-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 11px 12px;
+
+  border: 1px solid rgba(16, 24, 40, 0.075);
+  border-radius: 10px;
+
+  background: rgba(16, 24, 40, 0.025);
+}
+
+.service-grid-extra-item span {
+  color: var(--services-label, #667085);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
+.service-grid-extra-item strong {
+  color: var(--services-card-heading, #101828);
+
+  font-size: 0.75rem;
+  font-weight: 750;
+
+  line-height: 1.35;
+
+  word-break: break-word;
+}
+
+/* ==========================================================
+   COMPLETE PRICING DESCRIPTION
+   ========================================================== */
+
+.service-grid-full-pricing-description {
+  margin-bottom: 20px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(255, 178, 0, 0.16);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 178, 0, 0.07),
+      rgba(255, 178, 0, 0.025)
+    );
+}
+
+.service-grid-full-pricing-description
+  .service-grid-suitable-label {
+  margin-bottom: 8px;
+}
+
+.service-grid-full-pricing-description p {
+  margin: 0;
+
+  color: var(--services-price-description, #667085);
+
+  font-size: 0.76rem;
+  font-weight: 500;
+
+  line-height: 1.65;
+
+  white-space: pre-line;
+
+  overflow: visible;
+
+  max-height: none;
+}
+
+/* ==========================================================
+   PRICE + CTA CONTAINER
+   ========================================================== */
+
+.service-grid-offer {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: auto;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 178, 0, 0.2);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 178, 0, 0.085),
+      rgba(255, 178, 0, 0.025)
+    );
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.service-grid-card:hover
+  .service-grid-offer {
+  border-color: rgba(255, 178, 0, 0.36);
+
+  box-shadow:
+    0 10px 25px rgba(255, 178, 0, 0.075);
+}
+
+/* ==========================================================
+   PRICE AREA
+   ========================================================== */
+
+.service-grid-price-area {
+  width: 100%;
+
+  padding: 15px 16px 13px;
+
+  border-bottom: 1px solid rgba(255, 178, 0, 0.13);
+}
+
+.service-grid-price-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--services-price-label, #667085);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.service-grid-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.service-grid-price {
+  color: var(--services-price, #101828);
+
+  font-size: 1.42rem;
+  font-weight: 850;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+
+  word-break: break-word;
+}
+
+.service-grid-price-unit {
+  flex-shrink: 0;
+
+  color: var(--services-price-unit, #667085);
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+
+  text-align: right;
+}
+
+.service-grid-price-description {
+  margin: 7px 0 0;
+
+  color: var(--services-price-description, #667085);
+
+  font-size: 0.69rem;
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   CTA BUTTON
+   ========================================================== */
+
+.service-grid-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 13px 16px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--services-cta-text, #172033);
+
+  font-family: inherit;
+
+  text-align: left;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-grid-cta:hover {
+  color: var(--services-cta-text, #172033);
+
+  background: rgba(255, 178, 0, 0.045);
+}
+
+.service-grid-cta:focus-visible {
+  outline: 2px solid #ffb200;
+
+  outline-offset: -3px;
+
+  border-radius: 12px;
+}
+
+.service-grid-cta-content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.service-grid-cta-label {
+  color: var(--services-cta-label, #667085);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.075em;
+
+  text-transform: uppercase;
+}
+
+.service-grid-cta-title {
+  margin-top: 4px;
+
+  color: inherit;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+.service-grid-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: #ffb200;
+
+  color: #081c3a;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-grid-cta:hover
+  .service-grid-cta-icon {
+  transform: translateY(-2px);
+
+  background: #081c3a;
+
+  color: #ffffff;
+}
+
+/* ==========================================================
+   LOADING / ERROR / EMPTY
+   ========================================================== */
+
+.services-grid-state {
+  color: var(--services-text-secondary, #667085);
+}
+
+.services-grid-state .spinner-border {
+  width: 2.2rem;
+  height: 2.2rem;
+
+  border-width: 0.18rem;
+
+  color: #ffb200;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+[data-theme="dark"] .services-grid-section,
+.dark .services-grid-section,
+body.dark-mode .services-grid-section {
+  --services-section-bg: #071a34;
+
+  --services-text-primary: #f5f7fa;
+  --services-text-secondary: #aab6c7;
+
+  --services-heading: #ffffff;
+
+  --services-card-heading: #ffffff;
+  --services-card-description: #aab6c7;
+
+  --services-meta-text: #c2ccda;
+  --services-label: #9eabbc;
+
+  --services-tag-text: #c7d0dc;
+
+  --services-price: #ffffff;
+  --services-price-label: #9eabbc;
+  --services-price-unit: #aab6c7;
+  --services-price-description: #9eabbc;
+
+  --services-cta-text: #ffffff;
+  --services-cta-label: #9eabbc;
+}
+
+/* ==========================================================
+   DARK CARD
+   ========================================================== */
+
+[data-theme="dark"] .service-grid-card,
+.dark .service-grid-card,
+body.dark-mode .service-grid-card {
+  border-color: rgba(255, 255, 255, 0.075);
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d2749 0%,
+      #0a213f 100%
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18),
+    0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"]
+  .service-grid-card:hover,
+.dark
+  .service-grid-card:hover,
+body.dark-mode
+  .service-grid-card:hover {
+  border-color: rgba(255, 178, 0, 0.28);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.27),
+    0 8px 22px rgba(255, 178, 0, 0.07);
+}
+
+/* ==========================================================
+   DARK EXPANDED CARD
+   ========================================================== */
+
+[data-theme="dark"]
+  .service-grid-card--expanded,
+.dark
+  .service-grid-card--expanded,
+body.dark-mode
+  .service-grid-card--expanded {
+  border-color: rgba(255, 178, 0, 0.34);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.3),
+    0 10px 25px rgba(255, 178, 0, 0.075);
+}
+
+/* ==========================================================
+   DARK SUITABLE TAGS
+   ========================================================== */
+
+[data-theme="dark"] .service-grid-suitable-tag,
+.dark .service-grid-suitable-tag,
+body.dark-mode .service-grid-suitable-tag {
+  border-color: rgba(255, 255, 255, 0.085);
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: #c7d0dc;
+}
+
+[data-theme="dark"]
+  .service-grid-card:hover
+  .service-grid-suitable-tag,
+.dark
+  .service-grid-card:hover
+  .service-grid-suitable-tag,
+body.dark-mode
+  .service-grid-card:hover
+  .service-grid-suitable-tag {
+  border-color: rgba(255, 178, 0, 0.22);
+
+  background: rgba(255, 178, 0, 0.09);
+
+  color: #ffc84d;
+}
+
+/* ==========================================================
+   DARK EXTRA INFORMATION
+   ========================================================== */
+
+[data-theme="dark"]
+  .service-grid-extra-item,
+.dark
+  .service-grid-extra-item,
+body.dark-mode
+  .service-grid-extra-item {
+  border-color: rgba(255, 255, 255, 0.075);
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* ==========================================================
+   DARK PRICING DETAILS
+   ========================================================== */
+
+[data-theme="dark"]
+  .service-grid-full-pricing-description,
+.dark
+  .service-grid-full-pricing-description,
+body.dark-mode
+  .service-grid-full-pricing-description {
+  border-color: rgba(255, 178, 0, 0.18);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 178, 0, 0.095),
+      rgba(255, 178, 0, 0.025)
+    );
+}
+
+/* ==========================================================
+   DARK OFFER
+   ========================================================== */
+
+[data-theme="dark"] .service-grid-offer,
+.dark .service-grid-offer,
+body.dark-mode .service-grid-offer {
+  border-color: rgba(255, 178, 0, 0.18);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 178, 0, 0.095),
+      rgba(255, 178, 0, 0.025)
+    );
+}
+
+[data-theme="dark"]
+  .service-grid-price-area,
+.dark
+  .service-grid-price-area,
+body.dark-mode
+  .service-grid-price-area {
+  border-bottom-color: rgba(255, 178, 0, 0.13);
+}
+
+/* ==========================================================
+   DARK CTA
+   ========================================================== */
+
+[data-theme="dark"]
+  .service-grid-cta:hover,
+.dark
+  .service-grid-cta:hover,
+body.dark-mode
+  .service-grid-cta:hover {
+  color: #ffffff;
+
+  background: rgba(255, 178, 0, 0.045);
+}
+
+/* ==========================================================
+   DARK BADGE
+   ========================================================== */
+
+[data-theme="dark"] .services-grid-badge,
+.dark .services-grid-badge,
+body.dark-mode .services-grid-badge {
+  color: #ffc13b;
+
+  background: rgba(255, 178, 0, 0.09);
+
+  border-color: rgba(255, 178, 0, 0.2);
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 991.98px) {
+  .services-grid-section {
+    padding: 75px 0 85px;
+  }
+
+  .service-grid-image {
+    height: 225px;
+  }
+
+  .service-grid-card .card-body {
+    padding: 22px 21px 20px;
+  }
+
+  .service-grid-title {
+    font-size: 1.18rem;
+  }
+
+  .service-grid-price {
+    font-size: 1.3rem;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 767.98px) {
+  .services-grid-section {
+    padding: 65px 0 75px;
+  }
+
+  .services-grid-description-text {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .services-grid-section .row.g-4 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  .service-grid-image {
+    height: 235px;
+  }
+
+  .service-grid-card {
+    border-radius: 21px;
+  }
+
+  .service-grid-card .card-body {
+    padding: 21px 18px 18px;
+  }
+
+  .service-grid-title {
+    font-size: 1.18rem;
+  }
+
+  .service-grid-description {
+    font-size: 0.84rem;
+  }
+
+  .service-grid-meta {
+    gap: 8px 14px;
+  }
+
+  .service-grid-meta-item {
+    font-size: 0.74rem;
+  }
+
+  .service-grid-extra-info {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid-offer {
+    border-radius: 15px;
+  }
+
+  .service-grid-price-area {
+    padding: 14px;
+  }
+
+  .service-grid-cta {
+    padding: 12px 14px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 479.98px) {
+  .services-grid-section {
+    padding: 55px 0 65px;
+  }
+
+  .services-grid-badge {
+    font-size: 0.64rem;
+
+    padding: 6px 11px;
+  }
+
+  .services-grid-heading {
+    font-size: 1.85rem;
+  }
+
+  .service-grid-image {
+    height: 215px;
+  }
+
+  .service-grid-category {
+    top: 14px;
+    left: 14px;
+
+    font-size: 0.61rem;
+  }
+
+  .service-grid-media-arrow {
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .service-grid-card .card-body {
+    padding: 19px 16px 16px;
+  }
+
+  .service-grid-price-row {
+    align-items: center;
+  }
+
+  .service-grid-price {
+    font-size: 1.22rem;
+  }
+
+  .service-grid-price-unit {
+    font-size: 0.6rem;
+  }
+
+  .service-grid-cta-icon {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-grid-card,
+  .service-grid-image .service-image,
+  .service-grid-media-arrow,
+  .service-grid-suitable-tag,
+  .service-grid-offer,
+  .service-grid-cta,
+  .service-grid-cta-icon {
+    transition: none !important;
+  }
+
+  .service-grid-card:hover {
+    transform: none;
+  }
+
+  .service-grid-card:hover
+    .service-grid-image
+    .service-image {
+    transform: none;
+  }
+}
+
+/* ==========================================================
+   PREVENT UNWANTED HORIZONTAL OVERFLOW
+   ========================================================== */
+
+.service-grid-card,
+.service-grid-card *,
+.service-grid-image,
+.service-grid-offer {
+  max-width: 100%;
+}
+
+/* ==========================================================
+   IMPORTANT:
+   NO INTERNAL CARD SCROLLBAR
+   ========================================================== */
+
+.service-grid-card {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.service-grid-card .card-body {
+  overflow: visible;
+}

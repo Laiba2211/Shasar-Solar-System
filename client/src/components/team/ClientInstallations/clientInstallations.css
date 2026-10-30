@@ -1,0 +1,568 @@
+
+/* ==========================================================
+   SHASAR SOLAR
+   CLIENT INSTALLATIONS - PREMIUM PROJECT GALLERY
+========================================================== */
+
+.client-installations {
+  --ci-navy: #081c3a;
+  --ci-gold: #ffb200;
+  --ci-text: #ffffff;
+  --ci-muted: rgba(255, 255, 255, 0.65);
+
+  position: relative;
+  overflow: hidden;
+  padding: 105px 0 95px;
+  background: #07182f;
+  color: var(--ci-text);
+}
+
+/* BACKGROUND DETAIL */
+
+.client-installations::before,
+.client-installations::after {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.client-installations::before {
+  top: -300px;
+  right: -200px;
+  width: 650px;
+  height: 650px;
+  border: 1px solid rgba(255, 178, 0, 0.08);
+}
+
+.client-installations::after {
+  top: -220px;
+  right: -120px;
+  width: 490px;
+  height: 490px;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.client-installations .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================
+   SECTION INTRO
+========================================================== */
+
+.client-installations__intro {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  gap: 55px;
+  margin-bottom: 48px;
+}
+
+.client-installations__intro-left {
+  max-width: 700px;
+}
+
+.client-installations__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: var(--ci-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+}
+
+.client-installations__eyebrow-line {
+  display: inline-block;
+  width: 31px;
+  height: 1px;
+  background: var(--ci-gold);
+}
+
+.client-installations__intro h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(37px, 4.5vw, 57px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.client-installations__intro h2 span {
+  display: block;
+  color: var(--ci-gold);
+}
+
+.client-installations__intro-right {
+  max-width: 400px;
+  justify-self: end;
+  padding-bottom: 5px;
+}
+
+.client-installations__intro-right > p {
+  margin: 0 0 23px;
+  color: var(--ci-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.client-installations__gallery-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.client-installations__gallery-label svg {
+  color: var(--ci-gold);
+}
+
+/* ==========================================================
+   PROJECT GALLERY
+========================================================== */
+
+.client-installations__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 205px;
+  grid-auto-flow: dense;
+  gap: 15px;
+}
+
+.client-installations__item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #102642;
+}
+
+.client-installations__item--large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.client-installations__item--tall {
+  grid-row: span 2;
+}
+
+.client-installations__item--wide {
+  grid-column: span 2;
+}
+
+/* ==========================================================
+   RESIDENTIAL SOLAR - DESKTOP IMAGE FIX
+   Targets the image by its original filename.
+========================================================== */
+
+.client-installations__item:has(
+  img[src*="residential-solar"]
+) {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 0;
+}
+
+.client-installations__item:has(
+  img[src*="residential-solar"]
+) .client-installations__image-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.client-installations__item:has(
+  img[src*="residential-solar"]
+) .client-installations__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* ==========================================================
+   IMAGE WRAPPER
+========================================================== */
+
+.client-installations__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.client-installations__image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    transform 0.75s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.5s ease;
+}
+
+.client-installations__item:hover
+.client-installations__image-wrap img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+/* IMAGE OVERLAY */
+
+.client-installations__image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 15, 31, 0.02) 30%,
+    rgba(4, 15, 31, 0.2) 58%,
+    rgba(4, 15, 31, 0.86) 100%
+  );
+  opacity: 0.9;
+  transition: opacity 0.35s ease;
+}
+
+.client-installations__item:hover
+.client-installations__image-shade {
+  opacity: 1;
+}
+
+/* IMAGE CONTENT */
+
+.client-installations__image-content {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  left: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transform: translateY(5px);
+  transition: transform 0.35s ease;
+}
+
+.client-installations__item:hover
+.client-installations__image-content {
+  transform: translateY(0);
+}
+
+.client-installations__category {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+  background: rgba(8, 28, 58, 0.65);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  backdrop-filter: blur(8px);
+}
+
+.client-installations__image-arrow {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ci-gold);
+  color: var(--ci-navy);
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.client-installations__item:hover
+.client-installations__image-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ==========================================================
+   GALLERY FOOTER
+========================================================== */
+
+.client-installations__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 35px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.client-installations__footer-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.client-installations__footer-accent {
+  display: block;
+  flex: 0 0 3px;
+  width: 3px;
+  height: 38px;
+  background: var(--ci-gold);
+}
+
+.client-installations__footer-text p {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.client-installations__footer-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 13px;
+  min-height: 47px;
+  padding: 0 19px;
+  border: 1px solid rgba(255, 178, 0, 0.75);
+  border-radius: 4px;
+  color: var(--ci-gold);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.client-installations__footer-link:hover {
+  border-color: var(--ci-gold);
+  background: var(--ci-gold);
+  color: var(--ci-navy);
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1400px) {
+  .client-installations {
+    padding: 115px 0 100px;
+  }
+
+  .client-installations__gallery {
+    grid-auto-rows: 230px;
+    gap: 17px;
+  }
+
+  .client-installations__item:has(
+    img[src*="residential-solar"]
+  ) .client-installations__image-wrap img {
+    object-position: center center;
+  }
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .client-installations__gallery {
+    grid-auto-rows: 185px;
+    gap: 12px;
+  }
+
+  .client-installations__intro {
+    gap: 35px;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991px) {
+  .client-installations {
+    padding: 85px 0 80px;
+  }
+
+  .client-installations__intro {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+  }
+
+  .client-installations__intro h2 {
+    font-size: 42px;
+  }
+
+  .client-installations__gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 190px;
+    gap: 12px;
+  }
+
+  .client-installations__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .client-installations__item:has(
+    img[src*="residential-solar"]
+  ) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ==========================================================
+   SMALL TABLET
+========================================================== */
+
+@media (max-width: 700px) {
+  .client-installations__intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .client-installations__intro-right {
+    justify-self: start;
+    max-width: 520px;
+  }
+
+  .client-installations__intro-right > p {
+    margin-bottom: 15px;
+  }
+
+  .client-installations__gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 180px;
+  }
+
+  .client-installations__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .client-installations__item--tall {
+    grid-row: span 2;
+  }
+
+  .client-installations__item--wide {
+    grid-column: span 2;
+  }
+
+  .client-installations__item:has(
+    img[src*="residential-solar"]
+  ) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+  .client-installations {
+    padding: 68px 0 62px;
+  }
+
+  .client-installations__intro {
+    margin-bottom: 30px;
+  }
+
+  .client-installations__eyebrow {
+    margin-bottom: 15px;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .client-installations__intro h2 {
+    font-size: 34px;
+    letter-spacing: -1.1px;
+  }
+
+  .client-installations__intro-right > p {
+    font-size: 12px;
+  }
+
+  .client-installations__gallery {
+    grid-auto-rows: 145px;
+    gap: 9px;
+  }
+
+  .client-installations__item {
+    border-radius: 6px;
+  }
+
+  .client-installations__image-content {
+    right: 8px;
+    bottom: 9px;
+    left: 8px;
+  }
+
+  .client-installations__category {
+    min-height: 25px;
+    padding: 0 7px;
+    font-size: 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .client-installations__image-arrow {
+    flex-basis: 27px;
+    width: 27px;
+    height: 27px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .client-installations__image-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .client-installations__footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+    padding-top: 22px;
+  }
+
+  .client-installations__footer-text p {
+    font-size: 11px;
+  }
+
+  .client-installations__footer-link {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .client-installations__image-wrap img,
+  .client-installations__image-content,
+  .client-installations__image-arrow,
+  .client-installations__footer-link {
+    transition: none;
+  }
+}

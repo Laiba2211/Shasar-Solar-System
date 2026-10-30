@@ -1,0 +1,334 @@
+/* ==========================================================
+   SERVICES FINAL CTA
+   Shasar Solar System
+========================================================== */
+
+.services-final-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================
+   CTA CARD
+========================================================== */
+
+.services-final-cta-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 4rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--surface-primary),
+      var(--surface-secondary)
+    );
+
+  box-shadow: var(--shadow-lg);
+
+  isolation: isolate;
+}
+
+/* ==========================================================
+   DECORATIVE GLOWS
+========================================================== */
+
+.services-final-cta-glow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.services-final-cta-glow-one {
+  top: -140px;
+  right: -80px;
+}
+
+.services-final-cta-glow-two {
+  bottom: -160px;
+  left: -100px;
+
+  background: rgba(255, 178, 0, 0.05);
+}
+
+/* ==========================================================
+   BADGE
+========================================================== */
+
+.services-final-cta-badge {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 1.25rem;
+
+  padding: 0.5rem 0.9rem;
+
+  border: 1px solid rgba(255, 178, 0, 0.3);
+
+  border-radius: 999px;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  color: var(--brand-primary);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.services-final-cta-content h2 {
+  max-width: 760px;
+
+  margin-bottom: 1.25rem;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -0.03em;
+}
+
+.services-final-cta-content h2 span {
+  color: var(--brand-primary);
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.services-final-cta-content p {
+  max-width: 720px;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+}
+
+.services-final-cta-content .services-final-cta-subtext {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.services-final-cta-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: 0.9rem;
+
+  max-width: 310px;
+
+  margin-left: auto;
+}
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
+.services-final-cta-primary {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  width: 100%;
+
+  padding: 0.95rem 1.25rem;
+
+  border: 1px solid var(--brand-primary);
+
+  border-radius: 0.8rem;
+
+  background: var(--brand-primary);
+
+  color: #111;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.services-final-cta-primary:hover {
+  box-shadow: 0 10px 30px rgba(255, 178, 0, 0.25);
+}
+
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
+
+.services-final-cta-secondary {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  width: 100%;
+
+  padding: 0.9rem 1.25rem;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 0.8rem;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.services-final-cta-secondary:hover {
+  border-color: var(--brand-primary);
+
+  background: rgba(255, 178, 0, 0.08);
+
+  color: var(--brand-primary);
+}
+
+/* ==========================================================
+   NOTE
+========================================================== */
+
+.services-final-cta-note {
+  display: block;
+
+  margin-top: 0.2rem;
+
+  color: var(--text-secondary);
+
+  font-size: 0.75rem;
+
+  text-align: center;
+}
+
+/* ==========================================================
+   FOCUS STATES
+========================================================== */
+
+.services-final-cta-primary:focus-visible,
+.services-final-cta-secondary:focus-visible {
+  outline: 2px solid var(--brand-primary);
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991.98px) {
+  .services-final-cta-card {
+    padding: 3rem;
+  }
+
+  .services-final-cta-actions {
+    max-width: 100%;
+
+    margin-left: 0;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 575.98px) {
+  .services-final-cta-card {
+    padding: 2rem 1.25rem;
+
+    border-radius: 1.4rem;
+  }
+
+  .services-final-cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .services-final-cta-content p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .services-final-cta-badge {
+    font-size: 0.7rem;
+  }
+
+  .services-final-cta-actions {
+    margin-top: 0.75rem;
+  }
+
+  .services-final-cta-primary,
+  .services-final-cta-secondary {
+    padding: 0.85rem 1rem;
+
+    font-size: 0.88rem;
+  }
+}
+
+/* ==========================================================
+   VERY SMALL DEVICES
+========================================================== */
+
+@media (max-width: 359.98px) {
+  .services-final-cta-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .services-final-cta-content h2 {
+    font-size: 1.7rem;
+  }
+}
