@@ -1,0 +1,1320 @@
+/* ==========================================================
+   SHASAR SOLAR ADMIN PANEL
+   PRICING FORM
+   ADD + EDIT MODAL
+   LIGHT + DARK THEME
+   ========================================================== */
+
+/* ==========================================================
+   OVERLAY
+   ========================================================== */
+
+.pricing-form-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(3, 10, 24, 0.72);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: pricingFormOverlayIn
+    0.2s ease forwards;
+}
+
+@keyframes pricingFormOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================
+   MODAL
+   ========================================================== */
+
+.pricing-form-modal {
+  display: flex;
+  flex-direction: column;
+
+  width: min(
+    980px,
+    100%
+  );
+
+  max-height: calc(100vh - 48px);
+
+  overflow: hidden;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 20px;
+
+  background:
+    var(--pricing-form-surface);
+
+  color: var(--pricing-form-text);
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.28);
+
+  animation: pricingFormModalIn
+    0.25s ease forwards;
+}
+
+@keyframes pricingFormModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+      scale(1);
+  }
+}
+
+/* ==========================================================
+   LIGHT THEME VARIABLES
+   ========================================================== */
+
+.pricing-form-overlay {
+  --pricing-form-surface: #ffffff;
+  --pricing-form-input: #ffffff;
+  --pricing-form-soft: #f7f9fc;
+
+  --pricing-form-text: #172033;
+  --pricing-form-muted: #6b7485;
+  --pricing-form-border: #e2e7ef;
+
+  --pricing-form-brand: rgb(
+    255,
+    178,
+    0
+  );
+
+  --pricing-form-success: #16a34a;
+  --pricing-form-danger: #dc2626;
+  --pricing-form-purple: #7c3aed;
+
+  --pricing-form-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.07);
+}
+
+/* ==========================================================
+   DARK THEME
+   ========================================================== */
+
+[data-theme="dark"] .pricing-form-overlay {
+  --pricing-form-surface: rgb(
+    15,
+    37,
+    73
+  );
+
+  --pricing-form-input: rgb(
+    10,
+    30,
+    61
+  );
+
+  --pricing-form-soft: rgba(
+    255,
+    255,
+    255,
+    0.045
+  );
+
+  --pricing-form-text: #f4f7fb;
+  --pricing-form-muted: #9eafc7;
+  --pricing-form-border: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+
+  --pricing-form-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.pricing-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid
+    var(--pricing-form-border);
+
+  background:
+    var(--pricing-form-surface);
+
+  flex-shrink: 0;
+}
+
+.pricing-form-header__content {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.pricing-form-header__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(
+      255,
+      178,
+      0,
+      0.12
+    );
+
+  color:
+    var(--pricing-form-brand);
+}
+
+.pricing-form-header__eyebrow {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    var(--pricing-form-brand);
+
+  font-size: 0.64rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.pricing-form-header__title {
+  margin: 0;
+
+  color:
+    var(--pricing-form-text);
+
+  font-size: 1.2rem;
+  font-weight: 750;
+
+  line-height: 1.25;
+}
+
+.pricing-form-header__subtitle {
+  margin: 4px 0 0;
+
+  color:
+    var(--pricing-form-muted);
+
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.pricing-form-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--pricing-form-soft);
+
+  color:
+    var(--pricing-form-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pricing-form-close:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(
+      220,
+      38,
+      38,
+      0.3
+    );
+
+  background:
+    rgba(
+      220,
+      38,
+      38,
+      0.08
+    );
+
+  color:
+    var(--pricing-form-danger);
+}
+
+.pricing-form-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   FORM
+   ========================================================== */
+
+.pricing-form {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+  height: 100%;
+}
+
+.pricing-form-body {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 24px;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(
+      127,
+      127,
+      127,
+      0.35
+    )
+    transparent;
+}
+
+.pricing-form-body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.pricing-form-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pricing-form-body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background:
+    rgba(
+      127,
+      127,
+      127,
+      0.35
+    );
+}
+
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+
+.pricing-form-section {
+  margin-bottom: 25px;
+  padding: 20px;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 15px;
+
+  background:
+    var(--pricing-form-soft);
+}
+
+.pricing-form-section:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-form-section__header {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 20px;
+}
+
+.pricing-form-section__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+
+  color:
+    var(--pricing-form-brand);
+}
+
+.pricing-form-section__title {
+  margin: 0;
+
+  color:
+    var(--pricing-form-text);
+
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.pricing-form-section__description {
+  margin: 3px 0 0;
+
+  color:
+    var(--pricing-form-muted);
+
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   GRID
+   ========================================================== */
+
+.pricing-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 17px;
+}
+
+.pricing-form-field {
+  min-width: 0;
+}
+
+.pricing-form-field--full {
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================
+   LABEL
+   ========================================================== */
+
+.pricing-form-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-bottom: 7px;
+
+  color:
+    var(--pricing-form-text);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.pricing-form-required {
+  color:
+    var(--pricing-form-danger);
+}
+
+.pricing-form-private {
+  display: inline-flex;
+  align-items: center;
+
+  margin-left: 5px;
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background:
+    rgba(
+      124,
+      58,
+      237,
+      0.1
+    );
+
+  color:
+    var(--pricing-form-purple);
+
+  font-size: 0.55rem;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================================
+   INPUTS
+   ========================================================== */
+
+.pricing-form-input,
+.pricing-form-select,
+.pricing-form-textarea {
+  display: block;
+
+  width: 100%;
+
+  outline: none;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 9px;
+
+  background:
+    var(--pricing-form-input);
+
+  color:
+    var(--pricing-form-text);
+
+  font-family: inherit;
+  font-size: 0.8rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.pricing-form-input,
+.pricing-form-select {
+  height: 43px;
+  padding: 0 12px;
+}
+
+.pricing-form-textarea {
+  min-height: 95px;
+
+  padding: 11px 12px;
+
+  resize: vertical;
+
+  line-height: 1.55;
+}
+
+.pricing-form-input::placeholder,
+.pricing-form-textarea::placeholder {
+  color:
+    var(--pricing-form-muted);
+
+  opacity: 0.7;
+}
+
+.pricing-form-input:hover,
+.pricing-form-select:hover,
+.pricing-form-textarea:hover {
+  border-color:
+    rgba(
+      255,
+      178,
+      0,
+      0.3
+    );
+}
+
+.pricing-form-input:focus,
+.pricing-form-select:focus,
+.pricing-form-textarea:focus {
+  border-color:
+    rgba(
+      255,
+      178,
+      0,
+      0.7
+    );
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+}
+
+.pricing-form-input--error {
+  border-color:
+    var(--pricing-form-danger) !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      220,
+      38,
+      38,
+      0.08
+    ) !important;
+}
+
+.pricing-form-select {
+  cursor: pointer;
+}
+
+.pricing-form-select option {
+  background:
+    var(--pricing-form-surface);
+
+  color:
+    var(--pricing-form-text);
+}
+
+/* ==========================================================
+   HELP
+   ========================================================== */
+
+.pricing-form-help {
+  display: block;
+
+  margin-top: 6px;
+
+  color:
+    var(--pricing-form-muted);
+
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+.pricing-form-help-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pricing-form-counter {
+  margin-top: 5px;
+
+  color:
+    var(--pricing-form-muted);
+
+  font-size: 0.62rem;
+}
+
+.pricing-form-error {
+  display: block;
+
+  margin-top: 6px;
+
+  color:
+    var(--pricing-form-danger);
+
+  font-size: 0.67rem;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   FEATURES
+   ========================================================== */
+
+.pricing-form-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.pricing-form-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.pricing-form-feature__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+
+  color:
+    var(--pricing-form-brand);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.pricing-form-feature__input {
+  flex: 1;
+
+  width: 100%;
+  height: 40px;
+
+  padding: 0 11px;
+
+  outline: none;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 8px;
+
+  background:
+    var(--pricing-form-input);
+
+  color:
+    var(--pricing-form-text);
+
+  font-family: inherit;
+  font-size: 0.78rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-form-feature__input:focus {
+  border-color:
+    rgba(
+      255,
+      178,
+      0,
+      0.7
+    );
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+}
+
+.pricing-form-feature__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(
+      220,
+      38,
+      38,
+      0.18
+    );
+
+  border-radius: 8px;
+
+  background:
+    rgba(
+      220,
+      38,
+      38,
+      0.06
+    );
+
+  color:
+    var(--pricing-form-danger);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pricing-form-feature__remove:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(
+      220,
+      38,
+      38,
+      0.35
+    );
+
+  background:
+    rgba(
+      220,
+      38,
+      38,
+      0.12
+    );
+}
+
+.pricing-form-feature__remove:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pricing-form-add-feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-start;
+
+  gap: 7px;
+
+  height: 37px;
+
+  margin-top: 4px;
+  padding: 0 12px;
+
+  border: 1px dashed
+    rgba(
+      255,
+      178,
+      0,
+      0.5
+    );
+
+  border-radius: 8px;
+
+  background:
+    rgba(
+      255,
+      178,
+      0,
+      0.06
+    );
+
+  color:
+    var(--pricing-form-brand);
+
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pricing-form-add-feature:hover {
+  transform: translateY(-1px);
+
+  border-color:
+    var(--pricing-form-brand);
+
+  background:
+    rgba(
+      255,
+      178,
+      0,
+      0.11
+    );
+}
+
+/* ==========================================================
+   STATUS
+   ========================================================== */
+
+.pricing-form-status-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+.pricing-form-status-box {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  min-height: 88px;
+
+  padding: 15px;
+
+  border: 1px solid
+    var(--pricing-form-border);
+
+  border-radius: 11px;
+
+  background:
+    var(--pricing-form-input);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-form-status-box:hover {
+  border-color:
+    rgba(
+      255,
+      178,
+      0,
+      0.35
+    );
+}
+
+.pricing-form-status-box input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pricing-form-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 20px;
+  height: 20px;
+
+  margin-top: 1px;
+
+  border: 1.5px solid
+    var(--pricing-form-border);
+
+  border-radius: 6px;
+
+  background:
+    var(--pricing-form-surface);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pricing-form-checkbox span {
+  width: 9px;
+  height: 5px;
+
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  transform:
+    rotate(-45deg)
+    translateY(-1px);
+}
+
+.pricing-form-status-box--active
+  .pricing-form-checkbox {
+  border-color:
+    var(--pricing-form-success);
+
+  background:
+    var(--pricing-form-success);
+}
+
+.pricing-form-status-box--featured
+  .pricing-form-checkbox {
+  border-color:
+    var(--pricing-form-purple);
+
+  background:
+    var(--pricing-form-purple);
+}
+
+.pricing-form-status-box__content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.pricing-form-status-box__content strong {
+  color:
+    var(--pricing-form-text);
+
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.pricing-form-status-box__content small {
+  margin-top: 4px;
+
+  color:
+    var(--pricing-form-muted);
+
+  font-size: 0.67rem;
+  line-height: 1.45;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.pricing-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 16px 24px;
+
+  border-top: 1px solid
+    var(--pricing-form-border);
+
+  background:
+    var(--pricing-form-surface);
+
+  flex-shrink: 0;
+}
+
+.pricing-form-cancel,
+.pricing-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 41px;
+
+  padding: 0 16px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-form-cancel {
+  border: 1px solid
+    var(--pricing-form-border);
+
+  background:
+    var(--pricing-form-soft);
+
+  color:
+    var(--pricing-form-muted);
+}
+
+.pricing-form-cancel:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  color:
+    var(--pricing-form-text);
+
+  border-color:
+    rgba(
+      127,
+      127,
+      127,
+      0.35
+    );
+}
+
+.pricing-form-submit {
+  border: 1px solid
+    var(--pricing-form-brand);
+
+  background:
+    var(--pricing-form-brand);
+
+  color: #111827;
+
+  box-shadow:
+    0 6px 18px
+    rgba(
+      255,
+      178,
+      0,
+      0.18
+    );
+}
+
+.pricing-form-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 23px
+    rgba(
+      255,
+      178,
+      0,
+      0.25
+    );
+}
+
+.pricing-form-cancel:disabled,
+.pricing-form-submit:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* ==========================================================
+   SPINNER
+   ========================================================== */
+
+.pricing-form-spinner {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid
+    rgba(
+      17,
+      24,
+      39,
+      0.25
+    );
+
+  border-top-color:
+    #111827;
+
+  border-radius: 50%;
+
+  animation:
+    pricingFormSpinner
+    0.7s linear infinite;
+}
+
+@keyframes pricingFormSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   FOCUS
+   ========================================================== */
+
+.pricing-form button:focus-visible,
+.pricing-form input:focus-visible,
+.pricing-form select:focus-visible,
+.pricing-form textarea:focus-visible {
+  outline: 2px solid
+    var(--pricing-form-brand);
+
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 767.98px) {
+  .pricing-form-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .pricing-form-modal {
+    width: 100%;
+
+    max-height: 94vh;
+
+    border-radius:
+      20px 20px 0 0;
+  }
+
+  .pricing-form-header {
+    padding: 17px;
+  }
+
+  .pricing-form-body {
+    padding: 17px;
+  }
+
+  .pricing-form-section {
+    padding: 16px;
+  }
+
+  .pricing-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-form-field--full {
+    grid-column: auto;
+  }
+
+  .pricing-form-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-form-footer {
+    padding: 13px 17px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 479.98px) {
+  .pricing-form-header__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .pricing-form-header__title {
+    font-size: 1rem;
+  }
+
+  .pricing-form-header__subtitle {
+    display: none;
+  }
+
+  .pricing-form-close {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pricing-form-body {
+    padding: 13px;
+  }
+
+  .pricing-form-section {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  .pricing-form-section__header {
+    margin-bottom: 16px;
+  }
+
+  .pricing-form-feature {
+    align-items: stretch;
+  }
+
+  .pricing-form-feature__number {
+    display: none;
+  }
+
+  .pricing-form-feature__input {
+    min-width: 0;
+  }
+
+  .pricing-form-footer {
+    display: grid;
+
+    grid-template-columns:
+      1fr 1.4fr;
+
+    gap: 8px;
+
+    padding: 12px 13px;
+  }
+
+  .pricing-form-cancel,
+  .pricing-form-submit {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-form-overlay,
+  .pricing-form-modal,
+  .pricing-form *,
+  .pricing-form *::before,
+  .pricing-form *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

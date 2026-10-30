@@ -1,0 +1,1986 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   ANALYTICS PAGE
+   Premium Admin Dashboard UI
+   Bootstrap-compatible / No Tailwind
+   Fully scoped to .analytics-page
+   ========================================================== */
+
+
+/* ==========================================================
+   PAGE ROOT
+   ========================================================== */
+
+.analytics-page {
+  --analytics-bg: var(--admin-bg, #f5f7fb);
+  --analytics-card: var(--admin-card, #ffffff);
+  --analytics-card-soft: #f8fafc;
+  --analytics-border: rgba(15, 37, 73, 0.09);
+
+  --analytics-text: var(
+    --admin-text,
+    #0f2549
+  );
+
+  --analytics-muted: var(
+    --admin-muted,
+    #718096
+  );
+
+  --analytics-primary: #0f2549;
+  --analytics-gold: #ffb200;
+  --analytics-gold-soft: rgba(
+    255,
+    178,
+    0,
+    0.12
+  );
+
+  --analytics-green: #18a957;
+  --analytics-green-soft: rgba(
+    24,
+    169,
+    87,
+    0.11
+  );
+
+  --analytics-blue: #3b82f6;
+  --analytics-blue-soft: rgba(
+    59,
+    130,
+    246,
+    0.1
+  );
+
+  --analytics-orange: #f59e0b;
+  --analytics-orange-soft: rgba(
+    245,
+    158,
+    11,
+    0.11
+  );
+
+  --analytics-red: #ef4444;
+  --analytics-red-soft: rgba(
+    239,
+    68,
+    68,
+    0.1
+  );
+
+  --analytics-purple: #8b5cf6;
+  --analytics-purple-soft: rgba(
+    139,
+    92,
+    246,
+    0.1
+  );
+
+  width: 100%;
+  min-width: 0;
+  padding: 28px 30px 40px;
+  color: var(--analytics-text);
+  background: var(--analytics-bg);
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   GLOBAL PAGE BOX SIZING
+   ========================================================== */
+
+.analytics-page *,
+.analytics-page *::before,
+.analytics-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   DARK THEME
+   Supports common admin theme attributes
+   ========================================================== */
+
+[data-theme="dark"] .analytics-page,
+.dark .analytics-page {
+  --analytics-bg: #081c3a;
+  --analytics-card: #0f2549;
+  --analytics-card-soft: #102b52;
+  --analytics-border: rgba(
+    255,
+    255,
+    255,
+    0.09
+  );
+
+  --analytics-text: #f5f8ff;
+  --analytics-muted: #aab8cd;
+
+  --analytics-primary: #f5f8ff;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.analytics-page .analytics-page-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.analytics-page .analytics-page-header > div:first-child {
+  min-width: 0;
+}
+
+.analytics-page .analytics-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: var(--analytics-gold);
+}
+
+.analytics-page .analytics-page-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.1;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  color: var(--analytics-text);
+}
+
+.analytics-page .analytics-page-header p {
+  margin: 8px 0 0;
+  max-width: 620px;
+
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--analytics-muted);
+}
+
+
+/* ==========================================================
+   HEADER ACTIONS
+   ========================================================== */
+
+.analytics-page .analytics-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.analytics-page .analytics-refresh-btn,
+.analytics-page .analytics-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 0 16px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 10px;
+
+  background: var(--analytics-card);
+  color: var(--analytics-text);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.analytics-page .analytics-refresh-btn:hover,
+.analytics-page .analytics-primary-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.45
+  );
+
+  box-shadow:
+    0 8px 24px rgba(
+      15,
+      37,
+      73,
+      0.09
+    );
+}
+
+.analytics-page .analytics-refresh-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ==========================================================
+   FILTER BAR
+   ========================================================== */
+
+.analytics-page .analytics-filter-bar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  min-height: 68px;
+  margin-bottom: 22px;
+  padding: 12px 16px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 14px;
+
+  background: var(--analytics-card);
+
+  box-shadow:
+    0 3px 15px rgba(
+      15,
+      37,
+      73,
+      0.035
+    );
+}
+
+.analytics-page .analytics-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  color: var(--analytics-text);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.analytics-page .analytics-filter-label svg {
+  color: var(--analytics-gold);
+}
+
+.analytics-page .analytics-filter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.analytics-page .analytics-select-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 175px;
+  height: 40px;
+}
+
+.analytics-page .analytics-select-wrapper > svg:first-child {
+  position: absolute;
+  left: 12px;
+  z-index: 2;
+
+  pointer-events: none;
+  color: var(--analytics-muted);
+}
+
+.analytics-page .analytics-select-wrapper > svg:last-child {
+  position: absolute;
+  right: 11px;
+  z-index: 2;
+
+  pointer-events: none;
+  color: var(--analytics-muted);
+}
+
+.analytics-page .analytics-select-wrapper select {
+  width: 100%;
+  height: 40px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 0 34px 0 35px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--analytics-card-soft);
+  color: var(--analytics-text);
+
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.analytics-page .analytics-select-wrapper select:focus {
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.55
+  );
+
+  box-shadow:
+    0 0 0 3px rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+}
+
+.analytics-page .analytics-filter-controls input[type="date"] {
+  height: 40px;
+  padding: 0 11px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--analytics-card-soft);
+  color: var(--analytics-text);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.analytics-page
+  .analytics-filter-controls
+  input[type="date"]:focus {
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.55
+  );
+
+  box-shadow:
+    0 0 0 3px rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+}
+
+.analytics-page .analytics-date-separator {
+  font-size: 12px;
+  color: var(--analytics-muted);
+}
+
+
+/* ==========================================================
+   ERROR BANNER
+   ========================================================== */
+
+.analytics-page .analytics-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(
+    239,
+    68,
+    68,
+    0.2
+  );
+
+  border-radius: 11px;
+
+  background: var(--analytics-red-soft);
+  color: var(--analytics-red);
+
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.analytics-page .analytics-error-banner span {
+  flex: 1;
+  color: var(--analytics-text);
+}
+
+.analytics-page .analytics-error-banner button {
+  border: 0;
+  background: transparent;
+  color: var(--analytics-red);
+
+  font: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   KPI GRID
+   ========================================================== */
+
+.analytics-page .analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    minmax(0, 1fr)
+  );
+
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+
+/* ==========================================================
+   KPI CARD
+   ========================================================== */
+
+.analytics-page .analytics-kpi-card {
+  position: relative;
+  overflow: hidden;
+
+  min-width: 0;
+  min-height: 156px;
+
+  padding: 19px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 15px;
+
+  background: var(--analytics-card);
+
+  box-shadow:
+    0 4px 18px rgba(
+      15,
+      37,
+      73,
+      0.035
+    );
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.analytics-page .analytics-kpi-card::after {
+  content: "";
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  right: -42px;
+  top: -42px;
+
+  border-radius: 50%;
+
+  background: var(--analytics-gold-soft);
+
+  pointer-events: none;
+}
+
+.analytics-page .analytics-kpi-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.22
+  );
+
+  box-shadow:
+    0 10px 30px rgba(
+      15,
+      37,
+      73,
+      0.08
+    );
+}
+
+.analytics-page .analytics-kpi-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 17px;
+}
+
+.analytics-page .analytics-kpi-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: var(--analytics-gold-soft);
+  color: var(--analytics-gold);
+}
+
+.analytics-page .analytics-kpi-trend {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--analytics-green);
+}
+
+.analytics-page .analytics-kpi-value {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 3px;
+
+  color: var(--analytics-text);
+
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+}
+
+.analytics-page .analytics-kpi-title {
+  position: relative;
+  z-index: 1;
+
+  color: var(--analytics-text);
+
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-kpi-subtitle {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 4px;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* ==========================================================
+   GENERAL ANALYTICS GRID
+   ========================================================== */
+
+.analytics-page .analytics-grid {
+  display: grid;
+  gap: 18px;
+
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.analytics-page .analytics-grid-two {
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+}
+
+
+/* ==========================================================
+   SECTION CARD
+   ========================================================== */
+
+.analytics-page .analytics-section-card {
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 15px;
+
+  background: var(--analytics-card);
+
+  box-shadow:
+    0 4px 18px rgba(
+      15,
+      37,
+      73,
+      0.035
+    );
+}
+
+.analytics-page .analytics-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 17px 19px;
+
+  border-bottom: 1px solid var(--analytics-border);
+}
+
+.analytics-page .analytics-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.analytics-page .analytics-section-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--analytics-gold-soft);
+  color: var(--analytics-gold);
+}
+
+.analytics-page .analytics-section-heading h3 {
+  margin: 0;
+
+  color: var(--analytics-text);
+
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 720;
+}
+
+.analytics-page .analytics-section-heading p {
+  margin: 3px 0 0;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.analytics-page .analytics-section-actions {
+  flex-shrink: 0;
+}
+
+.analytics-page .analytics-section-body {
+  padding: 18px 19px;
+}
+
+
+/* ==========================================================
+   SUMMARY NUMBER
+   ========================================================== */
+
+.analytics-page .analytics-summary-number {
+  margin-bottom: 19px;
+
+  color: var(--analytics-text);
+
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.analytics-page .analytics-summary-number span {
+  margin-left: 7px;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  font-weight: 550;
+  letter-spacing: 0;
+}
+
+
+/* ==========================================================
+   STATUS LIST
+   ========================================================== */
+
+.analytics-page .analytics-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.analytics-page .analytics-status-row {
+  min-width: 0;
+}
+
+.analytics-page .analytics-status-info {
+  display: grid;
+
+  grid-template-columns: 9px minmax(0, 1fr) auto;
+
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 7px;
+}
+
+.analytics-page .analytics-status-info > span {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--analytics-text);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.analytics-page .analytics-status-info strong {
+  color: var(--analytics-text);
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.analytics-page .analytics-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+.analytics-page .analytics-status-dot.status-new {
+  background: var(--analytics-blue);
+}
+
+.analytics-page .analytics-status-dot.status-contacted {
+  background: var(--analytics-orange);
+}
+
+.analytics-page .analytics-status-dot.status-qualified {
+  background: var(--analytics-purple);
+}
+
+.analytics-page .analytics-status-dot.status-converted {
+  background: var(--analytics-green);
+}
+
+.analytics-page .analytics-status-dot.status-closed {
+  background: var(--analytics-muted);
+}
+
+.analytics-page .analytics-status-progress {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 36px;
+
+  align-items: center;
+  gap: 9px;
+}
+
+.analytics-page .analytics-status-track {
+  width: 100%;
+  height: 6px;
+
+  overflow: hidden;
+
+  border-radius: 100px;
+
+  background: var(--analytics-card-soft);
+}
+
+.analytics-page .analytics-status-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  transition: width 0.45s ease;
+}
+
+.analytics-page .analytics-status-fill.status-new {
+  background: var(--analytics-blue);
+}
+
+.analytics-page
+  .analytics-status-fill.status-contacted {
+  background: var(--analytics-orange);
+}
+
+.analytics-page
+  .analytics-status-fill.status-qualified {
+  background: var(--analytics-purple);
+}
+
+.analytics-page
+  .analytics-status-fill.status-converted {
+  background: var(--analytics-green);
+}
+
+.analytics-page
+  .analytics-status-fill.status-closed {
+  background: var(--analytics-muted);
+}
+
+.analytics-page .analytics-status-progress > span {
+  text-align: right;
+
+  color: var(--analytics-muted);
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+
+/* ==========================================================
+   TREND
+   ========================================================== */
+
+.analytics-page .analytics-trend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  max-height: 325px;
+  overflow-y: auto;
+
+  padding-right: 3px;
+}
+
+.analytics-page
+  .analytics-trend-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.analytics-page
+  .analytics-trend-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.analytics-page
+  .analytics-trend-list::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: rgba(
+    113,
+    128,
+    150,
+    0.25
+  );
+}
+
+.analytics-page .analytics-trend-item {
+  display: grid;
+
+  grid-template-columns: 85px minmax(0, 1fr);
+
+  align-items: center;
+  gap: 10px;
+
+  min-height: 27px;
+}
+
+.analytics-page .analytics-trend-label {
+  color: var(--analytics-muted);
+
+  font-size: 10.5px;
+  font-weight: 550;
+
+  white-space: nowrap;
+}
+
+.analytics-page .analytics-trend-bar-wrapper {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 25px;
+
+  align-items: center;
+  gap: 8px;
+}
+
+.analytics-page .analytics-trend-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 100px;
+
+  background: var(--analytics-card-soft);
+}
+
+.analytics-page .analytics-trend-fill {
+  height: 100%;
+
+  min-width: 3px;
+
+  border-radius: inherit;
+
+  background: var(--analytics-gold);
+
+  transition:
+    width 0.45s ease;
+}
+
+.analytics-page .analytics-trend-bar-wrapper strong {
+  text-align: right;
+
+  color: var(--analytics-text);
+
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   MINI STATS
+   ========================================================== */
+
+.analytics-page .analytics-mini-stats {
+  display: grid;
+
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+
+  gap: 9px;
+
+  margin-bottom: 21px;
+}
+
+.analytics-page .analytics-mini-stats > div {
+  min-width: 0;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 9px;
+
+  background: var(--analytics-card-soft);
+}
+
+.analytics-page .analytics-mini-stats span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--analytics-muted);
+
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.analytics-page .analytics-mini-stats strong {
+  display: block;
+
+  color: var(--analytics-text);
+
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 750;
+}
+
+
+/* ==========================================================
+   SUBSECTION
+   ========================================================== */
+
+.analytics-page .analytics-subsection {
+  min-width: 0;
+}
+
+.analytics-page .analytics-subsection-title {
+  margin-bottom: 12px;
+
+  color: var(--analytics-text);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-breakdown-row {
+  margin-bottom: 13px;
+}
+
+.analytics-page .analytics-breakdown-row:last-child {
+  margin-bottom: 0;
+}
+
+.analytics-page .analytics-breakdown-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 6px;
+}
+
+.analytics-page .analytics-breakdown-top span {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.analytics-page .analytics-breakdown-top strong {
+  flex-shrink: 0;
+
+  color: var(--analytics-text);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-breakdown-track {
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 100px;
+
+  background: var(--analytics-card-soft);
+}
+
+.analytics-page .analytics-breakdown-fill {
+  height: 100%;
+
+  min-width: 2px;
+
+  border-radius: inherit;
+
+  background: var(--analytics-gold);
+
+  transition: width 0.4s ease;
+}
+
+
+/* ==========================================================
+   PROJECT YEARS
+   ========================================================== */
+
+.analytics-page .analytics-year-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(105px, 1fr)
+  );
+
+  gap: 10px;
+}
+
+.analytics-page .analytics-year-card {
+  min-width: 0;
+
+  padding: 13px 14px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 10px;
+
+  background: var(--analytics-card-soft);
+}
+
+.analytics-page .analytics-year-card span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--analytics-muted);
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.analytics-page .analytics-year-card strong {
+  display: block;
+
+  color: var(--analytics-text);
+
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 750;
+}
+
+.analytics-page .analytics-year-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--analytics-muted);
+
+  font-size: 9px;
+}
+
+
+/* ==========================================================
+   LIVE BADGE
+   ========================================================== */
+
+.analytics-page .analytics-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border-radius: 100px;
+
+  background: var(--analytics-green-soft);
+  color: var(--analytics-green);
+
+  font-size: 9px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.analytics-page .analytics-live-badge > span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* ==========================================================
+   TABLE
+   ========================================================== */
+
+.analytics-page .analytics-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+.analytics-page .analytics-table {
+  width: 100%;
+  min-width: 760px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.analytics-page .analytics-table thead th {
+  padding: 10px 12px;
+
+  border-bottom: 1px solid var(--analytics-border);
+
+  color: var(--analytics-muted);
+
+  font-size: 9.5px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+
+  white-space: nowrap;
+}
+
+.analytics-page .analytics-table tbody td {
+  padding: 12px;
+
+  border-bottom: 1px solid var(--analytics-border);
+
+  color: var(--analytics-text);
+
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.analytics-page .analytics-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.analytics-page .analytics-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.analytics-page .analytics-table tbody tr:hover {
+  background: var(--analytics-card-soft);
+}
+
+
+/* ==========================================================
+   CLIENT CELL
+   ========================================================== */
+
+.analytics-page .analytics-client-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 175px;
+}
+
+.analytics-page .analytics-client-avatar {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--analytics-gold-soft);
+  color: var(--analytics-gold);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.analytics-page .analytics-client-cell > div:last-child {
+  min-width: 0;
+}
+
+.analytics-page .analytics-client-cell strong {
+  display: block;
+
+  max-width: 155px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--analytics-text);
+
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-client-cell span {
+  display: block;
+
+  max-width: 155px;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: var(--analytics-muted);
+
+  font-size: 9.5px;
+}
+
+
+/* ==========================================================
+   TABLE STATUS
+   ========================================================== */
+
+.analytics-page .analytics-table-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  border-radius: 100px;
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.analytics-page
+  .analytics-table-status.status-new {
+  background: var(--analytics-blue-soft);
+  color: var(--analytics-blue);
+}
+
+.analytics-page
+  .analytics-table-status.status-contacted {
+  background: var(--analytics-orange-soft);
+  color: var(--analytics-orange);
+}
+
+.analytics-page
+  .analytics-table-status.status-qualified {
+  background: var(--analytics-purple-soft);
+  color: var(--analytics-purple);
+}
+
+.analytics-page
+  .analytics-table-status.status-converted {
+  background: var(--analytics-green-soft);
+  color: var(--analytics-green);
+}
+
+.analytics-page
+  .analytics-table-status.status-closed {
+  background: rgba(
+    113,
+    128,
+    150,
+    0.11
+  );
+
+  color: var(--analytics-muted);
+}
+
+
+/* ==========================================================
+   READ STATE
+   ========================================================== */
+
+.analytics-page .analytics-read-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 9.5px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.analytics-page .analytics-read-state.read {
+  color: var(--analytics-green);
+}
+
+.analytics-page .analytics-read-state.unread {
+  color: var(--analytics-orange);
+}
+
+.analytics-page .analytics-read-state.unread > span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* ==========================================================
+   CREATED CELL
+   ========================================================== */
+
+.analytics-page .analytics-created-cell strong {
+  display: block;
+
+  color: var(--analytics-text);
+
+  font-size: 10.5px;
+  font-weight: 650;
+}
+
+.analytics-page .analytics-created-cell span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--analytics-muted);
+
+  font-size: 8.5px;
+}
+
+
+/* ==========================================================
+   EMPTY STATES
+   ========================================================== */
+
+.analytics-page .analytics-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 80px;
+
+  padding: 15px;
+
+  border: 1px dashed var(--analytics-border);
+  border-radius: 9px;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  text-align: center;
+}
+
+.analytics-page .analytics-empty-large {
+  min-height: 190px;
+
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analytics-page .analytics-empty-large svg {
+  color: var(--analytics-muted);
+}
+
+.analytics-page .analytics-empty-large h4 {
+  margin: 0;
+
+  color: var(--analytics-text);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-empty-large p {
+  margin: 0;
+
+  color: var(--analytics-muted);
+
+  font-size: 10.5px;
+}
+
+
+/* ==========================================================
+   LOADING
+   ========================================================== */
+
+.analytics-page .analytics-loading {
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 30px;
+
+  text-align: center;
+}
+
+.analytics-page .analytics-loading-spinner {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border: 1px solid var(--analytics-border);
+  border-radius: 15px;
+
+  background: var(--analytics-card);
+  color: var(--analytics-gold);
+
+  box-shadow:
+    0 6px 25px rgba(
+      15,
+      37,
+      73,
+      0.06
+    );
+}
+
+.analytics-page .analytics-loading h3 {
+  margin: 0;
+
+  color: var(--analytics-text);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-loading p {
+  max-width: 420px;
+
+  margin: 7px 0 0;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   ERROR PAGE
+   ========================================================== */
+
+.analytics-page .analytics-error {
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 30px;
+
+  text-align: center;
+}
+
+.analytics-page .analytics-error-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 15px;
+
+  background: var(--analytics-red-soft);
+  color: var(--analytics-red);
+}
+
+.analytics-page .analytics-error h3 {
+  margin: 0;
+
+  color: var(--analytics-text);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.analytics-page .analytics-error p {
+  max-width: 500px;
+
+  margin: 7px 0 18px;
+
+  color: var(--analytics-muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.analytics-page .analytics-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 13px 3px 0;
+
+  color: var(--analytics-muted);
+
+  font-size: 9.5px;
+}
+
+.analytics-page .analytics-footer > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.analytics-page .analytics-footer svg {
+  color: var(--analytics-green);
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+.analytics-page .spin {
+  animation: analytics-spin 0.85s linear infinite;
+}
+
+@keyframes analytics-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+   ========================================================== */
+
+@media (max-width: 1250px) {
+  .analytics-page {
+    padding: 24px 24px 35px;
+  }
+
+  .analytics-page .analytics-kpi-grid {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .analytics-page {
+    padding: 22px 20px 32px;
+  }
+
+  .analytics-page .analytics-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analytics-page .analytics-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .analytics-page .analytics-filter-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analytics-page .analytics-filter-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .analytics-page .analytics-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .analytics-page {
+    padding: 18px 14px 28px;
+  }
+
+  .analytics-page .analytics-page-header {
+    margin-bottom: 18px;
+  }
+
+  .analytics-page .analytics-page-header h1 {
+    font-size: 28px;
+  }
+
+  .analytics-page .analytics-page-header p {
+    font-size: 12px;
+  }
+
+  .analytics-page .analytics-refresh-btn {
+    width: 100%;
+  }
+
+  .analytics-page .analytics-filter-bar {
+    padding: 13px;
+  }
+
+  .analytics-page .analytics-filter-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .analytics-page .analytics-select-wrapper {
+    width: 100%;
+  }
+
+  .analytics-page
+    .analytics-filter-controls
+    input[type="date"] {
+    width: 100%;
+  }
+
+  .analytics-page .analytics-date-separator {
+    display: none;
+  }
+
+  .analytics-page .analytics-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .analytics-page .analytics-kpi-card {
+    min-height: 140px;
+  }
+
+  .analytics-page .analytics-section-header {
+    padding: 14px;
+  }
+
+  .analytics-page .analytics-section-body {
+    padding: 15px;
+  }
+
+  .analytics-page .analytics-mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page .analytics-trend-item {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .analytics-page .analytics-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 12px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 400px) {
+  .analytics-page {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .analytics-page .analytics-page-header h1 {
+    font-size: 25px;
+  }
+
+  .analytics-page .analytics-kpi-value {
+    font-size: 26px;
+  }
+
+  .analytics-page .analytics-section-heading h3 {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   KPI CARDS — PREMIUM SHASAR SOLAR
+   ========================================================== */
+
+.analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.analytics-kpi-card {
+  position: relative;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(127, 143, 168, 0.14);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(20, 30, 50, 0.06);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.analytics-kpi-card::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  bottom: -45px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255, 178, 0, 0.06);
+  pointer-events: none;
+}
+
+.analytics-kpi-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 178, 0, 0.28);
+  box-shadow: 0 14px 34px rgba(20, 30, 50, 0.10);
+}
+
+.analytics-kpi-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.analytics-kpi-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: rgba(255, 178, 0, 0.12);
+  color: rgb(255, 178, 0);
+}
+
+.analytics-kpi-value {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 5px;
+  color: #162033;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.analytics-kpi-title {
+  position: relative;
+  z-index: 1;
+  color: #263247;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.analytics-kpi-subtitle {
+  position: relative;
+  z-index: 1;
+  margin-top: 5px;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   DARK THEME
+   ========================================================== */
+
+[data-theme="dark"] .analytics-kpi-card,
+.dark-theme .analytics-kpi-card,
+body.dark .analytics-kpi-card {
+  background: rgb(15, 37, 73);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="dark"] .analytics-kpi-card:hover,
+.dark-theme .analytics-kpi-card:hover,
+body.dark .analytics-kpi-card:hover {
+  border-color: rgba(255, 178, 0, 0.28);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .analytics-kpi-card::after,
+.dark-theme .analytics-kpi-card::after,
+body.dark .analytics-kpi-card::after {
+  background: rgba(255, 178, 0, 0.08);
+}
+
+[data-theme="dark"] .analytics-kpi-value,
+.dark-theme .analytics-kpi-value,
+body.dark .analytics-kpi-value {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .analytics-kpi-title,
+.dark-theme .analytics-kpi-title,
+body.dark .analytics-kpi-title {
+  color: #e6edf7;
+}
+
+[data-theme="dark"] .analytics-kpi-subtitle,
+.dark-theme .analytics-kpi-subtitle,
+body.dark .analytics-kpi-subtitle {
+  color: #9eacc1;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 991.98px) {
+  .analytics-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 575.98px) {
+  .analytics-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .analytics-kpi-card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .analytics-kpi-top {
+    margin-bottom: 16px;
+  }
+
+  .analytics-kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .analytics-kpi-value {
+    font-size: 28px;
+  }
+
+  .analytics-kpi-title {
+    font-size: 13px;
+  }
+
+  .analytics-kpi-subtitle {
+    font-size: 11px;
+  }
+}

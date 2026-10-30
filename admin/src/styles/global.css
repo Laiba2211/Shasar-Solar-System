@@ -1,0 +1,100 @@
+/* =========================================================
+   SHASAR SOLAR SYSTEM
+   ADMIN GLOBAL THEME
+========================================================= */
+
+:root {
+  --admin-bg: #f5f7fb;
+
+  --admin-surface: #ffffff;
+  --admin-surface-secondary: #f8fafc;
+
+  --admin-text-primary: #101828;
+  --admin-text-secondary: #475467;
+  --admin-text-muted: #667085;
+
+  --admin-border: #e4e7ec;
+
+  --admin-hover: rgba(255, 178, 0, 0.08);
+
+  --admin-accent: #ffb200;
+
+  --admin-sidebar-shadow:
+    8px 0 30px rgba(16, 24, 40, 0.04);
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+[data-theme="dark"] {
+  --admin-bg: #071a33;
+
+  --admin-surface: #0b2342;
+  --admin-surface-secondary: #102b4d;
+
+  --admin-text-primary: #f8fafc;
+  --admin-text-secondary: #d0d5dd;
+  --admin-text-muted: #98a2b3;
+
+  --admin-border: rgba(255, 255, 255, 0.09);
+
+  --admin-hover: rgba(255, 178, 0, 0.09);
+
+  --admin-accent: #ffb200;
+
+  --admin-sidebar-shadow:
+    8px 0 35px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  background: var(--admin-bg);
+
+  color: var(--admin-text-primary);
+
+  font-family:
+    "Inter",
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(255, 178, 0, 0.25);
+
+  color: var(--admin-text-primary);
+}

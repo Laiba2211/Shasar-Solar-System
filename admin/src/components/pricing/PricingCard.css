@@ -1,0 +1,481 @@
+/* ==========================================================
+   SHASAR SOLAR ADMIN
+   PRICING CARD
+   MOBILE PRICING MANAGEMENT
+   LIGHT + DARK MODE
+   ========================================================== */
+
+.pricing-card {
+  width: 100%;
+  overflow: hidden;
+
+  background: var(--admin-surface, #ffffff);
+  border: 1px solid var(--admin-border, #e2e8f0);
+  border-radius: 16px;
+
+  color: var(--admin-text, #0f172a);
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(255, 178, 0, 0.35);
+
+  box-shadow:
+    0 14px 40px rgba(15, 23, 42, 0.10);
+}
+
+/* ==========================================================
+   DARK
+   ========================================================== */
+
+[data-theme="dark"] .pricing-card {
+  background: rgb(15, 37, 73);
+  border-color: rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20);
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.pricing-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  border-bottom: 1px solid
+    var(--admin-border, #e2e8f0);
+}
+
+.pricing-card__heading {
+  min-width: 0;
+}
+
+.pricing-card__title {
+  margin: 0 0 6px;
+
+  color: var(--admin-text, #0f172a);
+
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 750;
+
+  word-break: break-word;
+}
+
+.pricing-card__category {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(37, 99, 235, 0.10);
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pricing-card__order {
+  flex-shrink: 0;
+
+  min-width: 32px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background:
+    var(--admin-surface-soft, #f8fafc);
+
+  color:
+    var(--admin-muted-strong, #475569);
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+.pricing-card__body {
+  padding: 18px;
+}
+
+/* ==========================================================
+   PRICE
+   ========================================================== */
+
+.pricing-card__price-box {
+  margin-bottom: 18px;
+}
+
+.pricing-card__price-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    var(--admin-muted, #64748b);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.pricing-card__currency {
+  color: rgb(255, 178, 0);
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.pricing-card__price-value {
+  color:
+    var(--admin-text, #0f172a);
+
+  font-size: 27px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.pricing-card__price-unit {
+  color:
+    var(--admin-muted, #64748b);
+
+  font-size: 11px;
+}
+
+/* ==========================================================
+   DESCRIPTION
+   ========================================================== */
+
+.pricing-card__description {
+  margin: 0 0 18px;
+
+  color:
+    var(--admin-muted, #64748b);
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   DETAILS
+   ========================================================== */
+
+.pricing-card__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+.pricing-card__detail {
+  min-width: 0;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background:
+    var(--admin-surface-soft, #f8fafc);
+
+  border: 1px solid
+    var(--admin-border, #e2e8f0);
+}
+
+.pricing-card__detail-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    var(--admin-muted, #64748b);
+
+  font-size: 9px;
+  font-weight: 750;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pricing-card__detail-value {
+  display: block;
+
+  overflow: hidden;
+
+  color:
+    var(--admin-text, #0f172a);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   STATUS ROW
+   ========================================================== */
+
+.pricing-card__status-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 17px;
+}
+
+.pricing-card__status,
+.pricing-card__featured {
+  min-height: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pricing-card__status--active {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.10);
+}
+
+.pricing-card__status--inactive {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.10);
+}
+
+.pricing-card__featured--yes {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.10);
+}
+
+.pricing-card__featured--no {
+  color:
+    var(--admin-muted, #64748b);
+
+  background:
+    var(--admin-surface-soft, #f8fafc);
+}
+
+/* ==========================================================
+   QUICK CONTROLS
+   ========================================================== */
+
+.pricing-card__quick-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+}
+
+.pricing-card__quick-btn {
+  min-height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 10px;
+
+  border: 1px solid
+    var(--admin-border, #e2e8f0);
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color:
+    var(--admin-muted-strong, #475569);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.pricing-card__quick-btn:hover {
+  border-color: rgba(255, 178, 0, 0.45);
+
+  color: rgb(255, 178, 0);
+
+  background: rgba(255, 178, 0, 0.08);
+}
+
+.pricing-card__quick-btn--active {
+  color: #16a34a;
+
+  border-color:
+    rgba(22, 163, 74, 0.25);
+
+  background:
+    rgba(22, 163, 74, 0.08);
+}
+
+.pricing-card__quick-btn--featured {
+  color: #7c3aed;
+
+  border-color:
+    rgba(124, 58, 237, 0.25);
+
+  background:
+    rgba(124, 58, 237, 0.08);
+}
+
+.pricing-card__quick-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   ACTIONS
+   ========================================================== */
+
+.pricing-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid
+    var(--admin-border, #e2e8f0);
+}
+
+.pricing-card__edit-btn,
+.pricing-card__delete-btn {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.18s ease;
+}
+
+.pricing-card__edit-btn {
+  border: 1px solid
+    rgba(255, 178, 0, 0.35);
+
+  background:
+    rgba(255, 178, 0, 0.08);
+
+  color:
+    rgb(255, 178, 0);
+}
+
+.pricing-card__edit-btn:hover {
+  background:
+    rgb(255, 178, 0);
+
+  color: #081c3a;
+}
+
+.pricing-card__delete-btn {
+  border: 1px solid
+    rgba(220, 38, 38, 0.20);
+
+  background:
+    rgba(220, 38, 38, 0.06);
+
+  color:
+    #dc2626;
+}
+
+.pricing-card__delete-btn:hover {
+  background:
+    #dc2626;
+
+  color: #ffffff;
+}
+
+.pricing-card__edit-btn:disabled,
+.pricing-card__delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .pricing-card__header,
+  .pricing-card__body {
+    padding: 15px;
+  }
+
+  .pricing-card__price-value {
+    font-size: 24px;
+  }
+
+  .pricing-card__details {
+    gap: 7px;
+  }
+
+  .pricing-card__detail {
+    padding: 9px;
+  }
+}

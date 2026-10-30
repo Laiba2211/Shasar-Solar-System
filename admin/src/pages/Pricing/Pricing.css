@@ -1,0 +1,999 @@
+ /* ==========================================================
+   SHASAR SOLAR ADMIN PANEL
+   PRICING MANAGEMENT
+   PAGE STYLES
+   LIGHT + DARK THEME
+   BOOTSTRAP + CUSTOM CSS
+   ========================================================== */
+
+/* ==========================================================
+   PAGE ROOT
+   ========================================================== */
+
+.pricing-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px;
+  color: var(--admin-text, #172033);
+  background: var(--admin-bg, #f5f7fb);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* ==========================================================
+   THEME VARIABLES
+   ========================================================== */
+
+.pricing-page {
+  --pricing-bg: var(--admin-bg, #f5f7fb);
+  --pricing-surface: var(--admin-surface, #ffffff);
+  --pricing-input: var(--admin-input-bg, #ffffff);
+  --pricing-soft: var(--admin-soft-bg, #f7f9fc);
+
+  --pricing-text: var(--admin-text, #172033);
+  --pricing-muted: var(--admin-muted, #687386);
+  --pricing-muted-strong: var(
+    --admin-muted-strong,
+    #465066
+  );
+
+  --pricing-border: var(
+    --admin-border,
+    #e4e8ef
+  );
+
+  --pricing-brand: rgb(255, 178, 0);
+  --pricing-brand-dark: #d99600;
+
+  --pricing-success: #16a34a;
+  --pricing-danger: #dc2626;
+  --pricing-info: #2563eb;
+  --pricing-warning: #d97706;
+
+  --pricing-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06);
+
+  --pricing-shadow-hover:
+    0 18px 45px rgba(15, 23, 42, 0.1);
+
+  --pricing-radius: 16px;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+[data-theme="dark"] .pricing-page {
+  --pricing-bg: rgb(8, 28, 58);
+  --pricing-surface: rgb(15, 37, 73);
+  --pricing-input: rgb(11, 31, 62);
+  --pricing-soft: rgba(255, 255, 255, 0.045);
+
+  --pricing-text: #f4f7fb;
+  --pricing-muted: #9caec8;
+  --pricing-muted-strong: #c5d0df;
+
+  --pricing-border: rgba(
+    255,
+    255,
+    255,
+    0.09
+  );
+
+  --pricing-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2);
+
+  --pricing-shadow-hover:
+    0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================
+   PAGE HEADER
+   ========================================================== */
+
+.pricing-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.pricing-page__heading {
+  min-width: 0;
+}
+
+.pricing-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+
+  color: var(--pricing-brand);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pricing-page__eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--pricing-brand);
+}
+
+.pricing-page__title {
+  margin: 0;
+
+  color: var(--pricing-text);
+  font-size: clamp(
+    1.65rem,
+    2.5vw,
+    2.25rem
+  );
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.pricing-page__subtitle {
+  max-width: 700px;
+  margin: 8px 0 0;
+
+  color: var(--pricing-muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.pricing-page__header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   HEADER BUTTONS
+   ========================================================== */
+
+.pricing-page__add-btn,
+.pricing-page__refresh-btn,
+.pricing-page__reset-btn,
+.pricing-page__retry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pricing-page__add-btn {
+  padding: 0 17px;
+
+  border: 1px solid var(--pricing-brand);
+  background: var(--pricing-brand);
+  color: #111827;
+
+  box-shadow:
+    0 7px 20px rgba(255, 178, 0, 0.18);
+}
+
+.pricing-page__add-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  background: #ffbd1a;
+  border-color: #ffbd1a;
+
+  box-shadow:
+    0 10px 25px rgba(255, 178, 0, 0.25);
+}
+
+.pricing-page__refresh-btn {
+  padding: 0 14px;
+
+  border: 1px solid var(--pricing-border);
+  background: var(--pricing-surface);
+  color: var(--pricing-muted-strong);
+}
+
+.pricing-page__refresh-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.45
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-page__add-btn:disabled,
+.pricing-page__refresh-btn:disabled,
+.pricing-page__reset-btn:disabled,
+.pricing-page__retry-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pricing-page__spin {
+  animation: pricingSpin 0.85s linear infinite;
+}
+
+@keyframes pricingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   FEEDBACK ALERTS
+   ========================================================== */
+
+.pricing-page__alert {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 13px 15px;
+
+  border: 1px solid;
+  border-radius: 12px;
+
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.pricing-page__alert span {
+  flex: 1;
+}
+
+.pricing-page__alert > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: currentColor;
+
+  cursor: pointer;
+}
+
+.pricing-page__alert > button:hover {
+  background: rgba(
+    127,
+    127,
+    127,
+    0.1
+  );
+}
+
+.pricing-page__alert--success {
+  border-color: rgba(
+    22,
+    163,
+    74,
+    0.25
+  );
+
+  background: rgba(
+    22,
+    163,
+    74,
+    0.08
+  );
+
+  color: var(--pricing-success);
+}
+
+.pricing-page__alert--error {
+  border-color: rgba(
+    220,
+    38,
+    38,
+    0.25
+  );
+
+  background: rgba(
+    220,
+    38,
+    38,
+    0.08
+  );
+
+  color: var(--pricing-danger);
+}
+
+/* ==========================================================
+   SUMMARY SECTION
+   ========================================================== */
+
+.pricing-page__summary {
+  margin-bottom: 26px;
+}
+
+/* ==========================================================
+   SUMMARY CARD
+   ========================================================== */
+
+.pricing-summary-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  height: 100%;
+  min-height: 126px;
+  padding: 19px;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: var(--pricing-radius);
+
+  background: var(--pricing-surface);
+
+  box-shadow: var(--pricing-shadow);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.pricing-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--pricing-shadow-hover);
+
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.2
+  );
+}
+
+.pricing-summary-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 12px;
+}
+
+.pricing-summary-card__icon--primary {
+  background: rgba(
+    255,
+    178,
+    0,
+    0.12
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-summary-card__icon--success {
+  background: rgba(
+    22,
+    163,
+    74,
+    0.1
+  );
+
+  color: var(--pricing-success);
+}
+
+.pricing-summary-card__icon--featured {
+  background: rgba(
+    124,
+    58,
+    237,
+    0.1
+  );
+
+  color: #7c3aed;
+}
+
+.pricing-summary-card__icon--danger {
+  background: rgba(
+    220,
+    38,
+    38,
+    0.1
+  );
+
+  color: var(--pricing-danger);
+}
+
+.pricing-summary-card__content {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.pricing-summary-card__label {
+  margin-bottom: 3px;
+
+  color: var(--pricing-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.pricing-summary-card__value {
+  color: var(--pricing-text);
+  font-size: 1.55rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.pricing-summary-card__hint {
+  margin-top: 4px;
+
+  color: var(--pricing-muted);
+  font-size: 0.7rem;
+}
+
+/* ==========================================================
+   TOOLBAR
+   ========================================================== */
+
+.pricing-page__toolbar {
+  margin-bottom: 20px;
+  padding: 18px;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: var(--pricing-radius);
+
+  background: var(--pricing-surface);
+
+  box-shadow: var(--pricing-shadow);
+}
+
+.pricing-page__toolbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+.pricing-page__toolbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-page__toolbar-title h2 {
+  margin: 0;
+
+  color: var(--pricing-text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pricing-page__toolbar-title span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  background: var(--pricing-soft);
+  color: var(--pricing-muted);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.pricing-page__reset-btn {
+  min-height: 34px;
+  padding: 0 11px;
+
+  border: 1px solid var(--pricing-border);
+  background: transparent;
+  color: var(--pricing-muted);
+
+  font-size: 0.75rem;
+}
+
+.pricing-page__reset-btn:hover:not(:disabled) {
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.4
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-page__reset-btn--large {
+  min-height: 40px;
+  padding: 0 15px;
+}
+
+/* ==========================================================
+   FILTERS
+   ========================================================== */
+
+.pricing-page__filters {
+  display: grid;
+  grid-template-columns:
+    minmax(230px, 1.8fr)
+    minmax(160px, 1fr)
+    minmax(145px, 0.85fr)
+    minmax(160px, 0.9fr);
+
+  gap: 10px;
+}
+
+.pricing-page__search,
+.pricing-page__filter {
+  min-width: 0;
+}
+
+.pricing-page__search input,
+.pricing-page__filter select {
+  width: 100%;
+  height: 42px;
+  padding: 0 13px;
+
+  outline: none;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: 9px;
+
+  background: var(--pricing-input);
+  color: var(--pricing-text);
+
+  font-family: inherit;
+  font-size: 0.82rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.pricing-page__search input::placeholder {
+  color: var(--pricing-muted);
+  opacity: 0.75;
+}
+
+.pricing-page__search input:focus,
+.pricing-page__filter select:focus {
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.65
+  );
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      178,
+      0,
+      0.1
+    );
+}
+
+.pricing-page__filter select {
+  cursor: pointer;
+}
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
+
+.pricing-page__content {
+  width: 100%;
+}
+
+/* ==========================================================
+   DESKTOP / MOBILE VISIBILITY
+   ========================================================== */
+
+.pricing-page__desktop {
+  display: block;
+}
+
+.pricing-page__mobile {
+  display: none;
+}
+
+/* ==========================================================
+   LOADING STATE
+   ========================================================== */
+
+.pricing-page__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 330px;
+  padding: 40px;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: var(--pricing-radius);
+
+  background: var(--pricing-surface);
+  box-shadow: var(--pricing-shadow);
+
+  text-align: center;
+}
+
+.pricing-page__loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  margin-bottom: 17px;
+
+  border-radius: 50%;
+
+  background: rgba(
+    255,
+    178,
+    0,
+    0.1
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-page__loading h3,
+.pricing-page__error-state h3,
+.pricing-page__empty-state h3 {
+  margin: 0;
+
+  color: var(--pricing-text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pricing-page__loading p,
+.pricing-page__error-state p,
+.pricing-page__empty-state p {
+  max-width: 470px;
+  margin: 7px auto 0;
+
+  color: var(--pricing-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   ERROR / EMPTY STATE
+   ========================================================== */
+
+.pricing-page__error-state,
+.pricing-page__empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 330px;
+  padding: 40px;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: var(--pricing-radius);
+
+  background: var(--pricing-surface);
+  box-shadow: var(--pricing-shadow);
+
+  text-align: center;
+}
+
+.pricing-page__error-icon,
+.pricing-page__empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+  margin-bottom: 17px;
+
+  border-radius: 16px;
+}
+
+.pricing-page__error-icon {
+  background: rgba(
+    220,
+    38,
+    38,
+    0.1
+  );
+
+  color: var(--pricing-danger);
+}
+
+.pricing-page__empty-icon {
+  background: rgba(
+    255,
+    178,
+    0,
+    0.11
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-page__retry-btn {
+  margin-top: 18px;
+  padding: 0 16px;
+
+  border: 1px solid var(--pricing-border);
+  background: var(--pricing-surface);
+  color: var(--pricing-text);
+}
+
+.pricing-page__retry-btn:hover {
+  transform: translateY(-1px);
+
+  border-color: rgba(
+    255,
+    178,
+    0,
+    0.45
+  );
+
+  color: var(--pricing-brand);
+}
+
+.pricing-page__empty-state
+  .pricing-page__add-btn {
+  margin-top: 18px;
+}
+
+.pricing-page__empty-state--filtered {
+  min-height: 280px;
+}
+
+/* ==========================================================
+   MOBILE GRID
+   ========================================================== */
+
+.pricing-page__mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+
+  gap: 16px;
+}
+
+/* ==========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================== */
+
+.pricing-page button:focus-visible,
+.pricing-page input:focus-visible,
+.pricing-page select:focus-visible {
+  outline: 2px solid
+    var(--pricing-brand);
+
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1199.98px) {
+  .pricing-page {
+    padding: 24px;
+  }
+
+  .pricing-page__filters {
+    grid-template-columns:
+      minmax(200px, 1.5fr)
+      repeat(3, minmax(140px, 1fr));
+  }
+}
+
+/* ==========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================== */
+
+@media (max-width: 991.98px) {
+  .pricing-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pricing-page__header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pricing-page__filters {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-page__search {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 767.98px) {
+  .pricing-page {
+    padding: 18px 15px 28px;
+  }
+
+  .pricing-page__header {
+    margin-bottom: 21px;
+  }
+
+  .pricing-page__title {
+    font-size: 1.55rem;
+  }
+
+  .pricing-page__subtitle {
+    font-size: 0.82rem;
+  }
+
+  .pricing-page__header-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+  }
+
+  .pricing-page__add-btn,
+  .pricing-page__refresh-btn {
+    width: 100%;
+  }
+
+  .pricing-summary-card {
+    min-height: 110px;
+    padding: 16px;
+  }
+
+  .pricing-summary-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pricing-summary-card__value {
+    font-size: 1.35rem;
+  }
+
+  .pricing-page__toolbar {
+    padding: 15px;
+  }
+
+  .pricing-page__toolbar-top {
+    align-items: flex-start;
+  }
+
+  .pricing-page__toolbar-title {
+    flex-wrap: wrap;
+  }
+
+  .pricing-page__filters {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-page__search {
+    grid-column: auto;
+  }
+
+  .pricing-page__desktop {
+    display: none;
+  }
+
+  .pricing-page__mobile {
+    display: block;
+  }
+
+  .pricing-page__mobile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-page__loading,
+  .pricing-page__error-state,
+  .pricing-page__empty-state {
+    min-height: 280px;
+    padding: 28px 20px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 479.98px) {
+  .pricing-page {
+    padding: 15px 12px 24px;
+  }
+
+  .pricing-page__header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-page__toolbar-top {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pricing-page__reset-btn {
+    width: 100%;
+  }
+
+  .pricing-summary-card {
+    padding: 14px;
+  }
+
+  .pricing-summary-card__hint {
+    font-size: 0.67rem;
+  }
+
+  .pricing-page__alert {
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-page *,
+  .pricing-page *::before,
+  .pricing-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

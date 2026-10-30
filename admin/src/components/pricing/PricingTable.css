@@ -1,0 +1,1209 @@
+/* ==========================================================
+   SHASAR SOLAR ADMIN PANEL
+   PRICING TABLE
+   PREMIUM ADMIN UI
+   LIGHT + DARK MODE
+   BOOTSTRAP COMPATIBLE
+   RESPONSIVE
+   ========================================================== */
+
+
+/* ==========================================================
+   ROOT VARIABLES
+   ========================================================== */
+
+:root {
+  /* ---------- BACKGROUNDS ---------- */
+
+  --pricing-bg: #081c3a;
+  --pricing-surface: #0f2549;
+  --pricing-surface-light: #132d55;
+  --pricing-surface-hover: #17345f;
+
+  /* ---------- BORDERS ---------- */
+
+  --pricing-border: rgba(148, 163, 184, 0.18);
+  --pricing-border-strong: rgba(148, 163, 184, 0.26);
+
+  /* ---------- TEXT ---------- */
+
+  --pricing-text-primary: #ffffff;
+  --pricing-text-secondary: #c8d8ec;
+  --pricing-text-muted: #9bb0ca;
+  --pricing-text-soft: #8299b8;
+
+  /* ---------- BRAND ---------- */
+
+  --pricing-gold: #ffb200;
+  --pricing-gold-hover: #ffc229;
+
+  /* ---------- COLORS ---------- */
+
+  --pricing-blue: #3b82f6;
+  --pricing-green: #22c55e;
+  --pricing-red: #ef4444;
+  --pricing-purple: #8b5cf6;
+
+  /* ---------- RADIUS ---------- */
+
+  --pricing-radius-lg: 16px;
+  --pricing-radius-md: 10px;
+  --pricing-radius-sm: 8px;
+
+  /* ---------- TRANSITION ---------- */
+
+  --pricing-transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ==========================================================
+   MAIN TABLE CARD
+   ========================================================== */
+
+.pricing-table-card {
+  width: 100%;
+  overflow: hidden;
+
+  background-color: var(--pricing-surface) !important;
+
+  border: 1px solid var(--pricing-border);
+  border-radius: var(--pricing-radius-lg);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.14);
+}
+
+
+/* ==========================================================
+   TABLE HEADER
+   ========================================================== */
+
+.pricing-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 18px 20px;
+
+  background-color: var(--pricing-surface);
+
+  border-bottom: 1px solid var(--pricing-border);
+}
+
+
+/* ==========================================================
+   TABLE HEADING
+   ========================================================== */
+
+.pricing-table-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.pricing-table-heading-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: var(--pricing-gold);
+
+  background: rgba(255, 178, 0, 0.10);
+
+  border: 1px solid rgba(255, 178, 0, 0.18);
+
+  border-radius: 10px;
+}
+
+
+.pricing-table-heading h5 {
+  margin: 0;
+
+  color: var(--pricing-text-primary) !important;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+
+.pricing-table-heading span {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  color: var(--pricing-text-muted) !important;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* ==========================================================
+   TABLE SCROLL
+   ========================================================== */
+
+.pricing-table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(255, 178, 0, 0.40)
+    transparent;
+}
+
+
+.pricing-table-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+
+.pricing-table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.pricing-table-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 178, 0, 0.32);
+
+  border-radius: 20px;
+}
+
+
+.pricing-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 178, 0, 0.60);
+}
+
+
+/* ==========================================================
+   TABLE
+   IMPORTANT:
+   Bootstrap .table variables are explicitly overridden here.
+   ========================================================== */
+
+.pricing-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  margin: 0 !important;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  color: var(--pricing-text-secondary) !important;
+
+  /* Bootstrap overrides */
+
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--pricing-text-secondary);
+  --bs-table-border-color: var(--pricing-border);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.035);
+  --bs-table-hover-color: var(--pricing-text-primary);
+}
+
+
+/* ==========================================================
+   TABLE HEAD
+   ========================================================== */
+
+.pricing-table thead {
+  background: #0b2245 !important;
+}
+
+
+.pricing-table thead tr {
+  background: #0b2245 !important;
+}
+
+
+.pricing-table thead th {
+  padding: 14px 16px;
+
+  color: #bcd0e8 !important;
+
+  background: #0b2245 !important;
+
+  border-bottom: 1px solid var(--pricing-border-strong) !important;
+  border-top: 0 !important;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+
+/* ==========================================================
+   COLUMN WIDTHS
+   ========================================================== */
+
+.pricing-column-plan {
+  width: 25%;
+  min-width: 250px;
+}
+
+
+.pricing-column-category {
+  width: 11%;
+  min-width: 120px;
+}
+
+
+.pricing-column-price {
+  width: 15%;
+  min-width: 155px;
+}
+
+
+.pricing-column-system {
+  width: 12%;
+  min-width: 125px;
+}
+
+
+.pricing-column-status {
+  width: 10%;
+  min-width: 110px;
+}
+
+
+.pricing-column-featured {
+  width: 11%;
+  min-width: 115px;
+}
+
+
+.pricing-column-order {
+  width: 9%;
+  min-width: 95px;
+}
+
+
+.pricing-column-actions {
+  width: 100px;
+  min-width: 100px;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   TABLE BODY
+   ========================================================== */
+
+/*
+   IMPORTANT:
+   Bootstrap can apply --bs-table-bg and make the body white.
+   These rules intentionally force the dark background.
+*/
+
+.pricing-table tbody {
+  background-color: var(--pricing-surface) !important;
+}
+
+
+.pricing-table tbody tr {
+  background-color: var(--pricing-surface) !important;
+
+  --bs-table-bg: var(--pricing-surface);
+  --bs-table-color: var(--pricing-text-secondary);
+
+  transition:
+    background-color 0.2s ease;
+}
+
+
+.pricing-table tbody tr:hover {
+  background-color: var(--pricing-surface-hover) !important;
+
+  --bs-table-bg: var(--pricing-surface-hover);
+}
+
+
+/* ==========================================================
+   TABLE CELLS
+   ========================================================== */
+
+.pricing-table tbody td {
+  padding: 17px 16px;
+
+  color: var(--pricing-text-secondary) !important;
+
+  background-color: var(--pricing-surface) !important;
+
+  border-bottom: 1px solid var(--pricing-border) !important;
+  border-top: 0 !important;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+
+.pricing-table tbody tr:hover td {
+  color: var(--pricing-text-primary) !important;
+
+  background-color: var(--pricing-surface-hover) !important;
+}
+
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+
+/* ==========================================================
+   PLAN CELL
+   ========================================================== */
+
+.pricing-plan-cell {
+  min-width: 250px;
+}
+
+
+.pricing-plan-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 4px;
+}
+
+
+.pricing-plan-title {
+  max-width: 300px;
+
+  color: #ffffff !important;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+.pricing-plan-slug {
+  max-width: 300px;
+
+  color: #9bb0ca !important;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* ==========================================================
+   CATEGORY
+   ========================================================== */
+
+.pricing-category-cell {
+  white-space: nowrap;
+}
+
+
+.pricing-category-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding: 5px 10px;
+
+  color: #bcd8f7 !important;
+
+  background: rgba(96, 165, 250, 0.10) !important;
+
+  border: 1px solid rgba(96, 165, 250, 0.24) !important;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* ==========================================================
+   PRICE
+   ========================================================== */
+
+.pricing-price-cell {
+  white-space: nowrap;
+}
+
+
+.pricing-price-wrapper {
+  display: flex;
+  align-items: baseline;
+
+  gap: 5px;
+}
+
+
+.pricing-price {
+  color: #ffffff !important;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.pricing-price-unit {
+  color: #9bb0ca !important;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   SYSTEM SIZE
+   ========================================================== */
+
+.pricing-system-cell {
+  white-space: nowrap;
+}
+
+
+.pricing-system-size {
+  color: #bfd1e7 !important;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   STATUS
+   ========================================================== */
+
+.pricing-status-cell {
+  white-space: nowrap;
+}
+
+
+.pricing-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-height: 29px;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* ACTIVE */
+
+.pricing-status-active {
+  color: #63efa0 !important;
+
+  background: rgba(34, 197, 94, 0.10) !important;
+
+  border: 1px solid rgba(34, 197, 94, 0.30) !important;
+}
+
+
+/* INACTIVE */
+
+.pricing-status-inactive {
+  color: #ff8585 !important;
+
+  background: rgba(239, 68, 68, 0.10) !important;
+
+  border: 1px solid rgba(239, 68, 68, 0.28) !important;
+}
+
+
+/* ==========================================================
+   FEATURED
+   ========================================================== */
+
+.pricing-featured-cell {
+  white-space: nowrap;
+}
+
+
+.pricing-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  min-height: 29px;
+
+  padding: 5px 10px;
+
+  color: #ffd45c !important;
+
+  background: rgba(255, 178, 0, 0.10) !important;
+
+  border: 1px solid rgba(255, 178, 0, 0.27) !important;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+.pricing-not-featured {
+  color: #8fa6c2 !important;
+
+  font-size: 15px;
+}
+
+
+/* ==========================================================
+   DISPLAY ORDER
+   ========================================================== */
+
+.pricing-order-cell {
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+.pricing-order-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 28px;
+  height: 28px;
+
+  padding: 0 7px;
+
+  color: #bcd0e7 !important;
+
+  background: rgba(148, 163, 184, 0.08) !important;
+
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   ACTIONS
+   ========================================================== */
+
+.pricing-actions-cell {
+  width: 100px;
+  min-width: 100px;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+.pricing-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* ==========================================================
+   ACTION BUTTON
+   ========================================================== */
+
+.pricing-action-btn {
+  width: 36px;
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: var(--pricing-transition);
+}
+
+
+.pricing-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+.pricing-action-btn:active {
+  transform: translateY(0);
+}
+
+
+.pricing-action-btn:focus-visible {
+  outline: 2px solid rgba(255, 178, 0, 0.65);
+
+  outline-offset: 2px;
+}
+
+
+/* ==========================================================
+   EDIT BUTTON
+   ========================================================== */
+
+.pricing-edit-btn {
+  color: #8db8ff !important;
+
+  background: rgba(59, 130, 246, 0.10) !important;
+
+  border-color: rgba(59, 130, 246, 0.24) !important;
+}
+
+
+.pricing-edit-btn:hover {
+  color: #ffffff !important;
+
+  background: rgba(59, 130, 246, 0.28) !important;
+
+  border-color: rgba(59, 130, 246, 0.50) !important;
+
+  box-shadow:
+    0 6px 18px rgba(59, 130, 246, 0.18);
+}
+
+
+/* ==========================================================
+   DELETE BUTTON
+   ========================================================== */
+
+.pricing-delete-btn {
+  color: #ff9191 !important;
+
+  background: rgba(239, 68, 68, 0.10) !important;
+
+  border-color: rgba(239, 68, 68, 0.22) !important;
+}
+
+
+.pricing-delete-btn:hover {
+  color: #ffffff !important;
+
+  background: rgba(239, 68, 68, 0.28) !important;
+
+  border-color: rgba(239, 68, 68, 0.48) !important;
+
+  box-shadow:
+    0 6px 18px rgba(239, 68, 68, 0.18);
+}
+
+
+/* ==========================================================
+   EMPTY STATE
+   ========================================================== */
+
+.pricing-table-empty {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  background-color: var(--pricing-surface) !important;
+}
+
+
+.pricing-empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  color: var(--pricing-gold);
+
+  background: rgba(255, 178, 0, 0.09);
+
+  border: 1px solid rgba(255, 178, 0, 0.18);
+
+  border-radius: 16px;
+}
+
+
+.pricing-table-empty h5 {
+  margin: 0 0 7px;
+
+  color: #ffffff !important;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.pricing-table-empty p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #9bb0ca !important;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   LOADING STATE
+   ========================================================== */
+
+.pricing-table-loading {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  background-color: var(--pricing-surface) !important;
+}
+
+
+.pricing-loading-spinner {
+  width: 30px;
+  height: 30px;
+
+  color: var(--pricing-gold);
+}
+
+
+.pricing-table-loading p {
+  margin: 0;
+
+  color: #9bb0ca !important;
+
+  font-size: 13px;
+}
+
+
+/* ==========================================================
+   LIGHT THEME
+   ========================================================== */
+
+[data-theme="light"] {
+  --pricing-bg: #f4f7fb;
+
+  --pricing-surface: #ffffff;
+  --pricing-surface-light: #f8fafc;
+  --pricing-surface-hover: #f8fafc;
+
+  --pricing-border: rgba(15, 23, 42, 0.10);
+  --pricing-border-strong: rgba(15, 23, 42, 0.14);
+
+  --pricing-text-primary: #172b4d;
+  --pricing-text-secondary: #526581;
+  --pricing-text-muted: #71829d;
+  --pricing-text-soft: #8494aa;
+}
+
+
+/* ==========================================================
+   LIGHT - MAIN CARD
+   ========================================================== */
+
+[data-theme="light"] .pricing-table-card {
+  background-color: #ffffff !important;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ==========================================================
+   LIGHT - TABLE
+   ========================================================== */
+
+[data-theme="light"] .pricing-table {
+  color: #526581 !important;
+
+  --bs-table-bg: transparent;
+  --bs-table-color: #526581;
+  --bs-table-border-color: rgba(15, 23, 42, 0.10);
+  --bs-table-hover-bg: rgba(15, 23, 42, 0.018);
+  --bs-table-hover-color: #172b4d;
+}
+
+
+[data-theme="light"] .pricing-table thead,
+[data-theme="light"] .pricing-table thead tr {
+  background: #f1f5f9 !important;
+}
+
+
+[data-theme="light"] .pricing-table thead th {
+  color: #64748b !important;
+
+  background: #f1f5f9 !important;
+
+  border-bottom-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+
+[data-theme="light"] .pricing-table tbody,
+[data-theme="light"] .pricing-table tbody tr {
+  background-color: #ffffff !important;
+}
+
+
+[data-theme="light"] .pricing-table tbody td {
+  color: #526581 !important;
+
+  background-color: #ffffff !important;
+
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+
+[data-theme="light"] .pricing-table tbody tr:hover,
+[data-theme="light"] .pricing-table tbody tr:hover td {
+  background-color: #f8fafc !important;
+}
+
+
+/* ==========================================================
+   LIGHT - PLAN
+   ========================================================== */
+
+[data-theme="light"] .pricing-plan-title {
+  color: #172b4d !important;
+}
+
+
+[data-theme="light"] .pricing-plan-slug {
+  color: #7a8ca6 !important;
+}
+
+
+/* ==========================================================
+   LIGHT - CATEGORY
+   ========================================================== */
+
+[data-theme="light"] .pricing-category-badge {
+  color: #47688f !important;
+
+  background: rgba(59, 130, 246, 0.06) !important;
+
+  border-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+
+/* ==========================================================
+   LIGHT - PRICE
+   ========================================================== */
+
+[data-theme="light"] .pricing-price {
+  color: #172b4d !important;
+}
+
+
+[data-theme="light"] .pricing-price-unit {
+  color: #7a8ca6 !important;
+}
+
+
+/* ==========================================================
+   LIGHT - SYSTEM SIZE
+   ========================================================== */
+
+[data-theme="light"] .pricing-system-size {
+  color: #526581 !important;
+}
+
+
+/* ==========================================================
+   LIGHT - STATUS
+   ========================================================== */
+
+[data-theme="light"] .pricing-status-active {
+  color: #16834a !important;
+
+  background: rgba(34, 197, 94, 0.07) !important;
+
+  border-color: rgba(34, 197, 94, 0.20) !important;
+}
+
+
+[data-theme="light"] .pricing-status-inactive {
+  color: #c72f2f !important;
+
+  background: rgba(239, 68, 68, 0.06) !important;
+
+  border-color: rgba(239, 68, 68, 0.18) !important;
+}
+
+
+/* ==========================================================
+   LIGHT - FEATURED
+   ========================================================== */
+
+[data-theme="light"] .pricing-featured-badge {
+  color: #a66d00 !important;
+
+  background: rgba(255, 178, 0, 0.08) !important;
+
+  border-color: rgba(255, 178, 0, 0.20) !important;
+}
+
+
+[data-theme="light"] .pricing-not-featured {
+  color: #94a3b8 !important;
+}
+
+
+/* ==========================================================
+   LIGHT - ORDER
+   ========================================================== */
+
+[data-theme="light"] .pricing-order-number {
+  color: #526581 !important;
+
+  background: #f5f7fa !important;
+
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+
+/* ==========================================================
+   LIGHT - EDIT
+   ========================================================== */
+
+[data-theme="light"] .pricing-edit-btn {
+  color: #2563eb !important;
+
+  background: rgba(37, 99, 235, 0.06) !important;
+
+  border-color: rgba(37, 99, 235, 0.15) !important;
+}
+
+
+[data-theme="light"] .pricing-edit-btn:hover {
+  color: #ffffff !important;
+
+  background: #2563eb !important;
+
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 6px 18px rgba(37, 99, 235, 0.16);
+}
+
+
+/* ==========================================================
+   LIGHT - DELETE
+   ========================================================== */
+
+[data-theme="light"] .pricing-delete-btn {
+  color: #dc2626 !important;
+
+  background: rgba(220, 38, 38, 0.05) !important;
+
+  border-color: rgba(220, 38, 38, 0.14) !important;
+}
+
+
+[data-theme="light"] .pricing-delete-btn:hover {
+  color: #ffffff !important;
+
+  background: #dc2626 !important;
+
+  border-color: #dc2626 !important;
+
+  box-shadow:
+    0 6px 18px rgba(220, 38, 38, 0.14);
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 992px) {
+
+  .pricing-table {
+    min-width: 1000px;
+  }
+
+
+  .pricing-table-header {
+    padding: 16px;
+  }
+
+
+  .pricing-table tbody td {
+    padding: 15px 14px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  .pricing-table-card {
+    border-radius: 13px;
+  }
+
+
+  .pricing-table-header {
+    padding: 15px;
+  }
+
+
+  .pricing-table-heading {
+    gap: 10px;
+  }
+
+
+  .pricing-table-heading-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .pricing-table-heading h5 {
+    font-size: 14px;
+  }
+
+
+  .pricing-table-heading span {
+    font-size: 10px;
+  }
+
+
+  .pricing-table {
+    min-width: 1000px;
+  }
+
+
+  .pricing-plan-title {
+    max-width: 270px;
+
+    font-size: 13px;
+  }
+
+
+  .pricing-plan-slug {
+    max-width: 270px;
+
+    font-size: 9px;
+  }
+
+
+  .pricing-action-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .pricing-actions {
+    gap: 6px;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+  .pricing-table-header {
+    padding: 14px;
+  }
+
+
+  .pricing-table-heading-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .pricing-table-heading h5 {
+    font-size: 13px;
+  }
+
+
+  .pricing-table tbody td {
+    padding: 13px 12px;
+  }
+
+}

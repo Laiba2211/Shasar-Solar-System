@@ -1,0 +1,395 @@
+/* =========================================================
+   SHASAR SOLAR SYSTEM
+   ADMIN LOGIN
+========================================================= */
+
+.admin-login {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 178, 0, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(255, 178, 0, 0.06),
+      transparent 30%
+    ),
+    var(--admin-bg);
+
+  color: var(--admin-text-primary);
+}
+
+/* =========================================================
+   DECORATIVE GLOWS
+========================================================= */
+
+.admin-login__glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(90px);
+
+  opacity: 0.28;
+}
+
+.admin-login__glow--one {
+  top: -220px;
+  left: -170px;
+
+  background: rgba(255, 178, 0, 0.13);
+}
+
+.admin-login__glow--two {
+  right: -190px;
+  bottom: -240px;
+
+  background: rgba(255, 178, 0, 0.09);
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.admin-login__card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 38px;
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--admin-surface),
+      var(--admin-surface-secondary)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(16, 24, 40, 0.12);
+
+  backdrop-filter: blur(20px);
+}
+
+.admin-login__card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--admin-accent),
+      transparent
+    );
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.admin-login__brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.admin-login__logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: var(--admin-accent);
+
+  color: #081c3a;
+
+  box-shadow:
+    0 10px 30px rgba(255, 178, 0, 0.22);
+}
+
+.admin-login__brand div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-login__brand strong {
+  color: var(--admin-text-primary);
+
+  font-size: 16px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.admin-login__brand span {
+  margin-top: 4px;
+
+  color: var(--admin-text-muted);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   SECURITY BADGE
+========================================================= */
+
+.admin-login__security {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 19px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 178, 0, 0.25);
+
+  border-radius: 999px;
+
+  background: rgba(255, 178, 0, 0.07);
+
+  color: var(--admin-accent);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.admin-login__heading {
+  margin-bottom: 26px;
+}
+
+.admin-login__heading h1 {
+  margin: 0;
+
+  color: var(--admin-text-primary);
+
+  font-size: clamp(28px, 4vw, 38px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.admin-login__heading h1 span {
+  display: block;
+
+  color: var(--admin-accent);
+}
+
+.admin-login__heading p {
+  max-width: 470px;
+
+  margin: 13px 0 0;
+
+  color: var(--admin-text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SECURITY NOTE
+========================================================= */
+
+.admin-login__security-note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 22px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--admin-border);
+
+  color: var(--admin-text-muted);
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.admin-login__security-note svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: var(--admin-accent);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.admin-login__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+
+  color: var(--admin-text-muted);
+
+  font-size: 10px;
+}
+
+.admin-login__footer-dot {
+  color: var(--admin-accent);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+[data-theme="dark"] .admin-login__card {
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.32);
+}
+
+[data-theme="dark"] .admin-login {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 178, 0, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(255, 178, 0, 0.05),
+      transparent 30%
+    ),
+    var(--admin-bg);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 767.98px) {
+  .admin-login__card {
+    padding: 32px 28px;
+
+    border-radius: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575.98px) {
+  .admin-login {
+    padding: 15px 0;
+  }
+
+  .admin-login__card {
+    padding: 28px 20px;
+
+    border-radius: 19px;
+  }
+
+  .admin-login__brand {
+    margin-bottom: 20px;
+  }
+
+  .admin-login__heading {
+    margin-bottom: 23px;
+  }
+
+  .admin-login__heading h1 {
+    font-size: 29px;
+  }
+
+  .admin-login__heading p {
+    font-size: 12px;
+  }
+
+  .admin-login__security {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 359.98px) {
+  .admin-login__card {
+    padding: 24px 16px;
+  }
+
+  .admin-login__brand strong {
+    font-size: 14px;
+  }
+
+  .admin-login__heading h1 {
+    font-size: 26px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-login *,
+  .admin-login *::before,
+  .admin-login *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
