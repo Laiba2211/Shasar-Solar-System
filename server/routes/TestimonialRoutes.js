@@ -15,7 +15,7 @@ import {
   toggleFeatured,
   deleteTestimonial,
   getTestimonialStats,
-} from "../controllers/testimonialController.js";
+} from "../controllers/TestimonialController.js";
 
 
 /* ==========================================================
