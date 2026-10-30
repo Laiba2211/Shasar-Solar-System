@@ -1,9 +1,7 @@
+
+import heroImg from "../../../assets/images/services/HeroImg.jpeg";
 import { motion } from "framer-motion";
 import "./Hero.css";
-
-// import heroVideo from "../../../assets/videos/hero-video.mp4";
-import heroVideo from "../../../assets/videos/services/installation-only.mp4";
-
 
 import HeroContent from "./HeroContent";
 
@@ -13,17 +11,14 @@ const Hero = () => {
       className="hero"
       aria-labelledby="hero-heading"
     >
-      {/* Background Video */}
+      {/* Background Image */}
 
-      <video
+      <img
         className="hero__video"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
+        src={heroImg}
+        alt=""
+        aria-hidden="true"
+      />
 
       {/* Overlay */}
 
@@ -32,21 +27,18 @@ const Hero = () => {
       {/* Content */}
 
       <div className="container hero__container">
-
         <motion.div
           className="hero__content-wrapper"
           initial={{ opacity: 0, y: 45 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: .8,
-            ease: "easeOut"
+            duration: 0.8,
+            ease: "easeOut",
           }}
         >
           <HeroContent />
         </motion.div>
-
       </div>
-
     </section>
   );
 };

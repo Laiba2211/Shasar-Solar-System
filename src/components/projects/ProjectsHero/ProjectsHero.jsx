@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -9,25 +10,12 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import "./projectsHero.css";
-
-// ==========================================================
-// HERO IMAGE
-// Replace this import later with your client's actual image.
-// Example:
-// import projectsHeroImage from "../../../assets/images/projects/projects-hero.jpg";
-// ==========================================================
-
-// Temporary image
-const projectsHeroImage =
-  "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&auto=format&fit=crop&q=85";
+import projectsHeroImage from "../../../assets/images/services/commercial-solar.jpg";
 
 const ProjectsHero = () => {
   const navigate = useNavigate();
 
-  // ========================================================
-  // NAVIGATION
-  // ========================================================
-
+  // Navigation
   const handleQuote = () => {
     navigate("/contact");
   };
@@ -41,9 +29,7 @@ const ProjectsHero = () => {
       className="projects-hero"
       aria-labelledby="projects-hero-title"
     >
-      {/* =====================================================
-          BACKGROUND DECORATION
-      ====================================================== */}
+      {/* BACKGROUND DECORATION */}
 
       <div
         className="projects-hero__glow projects-hero__glow--one"
@@ -60,16 +46,12 @@ const ProjectsHero = () => {
         aria-hidden="true"
       />
 
-      {/* =====================================================
-          MAIN CONTAINER
-      ====================================================== */}
+      {/* MAIN CONTAINER */}
 
       <div className="container">
         <div className="row align-items-center g-5">
 
-          {/* ==================================================
-              LEFT CONTENT
-          =================================================== */}
+          {/* LEFT CONTENT */}
 
           <div className="col-lg-7">
             <motion.div
@@ -88,9 +70,7 @@ const ProjectsHero = () => {
               }}
             >
 
-              {/* ==============================================
-                  BADGE
-              =============================================== */}
+              {/* BADGE */}
 
               <motion.div
                 className="projects-hero__badge"
@@ -122,9 +102,7 @@ const ProjectsHero = () => {
                 />
               </motion.div>
 
-              {/* ==============================================
-                  MAIN HEADING
-              =============================================== */}
+              {/* MAIN HEADING */}
 
               <motion.h1
                 id="projects-hero-title"
@@ -146,9 +124,7 @@ const ProjectsHero = () => {
                 <span>Cleaner Energy Future.</span>
               </motion.h1>
 
-              {/* ==============================================
-                  DESCRIPTION
-              =============================================== */}
+              {/* DESCRIPTION */}
 
               <motion.p
                 className="projects-hero__description"
@@ -172,9 +148,7 @@ const ProjectsHero = () => {
                 energy future.
               </motion.p>
 
-              {/* ==============================================
-                  TRUST POINTS
-              =============================================== */}
+              {/* TRUST POINTS */}
 
               <motion.div
                 className="projects-hero__trust"
@@ -216,9 +190,7 @@ const ProjectsHero = () => {
                 </div>
               </motion.div>
 
-              {/* ==============================================
-                  ACTION BUTTONS
-              =============================================== */}
+              {/* ACTION BUTTONS */}
 
               <motion.div
                 className="projects-hero__actions"
@@ -235,6 +207,7 @@ const ProjectsHero = () => {
                   duration: 0.6,
                 }}
               >
+
                 {/* PRIMARY CTA */}
 
                 <motion.button
@@ -284,9 +257,7 @@ const ProjectsHero = () => {
                 </motion.button>
               </motion.div>
 
-              {/* ==============================================
-                  LOCATION / TRUST META
-              =============================================== */}
+              {/* LOCATION / TRUST META */}
 
               <motion.div
                 className="projects-hero__meta"
@@ -315,12 +286,11 @@ const ProjectsHero = () => {
                   <span>Renewable Energy Projects</span>
                 </div>
               </motion.div>
+
             </motion.div>
           </div>
 
-          {/* ==================================================
-              RIGHT VISUAL
-          =================================================== */}
+          {/* RIGHT VISUAL */}
 
           <div className="col-lg-5">
             <motion.div
@@ -342,9 +312,7 @@ const ProjectsHero = () => {
               }}
             >
 
-              {/* ============================================
-                  MAIN IMAGE CARD
-              ============================================= */}
+              {/* MAIN IMAGE CARD */}
 
               <motion.div
                 className="projects-hero__image-card"
@@ -356,12 +324,13 @@ const ProjectsHero = () => {
                 }}
               >
 
-                {/* IMAGE */}
+                {/* COMMERCIAL SOLAR IMAGE */}
 
                 <img
                   src={projectsHeroImage}
-                  alt="Solar panels installed on a modern building in Dubai"
+                  alt="Commercial solar panels installed on a modern building"
                   className="projects-hero__image"
+                  loading="eager"
                 />
 
                 {/* IMAGE OVERLAY */}
@@ -371,9 +340,7 @@ const ProjectsHero = () => {
                   aria-hidden="true"
                 />
 
-                {/* ==========================================
-                    TOP IMAGE LABEL
-                =========================================== */}
+                {/* TOP IMAGE LABEL */}
 
                 <div className="projects-hero__image-label">
                   <div className="projects-hero__image-label-left">
@@ -390,9 +357,7 @@ const ProjectsHero = () => {
                   </div>
                 </div>
 
-                {/* ==========================================
-                    BOTTOM PROJECT CARD
-                =========================================== */}
+                {/* BOTTOM PROJECT CARD */}
 
                 <div className="projects-hero__project-card">
 
@@ -414,12 +379,11 @@ const ProjectsHero = () => {
                   >
                     <ArrowRight size={18} />
                   </button>
+
                 </div>
               </motion.div>
 
-              {/* ============================================
-                  FLOATING STAT — TOP
-              ============================================= */}
+              {/* FLOATING STAT — TOP */}
 
               <motion.div
                 className="projects-hero__floating-card projects-hero__floating-card--top"
@@ -443,9 +407,7 @@ const ProjectsHero = () => {
                 </div>
               </motion.div>
 
-              {/* ============================================
-                  FLOATING STAT — BOTTOM
-              ============================================= */}
+              {/* FLOATING STAT — BOTTOM */}
 
               <motion.div
                 className="projects-hero__floating-card projects-hero__floating-card--bottom"
@@ -469,22 +431,20 @@ const ProjectsHero = () => {
                 </div>
               </motion.div>
 
-              {/* ============================================
-                  DECORATIVE FRAME
-              ============================================= */}
+              {/* DECORATIVE FRAME */}
 
               <div
                 className="projects-hero__frame"
                 aria-hidden="true"
               />
+
             </motion.div>
           </div>
+
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM SCROLL INDICATOR
-      ====================================================== */}
+      {/* BOTTOM SCROLL INDICATOR */}
 
       <motion.div
         className="projects-hero__scroll"
@@ -513,6 +473,7 @@ const ProjectsHero = () => {
           }}
         />
       </motion.div>
+
     </section>
   );
 };

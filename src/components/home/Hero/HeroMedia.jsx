@@ -1,17 +1,14 @@
-// import heroVideo from "../../../assets/videos/hero-video.mp4";
-import heroVideo from "../../../assets/videos/services/installation-only.mp4";
+
+
+import heroImg from "../../../assets/images/services/HeroImg.jpeg";
 
 const HeroMedia = () => {
   return (
-    <video
-      className="hero-video"
-      autoPlay
-      muted
-      loop
-      playsInline
-    >
-      <source src={heroVideo} type="video/mp4" />
-    </video>
+    <img
+      className="hero__video"
+      src={heroImg}
+      alt="Shasar Solar Energy System Installation Services"
+    />
   );
 };
 

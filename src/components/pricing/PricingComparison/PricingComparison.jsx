@@ -1,155 +1,180 @@
+
 // ==========================================================
 // SHASAR SOLAR SYSTEM
-// PRICING COMPARISON
-// Phase 3
+// SOLAR SOLUTIONS COMPARISON
 // ==========================================================
 
 import { motion } from "framer-motion";
 import {
-  Check,
-  X,
-  ShieldCheck,
-  Zap,
-  Activity,
-  Wrench,
   ArrowRight,
-  Sparkles,
+  BatteryCharging,
+  Building2,
+  Check,
+  Grid2X2,
+  House,
+  Layers3,
+  Network,
+  Sun,
+  Zap,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import "./pricingComparison.css";
 
 // ==========================================================
-// COMPARISON DATA
+// SOLAR SOLUTION DATA
 // ==========================================================
 
-const comparisonFeatures = [
+const solutions = [
   {
-    name: "Solar system design",
-    icon: Zap,
-    essential: true,
-    performance: true,
-    enterprise: true,
+    id: "on-grid",
+    number: "01",
+    name: "On-Grid Solar",
+    subtitle: "Grid-connected solar generation",
+    description:
+      "A solar solution connected to the utility grid. Solar electricity can serve your property's energy demand while grid electricity remains available when solar production is insufficient.",
+    icon: Grid2X2,
+    idealFor: "Homes, offices and commercial properties with grid access",
+    features: [
+      {
+        label: "Utility grid connection",
+        value: "Connected",
+        status: "yes",
+      },
+      {
+        label: "Battery storage",
+        value: "Not included by default",
+        status: "no",
+      },
+      {
+        label: "Solar energy generation",
+        value: "Yes",
+        status: "yes",
+      },
+      {
+        label: "Power during grid outages",
+        value: "Not normally available",
+        status: "no",
+      },
+    ],
+    highlight: "A practical option for grid-connected properties",
+    theme: "on-grid",
   },
   {
-    name: "Premium solar panels",
-    icon: Sparkles,
-    essential: true,
-    performance: true,
-    enterprise: true,
+    id: "off-grid",
+    number: "02",
+    name: "Off-Grid Solar",
+    subtitle: "Independent energy system",
+    description:
+      "A standalone solar solution designed to operate independently of the utility grid, typically combining solar panels, battery storage and suitable power management equipment.",
+    icon: BatteryCharging,
+    idealFor: "Remote sites and locations without reliable grid access",
+    features: [
+      {
+        label: "Utility grid connection",
+        value: "Independent",
+        status: "no",
+      },
+      {
+        label: "Battery storage",
+        value: "Core system component",
+        status: "yes",
+      },
+      {
+        label: "Solar energy generation",
+        value: "Yes",
+        status: "yes",
+      },
+      {
+        label: "Power during grid outages",
+        value: "Not dependent on the grid",
+        status: "yes",
+      },
+    ],
+    highlight: "Designed for properties requiring independent power",
+    theme: "off-grid",
   },
   {
-    name: "High-efficiency inverter",
-    icon: Activity,
-    essential: true,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Mounting & protection system",
-    icon: ShieldCheck,
-    essential: true,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "DEWA documentation support",
-    icon: ShieldCheck,
-    essential: true,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Professional installation",
-    icon: Wrench,
-    essential: true,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "System monitoring",
-    icon: Activity,
-    essential: false,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Performance reporting",
-    icon: Activity,
-    essential: false,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Preventive maintenance",
-    icon: Wrench,
-    essential: false,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Solar panel cleaning",
-    icon: Sparkles,
-    essential: false,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Priority technical support",
-    icon: ShieldCheck,
-    essential: false,
-    performance: true,
-    enterprise: true,
-  },
-  {
-    name: "Advanced performance analysis",
-    icon: Activity,
-    essential: false,
-    performance: false,
-    enterprise: true,
-  },
-  {
-    name: "Commercial & industrial engineering",
-    icon: Zap,
-    essential: false,
-    performance: false,
-    enterprise: true,
-  },
-  {
-    name: "Custom energy strategy",
-    icon: Sparkles,
-    essential: false,
-    performance: false,
-    enterprise: true,
-  },
-  {
-    name: "Dedicated project support",
-    icon: ShieldCheck,
-    essential: false,
-    performance: false,
-    enterprise: true,
+    id: "hybrid",
+    number: "03",
+    name: "Hybrid Solar",
+    subtitle: "Solar, battery and grid integration",
+    description:
+      "A flexible solar solution that combines solar generation, battery storage and utility grid connectivity. Stored energy can be used when solar production is unavailable or insufficient.",
+    icon: Layers3,
+    idealFor: "Homes and businesses seeking solar with battery backup",
+    features: [
+      {
+        label: "Utility grid connection",
+        value: "Connected",
+        status: "yes",
+      },
+      {
+        label: "Battery storage",
+        value: "Supported",
+        status: "yes",
+      },
+      {
+        label: "Solar energy generation",
+        value: "Yes",
+        status: "yes",
+      },
+      {
+        label: "Power during grid outages",
+        value: "With suitable backup design",
+        status: "yes",
+      },
+    ],
+    highlight: "Combines grid flexibility with battery storage",
+    theme: "hybrid",
+    featured: true,
   },
 ];
 
 // ==========================================================
-// PLAN DATA
+// COMPARISON ROWS
 // ==========================================================
 
-const plans = [
+const comparisonRows = [
   {
-    key: "essential",
-    name: "Essential",
-    label: "For homes & small systems",
+    label: "Grid connection",
+    values: ["Connected", "Independent", "Connected"],
   },
   {
-    key: "performance",
-    name: "Performance",
-    label: "For growing energy needs",
-    recommended: true,
+    label: "Battery storage",
+    values: [
+      "Not included by default",
+      "Core component",
+      "Supported",
+    ],
   },
   {
-    key: "enterprise",
-    name: "Enterprise",
-    label: "For large-scale projects",
+    label: "Solar generation",
+    values: ["Yes", "Yes", "Yes"],
+  },
+  {
+    label: "Grid electricity",
+    values: [
+      "Available",
+      "Not required",
+      "Available",
+    ],
+  },
+  {
+    label: "Backup during grid outage",
+    values: [
+      "Not normally available",
+      "Independent of grid",
+      "With suitable backup design",
+    ],
+  },
+  {
+    label: "Typical application",
+    values: [
+      "Grid-connected properties",
+      "Remote or independent sites",
+      "Properties needing storage",
+    ],
   },
 ];
 
@@ -160,292 +185,229 @@ const plans = [
 const PricingComparison = () => {
   return (
     <section
-      className="pricing-comparison"
-      id="pricing-comparison"
-      aria-labelledby="pricing-comparison-title"
+      className="solar-solutions"
+      id="solar-solutions"
+      aria-labelledby="solar-solutions-title"
     >
-      {/* ==================================================
-          BACKGROUND DECORATION
-      ================================================== */}
-
       <div
-        className="pricing-comparison__glow pricing-comparison__glow--one"
-        aria-hidden="true"
-      />
-
-      <div
-        className="pricing-comparison__glow pricing-comparison__glow--two"
+        className="solar-solutions__background"
         aria-hidden="true"
       />
 
       <div className="container">
-        {/* ==================================================
-            SECTION HEADER
-        ================================================== */}
+        {/* SECTION HEADER */}
 
         <motion.div
-          className="pricing-comparison__header"
+          className="solar-solutions__header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="pricing-comparison__eyebrow">
-            <span className="pricing-comparison__eyebrow-line" />
-
-            <span>Compare Your Solar Solution</span>
-
-            <span className="pricing-comparison__eyebrow-line" />
+          <div className="solar-solutions__eyebrow">
+            <span />
+            <span>UNDERSTANDING SOLAR TECHNOLOGY</span>
+            <span />
           </div>
 
           <h2
-            id="pricing-comparison-title"
-            className="pricing-comparison__title"
+            id="solar-solutions-title"
+            className="solar-solutions__title"
           >
-            Choose the right level of
-            <span> solar performance.</span>
+            Find the Right
+            <span> Solar System for Your Property</span>
           </h2>
 
-          <p className="pricing-comparison__intro">
-            Compare what is included across our solar solutions and choose
-            the level of engineering, monitoring and ongoing support that
-            fits your property and energy requirements.
+          <p className="solar-solutions__intro">
+            Every property has different energy requirements.
+            Explore how on-grid, off-grid and hybrid solar systems
+            work to identify the solution that fits your needs.
           </p>
         </motion.div>
 
-        {/* ==================================================
-            COMPARISON DESKTOP / TABLET
-        ================================================== */}
+        {/* SOLUTION CARDS */}
 
-        <motion.div
-          className="pricing-comparison__table-wrap"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.75 }}
-        >
-          {/* ==================================================
-              TABLE HEADER
-          ================================================== */}
+        <div className="solar-solutions__cards">
+          {solutions.map((solution, index) => {
+            const SolutionIcon = solution.icon;
 
-          <div className="pricing-comparison__table-head">
-            <div className="pricing-comparison__feature-heading">
-              <span>What&apos;s included</span>
-              <small>Core system & service features</small>
-            </div>
-
-            {plans.map((plan) => (
-              <div
-                key={plan.key}
-                className={`pricing-comparison__plan-heading ${
-                  plan.recommended
-                    ? "pricing-comparison__plan-heading--featured"
+            return (
+              <motion.article
+                key={solution.id}
+                className={`solar-solutions__card solar-solutions__card--${solution.theme} ${
+                  solution.featured
+                    ? "solar-solutions__card--featured"
                     : ""
                 }`}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.12,
+                }}
               >
-                {plan.recommended && (
-                  <span className="pricing-comparison__recommended">
-                    Recommended
+                {solution.featured && (
+                  <span className="solar-solutions__featured-label">
+                    Flexible Solution
                   </span>
                 )}
 
-                <strong>{plan.name}</strong>
+                <div className="solar-solutions__card-top">
+                  <span className="solar-solutions__number">
+                    {solution.number}
+                  </span>
 
-                <span>{plan.label}</span>
-              </div>
-            ))}
-          </div>
+                  <span className="solar-solutions__icon">
+                    <SolutionIcon size={25} strokeWidth={1.7} />
+                  </span>
+                </div>
 
-          {/* ==================================================
-              FEATURES
-          ================================================== */}
+                <div className="solar-solutions__card-heading">
+                  <h3>{solution.name}</h3>
+                  <span>{solution.subtitle}</span>
+                </div>
 
-          <div className="pricing-comparison__rows">
-            {comparisonFeatures.map((feature, index) => {
-              const FeatureIcon = feature.icon;
+                <p className="solar-solutions__description">
+                  {solution.description}
+                </p>
 
-              return (
-                <motion.div
-                  className="pricing-comparison__row"
-                  key={feature.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{
-                    duration: 0.35,
-                    delay: Math.min(index * 0.025, 0.25),
-                  }}
+                <div className="solar-solutions__ideal">
+                  <span className="solar-solutions__ideal-icon">
+                    <Building2 size={17} />
+                  </span>
+
+                  <div>
+                    <small>SUITABLE FOR</small>
+                    <p>{solution.idealFor}</p>
+                  </div>
+                </div>
+
+                <div className="solar-solutions__card-divider" />
+
+                <div className="solar-solutions__highlights">
+                  <span className="solar-solutions__highlights-icon">
+                    <Check size={15} />
+                  </span>
+                  <p>{solution.highlight}</p>
+                </div>
+
+                <Link
+                  to="/contact"
+                  className="solar-solutions__card-link"
+                  aria-label={`Discuss ${solution.name} with Shasar Solar`}
                 >
-                  {/* Feature */}
-
-                  <div className="pricing-comparison__feature">
-                    <span className="pricing-comparison__feature-icon">
-                      <FeatureIcon size={16} strokeWidth={2} />
-                    </span>
-
-                    <span>{feature.name}</span>
-                  </div>
-
-                  {/* Essential */}
-
-                  <ComparisonValue available={feature.essential} />
-
-                  {/* Performance */}
-
-                  <div className="pricing-comparison__cell pricing-comparison__cell--featured">
-                    <ComparisonValue available={feature.performance} />
-                  </div>
-
-                  {/* Enterprise */}
-
-                  <ComparisonValue available={feature.enterprise} />
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* ==================================================
-            MOBILE COMPARISON
-        ================================================== */}
-
-        <div className="pricing-comparison__mobile">
-          {plans.map((plan) => (
-            <motion.article
-              key={plan.key}
-              className={`pricing-comparison__mobile-card ${
-                plan.recommended
-                  ? "pricing-comparison__mobile-card--featured"
-                  : ""
-              }`}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.55 }}
-            >
-              {plan.recommended && (
-                <div className="pricing-comparison__mobile-badge">
-                  Recommended
-                </div>
-              )}
-
-              <div className="pricing-comparison__mobile-head">
-                <div>
-                  <h3>{plan.name}</h3>
-                  <p>{plan.label}</p>
-                </div>
-
-                <span className="pricing-comparison__mobile-icon">
-                  <Zap size={18} />
-                </span>
-              </div>
-
-              <div className="pricing-comparison__mobile-list">
-                {comparisonFeatures.map((feature) => {
-                  const available = feature[plan.key];
-
-                  return (
-                    <div
-                      className={`pricing-comparison__mobile-feature ${
-                        !available
-                          ? "pricing-comparison__mobile-feature--disabled"
-                          : ""
-                      }`}
-                      key={`${plan.key}-${feature.name}`}
-                    >
-                      <span>
-                        {available ? (
-                          <Check size={15} />
-                        ) : (
-                          <X size={15} />
-                        )}
-                      </span>
-
-                      <p>{feature.name}</p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <a
-                href="/contact"
-                className="pricing-comparison__mobile-cta"
-              >
-                <span>Get a Custom Quote</span>
-                <ArrowRight size={17} />
-              </a>
-            </motion.article>
-          ))}
+                  <span>Discuss This Solution</span>
+                  <ArrowRight size={17} />
+                </Link>
+              </motion.article>
+            );
+          })}
         </div>
 
-        {/* ==================================================
-            BOTTOM NOTE / CTA
-        ================================================== */}
+        {/* TECHNICAL COMPARISON TABLE */}
 
         <motion.div
-          className="pricing-comparison__bottom"
-          initial={{ opacity: 0, y: 20 }}
+          className="solar-solutions__comparison"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="solar-solutions__comparison-header">
+            <div>
+              <span className="solar-solutions__comparison-eyebrow">
+                SYSTEM OVERVIEW
+              </span>
+
+              <h3>Compare the Key Differences</h3>
+
+              <p>
+                A quick technical overview of the three solar
+                system configurations.
+              </p>
+            </div>
+
+            <span className="solar-solutions__comparison-symbol">
+              <Network size={25} />
+            </span>
+          </div>
+
+          <div className="solar-solutions__table-scroll">
+            <table className="solar-solutions__table">
+              <thead>
+                <tr>
+                  <th scope="col">SYSTEM FEATURES</th>
+                  <th scope="col">ON-GRID</th>
+                  <th scope="col">OFF-GRID</th>
+                  <th scope="col">HYBRID</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.label}>
+                    <th scope="row">{row.label}</th>
+
+                    {row.values.map((value, index) => (
+                      <td key={`${row.label}-${index}`}>
+                        {value}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="solar-solutions__table-note">
+            System configuration, backup capability and equipment
+            requirements depend on the property's load profile,
+            site conditions and engineering design.
+          </p>
+        </motion.div>
+
+        {/* BOTTOM CONSULTATION PANEL */}
+
+        <motion.div
+          className="solar-solutions__bottom"
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.65 }}
         >
-          <div className="pricing-comparison__bottom-content">
-            <span className="pricing-comparison__bottom-icon">
-              <ShieldCheck size={20} />
+          <div className="solar-solutions__bottom-content">
+            <span className="solar-solutions__bottom-icon">
+              <Sun size={24} />
             </span>
 
             <div>
-              <strong>
-                Need a solution built around your property?
-              </strong>
+              <span className="solar-solutions__bottom-label">
+                NOT SURE WHICH SYSTEM YOU NEED?
+              </span>
+
+              <h3>
+                Let's identify the right solar solution for your property.
+              </h3>
 
               <p>
-                Final system sizing and project pricing are determined after
-                reviewing your energy consumption, roof conditions and
-                technical requirements.
+                Our team can review your energy requirements,
+                property conditions and backup needs to help
+                determine a suitable system configuration.
               </p>
             </div>
           </div>
 
-          <a
-            href="/contact"
-            className="pricing-comparison__cta"
+          <Link
+            to="/contact"
+            className="solar-solutions__bottom-cta"
           >
-            <span>Request Custom Quote</span>
-
-            <span className="pricing-comparison__cta-icon">
-              <ArrowRight size={17} />
-            </span>
-          </a>
+            <span>Talk to Our Team</span>
+            <ArrowRight size={18} />
+          </Link>
         </motion.div>
       </div>
     </section>
-  );
-};
-
-// ==========================================================
-// COMPARISON VALUE
-// ==========================================================
-
-const ComparisonValue = ({ available }) => {
-  return (
-    <div className="pricing-comparison__cell">
-      {available ? (
-        <span
-          className="pricing-comparison__check"
-          aria-label="Included"
-        >
-          <Check size={16} strokeWidth={2.5} />
-        </span>
-      ) : (
-        <span
-          className="pricing-comparison__cross"
-          aria-label="Not included"
-        >
-          <X size={15} strokeWidth={2} />
-        </span>
-      )}
-    </div>
   );
 };
 

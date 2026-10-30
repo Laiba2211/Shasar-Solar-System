@@ -1,0 +1,1730 @@
+/* ==========================================================
+   SHASAR SOLAR SYSTEM
+   TESTOMONIALS
+   PREMIUM CLIENT EXPERIENCE SECTION
+========================================================== */
+
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
+.testomonials-section {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  background: #ffffff;
+  isolation: isolate;
+}
+
+[data-theme="dark"] .testomonials-section {
+  background: rgb(8, 28, 58);
+}
+
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
+
+.testomonials-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  top: -260px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.testomonials-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  bottom: -220px;
+  left: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.055);
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.testomonials-header {
+  max-width: 900px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.testomonials-heading-content {
+  max-width: 780px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   EYEBROW
+========================================================== */
+
+.testomonials-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-bottom: 16px;
+
+  color: rgb(255, 178, 0);
+
+  font-size: 0.76rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.testomonials-eyebrow::before,
+.testomonials-eyebrow::after {
+  content: "";
+
+  width: 24px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.65;
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.testomonials-title {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: clamp(2rem, 4vw, 3.45rem);
+
+  font-weight: 800;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.045em;
+}
+
+.testomonials-title span {
+  color: rgb(255, 178, 0);
+}
+
+[data-theme="dark"] .testomonials-title {
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.testomonials-description {
+  max-width: 650px;
+
+  margin: 18px auto 0;
+
+  color: #64748b;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+[data-theme="dark"] .testomonials-description {
+  color: rgba(255, 255, 255, 0.67);
+}
+
+
+/* ==========================================================
+   REVIEW CTA BUTTON
+========================================================== */
+
+.testomonials-review-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 48px;
+
+  margin-top: 26px;
+
+  padding: 11px 22px;
+
+  border: 1px solid rgba(255, 178, 0, 0.5);
+
+  border-radius: 12px;
+
+  background: rgb(255, 178, 0);
+
+  color: rgb(8, 28, 58);
+
+  font-size: 0.88rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.01em;
+
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px rgba(255, 178, 0, 0.18);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.testomonials-review-button:hover {
+  transform: translateY(-2px);
+
+  background: #ffbd18;
+
+  color: rgb(8, 28, 58);
+
+  border-color: rgba(255, 178, 0, 0.75);
+
+  box-shadow: 0 16px 36px rgba(255, 178, 0, 0.28);
+}
+
+.testomonials-review-button:focus-visible {
+  outline: 3px solid rgba(255, 178, 0, 0.3);
+
+  outline-offset: 4px;
+}
+
+.testomonials-review-button svg {
+  flex: 0 0 auto;
+}
+
+
+/* ==========================================================
+   REVIEW FORM WRAPPER
+========================================================== */
+
+.testomonials-review-form-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+}
+
+
+/* ==========================================================
+   SLIDER WRAPPER
+========================================================== */
+
+.testomonials-slider-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* ==========================================================
+   LOADING STATE
+========================================================== */
+
+.testomonials-loading {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  min-height: 220px;
+
+  color: #64748b;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+[data-theme="dark"] .testomonials-loading {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.testomonials-loading .spinner-border {
+  width: 1.6rem;
+  height: 1.6rem;
+
+  color: rgb(255, 178, 0);
+
+  border-width: 0.18em;
+}
+
+
+/* ==========================================================
+   ERROR STATE
+========================================================== */
+
+.testomonials-error {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 22px 24px;
+
+  border: 1px solid rgba(220, 38, 38, 0.16);
+
+  border-radius: 16px;
+
+  background: rgba(220, 38, 38, 0.045);
+}
+
+.testomonials-error-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.testomonials-error-content strong {
+  color: #1e293b;
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+}
+
+.testomonials-error-content span {
+  color: #64748b;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+[data-theme="dark"] .testomonials-error {
+  border-color: rgba(248, 113, 113, 0.18);
+
+  background: rgba(248, 113, 113, 0.055);
+}
+
+[data-theme="dark"] .testomonials-error-content strong {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .testomonials-error-content span {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* ==========================================================
+   RETRY BUTTON
+========================================================== */
+
+.testomonials-retry-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  flex: 0 0 auto;
+
+  min-height: 42px;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(255, 178, 0, 0.4);
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: rgb(8, 28, 58);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.testomonials-retry-button:hover {
+  transform: translateY(-1px);
+
+  background: rgb(255, 178, 0);
+
+  color: rgb(8, 28, 58);
+
+  border-color: rgb(255, 178, 0);
+}
+
+[data-theme="dark"] .testomonials-retry-button {
+  color: #ffffff;
+
+  border-color: rgba(255, 178, 0, 0.35);
+}
+
+[data-theme="dark"] .testomonials-retry-button:hover {
+  color: rgb(8, 28, 58);
+}
+
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.testomonials-empty {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  padding: 55px 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .testomonials-empty {
+  border-color: rgba(255, 255, 255, 0.08);
+
+  background: rgba(15, 37, 73, 0.75);
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==========================================================
+   EMPTY ICON
+========================================================== */
+
+.testomonials-empty-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255, 178, 0, 0.18);
+
+  border-radius: 18px;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  color: rgb(255, 178, 0);
+}
+
+.testomonials-empty-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+
+/* ==========================================================
+   EMPTY TITLE
+========================================================== */
+
+.testomonials-empty h3 {
+  margin: 0 0 9px;
+
+  color: #111827;
+
+  font-size: 1.25rem;
+
+  font-weight: 800;
+}
+
+[data-theme="dark"] .testomonials-empty h3 {
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   EMPTY DESCRIPTION
+========================================================== */
+
+.testomonials-empty p {
+  max-width: 480px;
+
+  margin: 0 0 22px;
+
+  color: #64748b;
+
+  font-size: 0.9rem;
+
+  line-height: 1.75;
+}
+
+[data-theme="dark"] .testomonials-empty p {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.testomonials-empty .testomonials-review-button {
+  margin-top: 0;
+}
+
+
+/* ==========================================================
+   SLIDER
+========================================================== */
+
+.testomonial-slider {
+  position: relative;
+
+  width: 100%;
+
+  outline: none;
+}
+
+.testomonial-slider:focus-visible {
+  outline: 2px solid rgba(255, 178, 0, 0.7);
+
+  outline-offset: 8px;
+
+  border-radius: 18px;
+}
+
+
+/* ==========================================================
+   SLIDER WRAPPER
+========================================================== */
+
+.testomonial-slider-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* ==========================================================
+   VIEWPORT
+========================================================== */
+
+.testomonial-slider-viewport {
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 12px 0 22px;
+}
+
+
+/* ==========================================================
+   TRACK
+========================================================== */
+
+.testomonial-slider-track {
+  display: flex;
+
+  width: 100%;
+
+  will-change: transform;
+}
+
+
+/* ==========================================================
+   SLIDE
+========================================================== */
+
+.testomonial-slide {
+  min-width: 0;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   TESTIMONIAL CARD
+========================================================== */
+
+.testomonial-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 455px;
+
+  height: 100%;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(15, 23, 42, 0.09);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 18px 55px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.testomonial-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 178, 0, 0.35);
+
+  box-shadow:
+    0 24px 65px rgba(15, 23, 42, 0.12),
+    0 5px 14px rgba(255, 178, 0, 0.06);
+}
+
+[data-theme="dark"] .testomonial-card {
+  border-color: rgba(255, 255, 255, 0.08);
+
+  background: rgb(15, 37, 73);
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+[data-theme="dark"] .testomonial-card:hover {
+  border-color: rgba(255, 178, 0, 0.34);
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.28),
+    0 8px 28px rgba(255, 178, 0, 0.055);
+}
+
+
+/* ==========================================================
+   CARD ACCENT
+========================================================== */
+
+.testomonial-card-accent {
+  position: absolute;
+
+  top: 0;
+  left: 30px;
+
+  width: 48px;
+  height: 3px;
+
+  border-radius: 0 0 5px 5px;
+
+  background: rgb(255, 178, 0);
+
+  box-shadow: 0 4px 14px rgba(255, 178, 0, 0.3);
+}
+
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.testomonial-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+
+/* ==========================================================
+   CLIENT
+========================================================== */
+
+.testomonial-client {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.testomonial-client-image {
+  position: relative;
+
+  flex: 0 0 54px;
+
+  width: 54px;
+  height: 54px;
+
+  overflow: hidden;
+
+  border: 2px solid rgba(255, 178, 0, 0.42);
+
+  border-radius: 50%;
+
+  background: rgba(255, 178, 0, 0.08);
+
+  box-shadow:
+    0 6px 18px rgba(255, 178, 0, 0.08);
+}
+
+.testomonial-client-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.testomonial-client-fallback {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 178, 0, 0.1);
+
+  color: rgb(255, 178, 0);
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.03em;
+}
+
+[data-theme="dark"] .testomonial-client-fallback {
+  background: rgba(255, 178, 0, 0.09);
+}
+
+
+/* ==========================================================
+   CLIENT INFORMATION
+========================================================== */
+
+.testomonial-client-info {
+  min-width: 0;
+}
+
+.testomonial-client-name {
+  margin: 0;
+
+  overflow-wrap: anywhere;
+
+  color: #111827;
+
+  font-size: 1rem;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+}
+
+[data-theme="dark"] .testomonial-client-name {
+  color: #ffffff;
+}
+
+.testomonial-client-designation {
+  margin: 3px 0 0;
+
+  overflow-wrap: anywhere;
+
+  color: #64748b;
+
+  font-size: 0.77rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .testomonial-client-designation {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.testomonial-client-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 5px;
+
+  color: #7c8798;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.testomonial-client-location svg {
+  flex: 0 0 auto;
+
+  color: rgb(255, 178, 0);
+}
+
+[data-theme="dark"] .testomonial-client-location {
+  color: rgba(255, 255, 255, 0.47);
+}
+
+
+/* ==========================================================
+   QUOTE ICON
+========================================================== */
+
+.testomonial-quote-icon {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 13px;
+
+  background: rgba(255, 178, 0, 0.09);
+
+  color: rgba(255, 178, 0, 0.85);
+}
+
+[data-theme="dark"] .testomonial-quote-icon {
+  background: rgba(255, 178, 0, 0.075);
+
+  color: rgba(255, 178, 0, 0.9);
+}
+
+
+/* ==========================================================
+   RATING
+========================================================== */
+
+.testomonial-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+.testomonial-stars {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  color: rgb(255, 178, 0);
+}
+
+.testomonial-stars svg {
+  flex: 0 0 auto;
+}
+
+.testomonial-rating-value {
+  color: #64748b;
+
+  font-size: 0.76rem;
+
+  font-weight: 800;
+}
+
+[data-theme="dark"] .testomonial-rating-value {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+
+/* ==========================================================
+   SERVICE
+========================================================== */
+
+.testomonial-service {
+  display: inline-flex;
+
+  align-items: center;
+
+  align-self: flex-start;
+
+  gap: 8px;
+
+  max-width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 178, 0, 0.15);
+
+  border-radius: 8px;
+
+  background: rgba(255, 178, 0, 0.055);
+}
+
+.testomonial-service-label {
+  flex: 0 0 auto;
+
+  color: rgb(255, 178, 0);
+
+  font-size: 0.67rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.testomonial-service-value {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  color: #475569;
+
+  font-size: 0.73rem;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+[data-theme="dark"] .testomonial-service-value {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* ==========================================================
+   REVIEW
+========================================================== */
+
+.testomonial-review {
+  flex: 1;
+
+  position: relative;
+
+  min-width: 0;
+}
+
+.testomonial-review::before {
+  content: "“";
+
+  position: absolute;
+
+  top: -13px;
+  left: -2px;
+
+  color: rgba(255, 178, 0, 0.1);
+
+  font-family: Georgia, serif;
+
+  font-size: 4.2rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.testomonial-review p {
+  position: relative;
+
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 0.91rem;
+
+  font-weight: 500;
+
+  line-height: 1.85;
+
+  overflow-wrap: anywhere;
+}
+
+[data-theme="dark"] .testomonial-review p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
+
+.testomonial-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 27px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+[data-theme="dark"] .testomonial-card-footer {
+  border-top-color: rgba(255, 255, 255, 0.07);
+}
+
+.testomonial-verified {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex: 0 0 auto;
+
+  color: #64748b;
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .testomonial-verified {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.testomonial-verified-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: rgb(255, 178, 0);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 178, 0, 0.1);
+}
+
+.testomonial-footer-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 178, 0, 0.25),
+    transparent
+  );
+}
+
+
+/* ==========================================================
+   NAVIGATION ARROWS
+========================================================== */
+
+.testomonial-slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 178, 0, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: #1e293b;
+
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.12);
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.testomonial-slider-arrow:hover {
+  background: rgb(255, 178, 0);
+
+  border-color: rgb(255, 178, 0);
+
+  color: rgb(8, 28, 58);
+
+  box-shadow:
+    0 14px 30px rgba(255, 178, 0, 0.22);
+}
+
+.testomonial-slider-arrow:focus-visible {
+  outline: 3px solid rgba(255, 178, 0, 0.3);
+
+  outline-offset: 3px;
+}
+
+.testomonial-slider-arrow-prev {
+  left: -22px;
+}
+
+.testomonial-slider-arrow-next {
+  right: -22px;
+}
+
+[data-theme="dark"] .testomonial-slider-arrow {
+  border-color: rgba(255, 255, 255, 0.09);
+
+  background: rgb(15, 37, 73);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .testomonial-slider-arrow:hover {
+  background: rgb(255, 178, 0);
+
+  border-color: rgb(255, 178, 0);
+
+  color: rgb(8, 28, 58);
+}
+
+
+/* ==========================================================
+   SLIDER FOOTER
+========================================================== */
+
+.testomonial-slider-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-top: 15px;
+}
+
+
+/* ==========================================================
+   DOTS
+========================================================== */
+
+.testomonial-slider-dots {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.testomonial-slider-dot {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.testomonial-slider-dot span {
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+
+  transition:
+    width 0.3s ease,
+    border-radius 0.3s ease,
+    background 0.3s ease;
+}
+
+.testomonial-slider-dot.active span {
+  width: 22px;
+
+  border-radius: 6px;
+
+  background: rgb(255, 178, 0);
+}
+
+.testomonial-slider-dot:hover span {
+  background: rgb(255, 178, 0);
+}
+
+.testomonial-slider-dot:focus-visible {
+  outline: 2px solid rgba(255, 178, 0, 0.5);
+
+  outline-offset: 2px;
+
+  border-radius: 50%;
+}
+
+[data-theme="dark"] .testomonial-slider-dot span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .testomonial-slider-dot.active span,
+[data-theme="dark"] .testomonial-slider-dot:hover span {
+  background: rgb(255, 178, 0);
+}
+
+
+/* ==========================================================
+   COUNTER
+========================================================== */
+
+.testomonial-slider-counter {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+[data-theme="dark"] .testomonial-slider-counter {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.testomonial-slider-counter span:first-child {
+  color: rgb(255, 178, 0);
+}
+
+.testomonial-slider-counter-line {
+  width: 22px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.35;
+}
+
+
+/* ==========================================================
+   AUTOPLAY PAUSED
+========================================================== */
+
+.testomonial-slider-paused {
+  position: absolute;
+
+  right: 18px;
+  bottom: 5px;
+
+  z-index: 3;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgba(255, 178, 0, 0.14);
+
+  border-radius: 6px;
+
+  background: rgba(255, 178, 0, 0.06);
+
+  color: rgba(255, 178, 0, 0.75);
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1199.98px) {
+  .testomonials-section {
+    padding: 80px 0;
+  }
+
+  .testomonials-header {
+    margin-bottom: 45px;
+  }
+
+  .testomonial-card {
+    min-height: 445px;
+
+    padding: 27px;
+  }
+
+  .testomonial-slider-arrow-prev {
+    left: -10px;
+  }
+
+  .testomonial-slider-arrow-next {
+    right: -10px;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767.98px) {
+  .testomonials-section {
+    padding: 70px 0;
+  }
+
+  .testomonials-section::before {
+    width: 330px;
+    height: 330px;
+
+    top: -170px;
+    right: -180px;
+  }
+
+  .testomonials-section::after {
+    width: 300px;
+    height: 300px;
+
+    bottom: -170px;
+    left: -180px;
+  }
+
+  .testomonials-header {
+    margin-bottom: 35px;
+
+    padding: 0 10px;
+  }
+
+  .testomonials-eyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.14em;
+  }
+
+  .testomonials-eyebrow::before,
+  .testomonials-eyebrow::after {
+    width: 17px;
+  }
+
+  .testomonials-title {
+    font-size: 2rem;
+
+    letter-spacing: -0.035em;
+  }
+
+  .testomonials-description {
+    margin-top: 14px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .testomonials-review-button {
+    width: 100%;
+
+    max-width: 290px;
+
+    min-height: 46px;
+
+    margin-top: 21px;
+  }
+
+  .testomonials-error {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 20px;
+  }
+
+  .testomonials-retry-button {
+    width: 100%;
+  }
+
+  .testomonials-empty {
+    padding: 45px 22px;
+  }
+
+  .testomonial-slider-viewport {
+    padding: 8px 0 20px;
+  }
+
+  .testomonial-slide {
+    padding: 0 2px;
+  }
+
+  .testomonial-card {
+    min-height: 0;
+
+    padding: 25px 22px;
+
+    border-radius: 19px;
+  }
+
+  .testomonial-card-accent {
+    left: 22px;
+
+    width: 42px;
+  }
+
+  .testomonial-card-header {
+    gap: 10px;
+
+    margin-bottom: 19px;
+  }
+
+  .testomonial-client-image {
+    width: 50px;
+    height: 50px;
+
+    flex-basis: 50px;
+  }
+
+  .testomonial-client-name {
+    font-size: 0.92rem;
+  }
+
+  .testomonial-client-designation {
+    font-size: 0.72rem;
+  }
+
+  .testomonial-client-location {
+    font-size: 0.68rem;
+  }
+
+  .testomonial-quote-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 11px;
+  }
+
+  .testomonial-quote-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .testomonial-rating {
+    margin-bottom: 14px;
+  }
+
+  .testomonial-service {
+    margin-bottom: 18px;
+  }
+
+  .testomonial-review p {
+    font-size: 0.87rem;
+
+    line-height: 1.8;
+  }
+
+  .testomonial-card-footer {
+    margin-top: 23px;
+
+    padding-top: 16px;
+  }
+
+  .testomonial-verified {
+    font-size: 0.61rem;
+  }
+
+  .testomonial-slider-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .testomonial-slider-arrow-prev {
+    left: 5px;
+  }
+
+  .testomonial-slider-arrow-next {
+    right: 5px;
+  }
+
+  .testomonial-slider-footer {
+    gap: 15px;
+
+    margin-top: 8px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 420px) {
+  .testomonials-section {
+    padding: 60px 0;
+  }
+
+  .testomonials-title {
+    font-size: 1.75rem;
+  }
+
+  .testomonials-description {
+    font-size: 0.84rem;
+  }
+
+  .testomonials-review-button {
+    max-width: 100%;
+  }
+
+  .testomonial-card {
+    padding: 23px 18px;
+  }
+
+  .testomonial-card-accent {
+    left: 18px;
+  }
+
+  .testomonial-client {
+    gap: 10px;
+  }
+
+  .testomonial-client-image {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+  }
+
+  .testomonial-client-name {
+    font-size: 0.87rem;
+  }
+
+  .testomonial-client-location {
+    max-width: 150px;
+  }
+
+  .testomonial-quote-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .testomonial-quote-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .testomonial-review p {
+    font-size: 0.84rem;
+
+    line-height: 1.75;
+  }
+
+  .testomonial-slider-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .testomonial-slider-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .testomonial-slider-arrow-prev {
+    left: 8px;
+  }
+
+  .testomonial-slider-arrow-next {
+    right: 8px;
+  }
+
+  .testomonial-slider-counter {
+    display: none;
+  }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .testomonials-review-button,
+  .testomonial-card,
+  .testomonial-slider-arrow,
+  .testomonial-slider-dot span {
+    transition: none;
+  }
+
+  .testomonial-card:hover {
+    transform: none;
+  }
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .testomonials-section {
+    background: #ffffff !important;
+
+    padding: 30px 0;
+  }
+
+  .testomonial-slider-arrow,
+  .testomonial-slider-footer,
+  .testomonial-slider-paused,
+  .testomonials-review-button {
+    display: none !important;
+  }
+
+  .testomonial-slider-viewport {
+    overflow: visible;
+  }
+
+  .testomonial-slider-track {
+    display: block;
+
+    transform: none !important;
+  }
+
+  .testomonial-slide {
+    display: none;
+  }
+
+  .testomonial-slide:first-child {
+    display: block;
+  }
+
+  .testomonial-card {
+    border: 1px solid #ddd;
+
+    box-shadow: none;
+  }
+}

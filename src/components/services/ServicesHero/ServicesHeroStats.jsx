@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 const stats = [
 
     {
-        number:"12+",
+        number:"10+",
         label:"Years Experience"
     },
 
     {
-        number:"500+",
+        number:"400+",
         label:"Projects Delivered"
     },
 

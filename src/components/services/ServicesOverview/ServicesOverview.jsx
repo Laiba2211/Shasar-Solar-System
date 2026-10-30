@@ -5,12 +5,12 @@ import "./servicesOverview.css";
 const stats = [
   {
     icon: <Sun size={22} />,
-    value: "12+",
+    value: "10+",
     label: "Years Experience",
   },
   {
     icon: <Building2 size={22} />,
-    value: "450+",
+    value: "400+",
     label: "Projects Completed",
   },
   {

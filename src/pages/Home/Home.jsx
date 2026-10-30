@@ -6,9 +6,10 @@ import OurExpertise from "../../components/home/expertise/OurExpertise";
 import Pricing from "../../components/home/pricing/Pricing";
 import ROICalculator from "../../components/home/roiCalculator/ROICalculator";
 import HowItWorks from "../../components/home/howItWorks/HowItWorks";
-import FeaturedProjects from "../../components/home/featuredProjects/FeaturedProjects";
-import Testimonials from "../../components/home/testimonials/Testimonials";
+// import FeaturedProjects from "../../components/home/featuredProjects/FeaturedProjects";
+import ProjectsGrid from "../../components/projects/ProjectsGrid/ProjectsGrid"; 
 
+import Testimonials from "../../components/home/testomonials";
 
 const Home = () => {
   return (
@@ -28,11 +29,11 @@ const Home = () => {
       <ROICalculator />
 
       <HowItWorks />
-
-      <FeaturedProjects />
+ <ProjectsGrid />
+      {/* <FeaturedProjects /> */}
 
       <Testimonials />
-    </>
+      </>
   );
 };
 

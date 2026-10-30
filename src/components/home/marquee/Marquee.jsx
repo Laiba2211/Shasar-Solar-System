@@ -3,16 +3,16 @@ import MarqueeItem from "./MarqueeItem";
 import "./marquee.css";
 
 const partners = [
-  "EMAAR",
-  "NAKHEEL",
-  "DAMAC",
-  "DUBAI MUNICIPALITY",
-  "DEWA APPROVED",
-  "JAFZA",
-  "TECOM GROUP",
-  "EMAAR",
-  "NAKHEEL",
-  "DAMAC",
+  "RESIDENTIAL SOLAR",
+  "COMMERCIAL SOLAR",
+  "INDUSTRIAL SOLAR",
+  "WAREHOUSE SOLAR",
+  "ROOFTOP SOLAR",
+  "BATTERY STORAGE",
+  "ON-GRID SYSTEMS",
+  "OFF-GRID SYSTEMS",
+  "HYBRID SOLAR",
+  "SOLAR MAINTENANCE",
 ];
 
 const Marquee = () => {

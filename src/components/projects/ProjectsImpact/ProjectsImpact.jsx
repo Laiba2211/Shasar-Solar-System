@@ -1,9 +1,12 @@
+
 // ==========================================================
 // SHASAR SOLAR SYSTEM
 // PROJECTS IMPACT
 // ==========================================================
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import {
   ArrowUpRight,
   BatteryCharging,
@@ -28,13 +31,13 @@ const ProjectsImpact = () => {
       icon: Zap,
     },
     {
-      value: "450+",
+      value: "400+",
       label: "Projects Delivered",
       description: "Residential, commercial and industrial installations.",
       icon: CheckCircle2,
     },
     {
-      value: "12+",
+      value: "10+",
       label: "Years Experience",
       description: "Engineering solar solutions for demanding environments.",
       icon: SunMedium,
@@ -244,18 +247,21 @@ const ProjectsImpact = () => {
 
                 {/* CTA */}
 
-                <motion.a
-                  href="#contact"
-                  className="projects-impact__cta"
+                <motion.div
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span>Build Your Solar Future</span>
+                  <Link
+                    to="/contact"
+                    className="projects-impact__cta"
+                  >
+                    <span>Build Your Solar Future</span>
 
-                  <span className="projects-impact__cta-icon">
-                    <ArrowUpRight size={17} />
-                  </span>
-                </motion.a>
+                    <span className="projects-impact__cta-icon">
+                      <ArrowUpRight size={17} />
+                    </span>
+                  </Link>
+                </motion.div>
               </motion.div>
             </div>
 

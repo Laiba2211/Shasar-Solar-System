@@ -12,14 +12,14 @@ import "./stats.css";
 const stats = [
   {
     id: 1,
-    value: 12,
+    value: 10,
     suffix: "+",
     title: "Years Experience",
     icon: CalendarClock,
   },
   {
     id: 2,
-    value: 450,
+    value: 400,
     suffix: "+",
     title: "Projects Completed",
     icon: BriefcaseBusiness,

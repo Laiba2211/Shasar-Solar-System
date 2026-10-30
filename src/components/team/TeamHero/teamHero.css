@@ -273,7 +273,7 @@
   display: flex;
 
   justify-content: center;
-
+  
   margin-top: 34px;
 }
 
@@ -299,8 +299,8 @@
   border-radius: 999px;
 
   background: var(--accent-color);
-
-  color: #081c3a;
+   color:#ffc229;
+  /* color: #081c3a; */
 
   font-size: 14px;
 

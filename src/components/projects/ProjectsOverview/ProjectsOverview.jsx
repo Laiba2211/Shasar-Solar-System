@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -9,12 +10,13 @@ import {
 } from "lucide-react";
 
 import "./projectsOverview.css";
+import solarProjectImage from "../../../assets/images/services/Solarproject.jpeg";
 
 const ProjectsOverview = () => {
   const stats = [
     {
       icon: Home,
-      value: "450+",
+      value: "400+",
       label: "Projects Delivered",
     },
     {
@@ -24,7 +26,7 @@ const ProjectsOverview = () => {
     },
     {
       icon: Factory,
-      value: "12+",
+      value: "10+",
       label: "Years Experience",
     },
     {
@@ -60,7 +62,6 @@ const ProjectsOverview = () => {
                 ease: "easeOut",
               }}
             >
-
               {/* Eyebrow */}
               <motion.div
                 className="projects-overview__eyebrow"
@@ -113,9 +114,9 @@ const ProjectsOverview = () => {
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* CTA - CONNECTED TO PROJECTS GRID */}
               <motion.a
-                href="#projects-grid"
+                href="#featured-projects"
                 className="projects-overview__button"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
@@ -126,7 +127,6 @@ const ProjectsOverview = () => {
                   <ArrowRight size={18} />
                 </span>
               </motion.a>
-
             </motion.div>
           </div>
 
@@ -144,14 +144,13 @@ const ProjectsOverview = () => {
                 ease: "easeOut",
               }}
             >
-
               {/* Main Image */}
               <div className="projects-overview__image-wrapper">
-
                 <img
-                  src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1200&auto=format&fit=crop&q=85"
-                  alt="Solar panels installed on a modern building"
+                  src={solarProjectImage}
+                  alt="Shasar Solar project installation"
                   className="projects-overview__image"
+                  loading="lazy"
                 />
 
                 <div className="projects-overview__image-overlay" />
@@ -165,10 +164,9 @@ const ProjectsOverview = () => {
                     <small>Premium solar infrastructure</small>
                   </div>
                 </div>
-
               </div>
 
-              {/* Decorative frame */}
+              {/* Decorative Frame */}
               <div className="projects-overview__frame" />
 
               {/* Floating Experience Card */}
@@ -184,7 +182,7 @@ const ProjectsOverview = () => {
                 }}
               >
                 <span className="projects-overview__experience-number">
-                  12+
+                  10+
                 </span>
 
                 <div>
@@ -214,7 +212,6 @@ const ProjectsOverview = () => {
                   <small>Installed Capacity</small>
                 </div>
               </motion.div>
-
             </motion.div>
           </div>
         </div>
@@ -233,7 +230,6 @@ const ProjectsOverview = () => {
           }}
         >
           <div className="row g-0">
-
             {stats.map((stat, index) => {
               const Icon = stat.icon;
 
@@ -262,10 +258,8 @@ const ProjectsOverview = () => {
                 </div>
               );
             })}
-
           </div>
         </motion.div>
-
       </div>
     </section>
   );

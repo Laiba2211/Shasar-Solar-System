@@ -1,3 +1,4 @@
+
 // ==========================================================
 // SHASAR SOLAR SYSTEM
 // PROJECT DETAILS
@@ -5,6 +6,8 @@
 // ==========================================================
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -18,16 +21,15 @@ import "./projectDetails.css";
 
 // ==========================================================
 // PROJECT IMAGE
-// Replace this file later with the client's original image.
 // ==========================================================
 
 import commercialProject from "../../../assets/images/projects/commercial-project.jpeg";
 
+const MotionLink = motion(Link);
+
 const ProjectDetails = () => {
   // ========================================================
   // PROJECT DATA
-  // Keep this section clean.
-  // Later this can be connected to projectsData.js.
   // ========================================================
 
   const project = {
@@ -145,6 +147,7 @@ const ProjectDetails = () => {
       />
 
       <div className="container">
+
         {/* ==================================================
             SECTION HEADER
         ================================================== */}
@@ -158,7 +161,9 @@ const ProjectDetails = () => {
         >
           <div className="project-details__eyebrow">
             <span className="project-details__eyebrow-line" />
+
             <span>Project Excellence</span>
+
             <span className="project-details__eyebrow-line" />
           </div>
 
@@ -182,6 +187,7 @@ const ProjectDetails = () => {
         ================================================== */}
 
         <div className="row align-items-stretch g-4 g-xl-5">
+
           {/* ==================================================
               IMAGE
           ================================================== */}
@@ -194,9 +200,8 @@ const ProjectDetails = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {/* Image */}
-
               <div className="project-details__image-wrapper">
+
                 <img
                   src={project.image}
                   alt={`${project.title} in ${project.location}`}
@@ -247,10 +252,12 @@ const ProjectDetails = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
+
               {/* Category */}
 
               <div className="project-details__category">
                 <span />
+
                 {project.category}
               </div>
 
@@ -271,6 +278,7 @@ const ProjectDetails = () => {
               ================================================== */}
 
               <div className="project-details__meta">
+
                 {/* Location */}
 
                 <div className="project-details__meta-item">
@@ -280,6 +288,7 @@ const ProjectDetails = () => {
 
                   <div>
                     <span>Location</span>
+
                     <strong>{project.location}</strong>
                   </div>
                 </div>
@@ -293,6 +302,7 @@ const ProjectDetails = () => {
 
                   <div>
                     <span>System Capacity</span>
+
                     <strong>{project.capacity}</strong>
                   </div>
                 </div>
@@ -306,6 +316,7 @@ const ProjectDetails = () => {
 
                   <div>
                     <span>Project Type</span>
+
                     <strong>{project.projectType}</strong>
                   </div>
                 </div>
@@ -319,9 +330,11 @@ const ProjectDetails = () => {
 
                   <div>
                     <span>Project Status</span>
+
                     <strong>{project.status}</strong>
                   </div>
                 </div>
+
               </div>
 
               {/* ==================================================
@@ -329,6 +342,7 @@ const ProjectDetails = () => {
               ================================================== */}
 
               <div className="project-details__highlights">
+
                 <h4>Engineering Highlights</h4>
 
                 <motion.div
@@ -354,14 +368,15 @@ const ProjectDetails = () => {
                     </motion.div>
                   ))}
                 </motion.div>
+
               </div>
 
               {/* ==================================================
-                  CTA
+                  CTA — CONTACT PAGE
               ================================================== */}
 
-              <motion.a
-                href="#contact"
+              <MotionLink
+                to="/contact"
                 className="project-details__button"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
@@ -371,9 +386,11 @@ const ProjectDetails = () => {
                 <span className="project-details__button-icon">
                   <ArrowRight size={17} />
                 </span>
-              </motion.a>
+              </MotionLink>
+
             </motion.div>
           </div>
+
         </div>
       </div>
     </section>

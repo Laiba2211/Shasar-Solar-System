@@ -1,1072 +1,697 @@
-/* ==========================================================
-   SHASAR SOLAR SYSTEM
-   PRICING COMPARISON
-   Phase 3
-========================================================== */
 
 /* ==========================================================
-   SECTION
+   SHASAR SOLAR
+   SOLAR SOLUTIONS COMPARISON
 ========================================================== */
 
-.pricing-comparison {
+.solar-solutions {
+  --solar-navy: #081c3a;
+  --solar-navy-light: #102b50;
+  --solar-gold: #ffb200;
+  --solar-text: #172338;
+  --solar-muted: #697586;
+  --solar-border: #e6eaf0;
+
   position: relative;
   isolation: isolate;
   overflow: hidden;
-
-  padding: 120px 0;
-
-  background:
-    radial-gradient(
-      circle at 8% 20%,
-      rgba(255, 178, 0, 0.055),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 92% 75%,
-      rgba(255, 178, 0, 0.04),
-      transparent 28%
-    ),
-    var(--bg-primary);
-
-  color: var(--text-primary);
-
-  transition:
-    background-color 0.35s ease,
-    color 0.35s ease;
+  padding: 110px 0 100px;
+  background: #f7f9fc;
+  color: var(--solar-text);
 }
 
-/* ==========================================================
-   DECORATIVE GLOWS
-========================================================== */
-
-.pricing-comparison__glow {
+.solar-solutions__background {
   position: absolute;
-
-  width: 430px;
-  height: 430px;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  filter: blur(90px);
-
-  opacity: 0.28;
-
+  top: -220px;
+  right: -180px;
   z-index: -1;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 178, 0, 0.09) 0%,
+    rgba(255, 178, 0, 0.025) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
 }
 
-.pricing-comparison__glow--one {
-  top: -230px;
-  right: -140px;
-
-  background: rgba(255, 178, 0, 0.13);
-}
-
-.pricing-comparison__glow--two {
-  bottom: -250px;
-  left: -180px;
-
-  background: rgba(255, 178, 0, 0.08);
+.solar-solutions .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* ==========================================================
-   HEADER
+   SECTION HEADER
 ========================================================== */
 
-.pricing-comparison__header {
-  max-width: 780px;
-
+.solar-solutions__header {
+  max-width: 790px;
   margin: 0 auto 58px;
-
   text-align: center;
 }
 
-.pricing-comparison__eyebrow {
-  display: inline-flex;
+.solar-solutions__eyebrow {
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 11px;
-
-  margin-bottom: 18px;
-
-  color: var(--accent-color);
-
+  gap: 13px;
+  margin-bottom: 20px;
+  color: #a87900;
   font-size: 11px;
   font-weight: 800;
-
-  letter-spacing: 0.17em;
-
-  text-transform: uppercase;
+  letter-spacing: 2.2px;
 }
 
-.pricing-comparison__eyebrow-line {
+.solar-solutions__eyebrow span:first-child,
+.solar-solutions__eyebrow span:last-child {
   width: 30px;
-  height: 2px;
-
-  border-radius: 99px;
-
-  background: var(--accent-color);
+  height: 1px;
+  background: var(--solar-gold);
 }
 
-.pricing-comparison__title {
+.solar-solutions__title {
   margin: 0;
-
-  color: var(--text-primary);
-
-  font-size: clamp(2.1rem, 4vw, 3.55rem);
-
-  line-height: 1.08;
-
+  color: var(--solar-navy);
+  font-size: clamp(34px, 4.2vw, 54px);
   font-weight: 800;
-
-  letter-spacing: -0.045em;
+  line-height: 1.14;
+  letter-spacing: -1.8px;
 }
 
-.pricing-comparison__title span {
-  color: var(--accent-color);
+.solar-solutions__title span {
+  display: block;
+  color: #b98200;
 }
 
-.pricing-comparison__intro {
-  max-width: 680px;
-
+.solar-solutions__intro {
+  max-width: 670px;
   margin: 20px auto 0;
-
-  color: var(--text-secondary);
-
-  font-size: 16px;
-
-  line-height: 1.8;
+  color: var(--solar-muted);
+  font-size: 15px;
+  line-height: 1.85;
 }
 
 /* ==========================================================
-   TABLE WRAPPER
+   SOLUTION CARDS
 ========================================================== */
 
-.pricing-comparison__table-wrap {
-  position: relative;
+.solar-solutions__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
 
+.solar-solutions__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px 27px 27px;
   overflow: hidden;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: 26px;
-
-  background: var(--surface-primary);
-
-  box-shadow:
-    0 28px 80px rgba(8, 28, 58, 0.08);
-
+  border: 1px solid var(--solar-border);
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(8, 28, 58, 0.045);
   transition:
-    background-color 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-/* ==========================================================
-   TABLE HEADER
-========================================================== */
-
-.pricing-comparison__table-head {
-  display: grid;
-
-  grid-template-columns:
-    minmax(250px, 1.55fr)
-    repeat(3, minmax(145px, 1fr));
-
-  min-height: 126px;
-
-  border-bottom: 1px solid var(--border-color);
+.solar-solutions__card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 178, 0, 0.7);
+  box-shadow: 0 22px 45px rgba(8, 28, 58, 0.09);
 }
 
-.pricing-comparison__feature-heading {
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  padding: 25px 28px;
-
-  background: var(--surface-secondary);
-
-  border-right: 1px solid var(--border-color);
+.solar-solutions__card--featured {
+  border: 1.5px solid rgba(255, 178, 0, 0.85);
+  box-shadow: 0 16px 40px rgba(8, 28, 58, 0.075);
 }
 
-.pricing-comparison__feature-heading span {
-  color: var(--text-primary);
-
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.pricing-comparison__feature-heading small {
-  margin-top: 5px;
-
-  color: var(--text-secondary);
-
-  font-size: 11px;
-
-  line-height: 1.5;
-}
-
-/* ==========================================================
-   PLAN HEADINGS
-========================================================== */
-
-.pricing-comparison__plan-heading {
-  position: relative;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  padding: 22px 12px;
-
-  text-align: center;
-
-  border-right: 1px solid var(--border-color);
-
-  background: var(--surface-primary);
-
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.pricing-comparison__plan-heading:last-child {
-  border-right: 0;
-}
-
-.pricing-comparison__plan-heading strong {
-  color: var(--text-primary);
-
-  font-size: 17px;
-  font-weight: 800;
-}
-
-.pricing-comparison__plan-heading > span:not(.pricing-comparison__recommended) {
-  margin-top: 5px;
-
-  max-width: 135px;
-
-  color: var(--text-secondary);
-
-  font-size: 10px;
-
-  line-height: 1.45;
-}
-
-.pricing-comparison__plan-heading--featured {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 178, 0, 0.12),
-      rgba(255, 178, 0, 0.035)
-    );
-
-  border-left: 1px solid rgba(255, 178, 0, 0.3);
-  border-right: 1px solid rgba(255, 178, 0, 0.3);
-}
-
-.pricing-comparison__recommended {
+.solar-solutions__card--featured::before {
   position: absolute;
-
   top: 0;
-  left: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--solar-gold);
+  content: "";
+}
 
-  transform: translate(-50%, -1px);
-
-  padding: 5px 12px;
-
-  border-radius: 0 0 10px 10px;
-
-  background: var(--accent-color);
-
-  color: #081c3a !important;
-
-  font-size: 9px !important;
+.solar-solutions__featured-label {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #fff5d9;
+  color: #916400;
+  font-size: 9px;
   font-weight: 800;
-
-  letter-spacing: 0.07em;
-
+  letter-spacing: 0.7px;
   text-transform: uppercase;
+}
 
-  white-space: nowrap;
+.solar-solutions__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.solar-solutions__number {
+  color: #aab3c0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.solar-solutions__icon {
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  border: 1px solid rgba(255, 178, 0, 0.35);
+  border-radius: 12px;
+  background: #fff8e8;
+  color: #a87900;
+}
+
+.solar-solutions__card-heading {
+  margin-bottom: 14px;
+}
+
+.solar-solutions__card-heading h3 {
+  margin: 0 0 7px;
+  color: var(--solar-navy);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.solar-solutions__card-heading > span {
+  color: #a87900;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.solar-solutions__description {
+  min-height: 120px;
+  margin: 0;
+  color: var(--solar-muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.solar-solutions__ideal {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 88px;
+  margin-top: 23px;
+  padding: 15px;
+  border-radius: 9px;
+  background: #f5f7fa;
+}
+
+.solar-solutions__ideal-icon {
+  display: grid;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 7px;
+  background: #e9eef5;
+  color: var(--solar-navy);
+}
+
+.solar-solutions__ideal small {
+  display: block;
+  margin-bottom: 5px;
+  color: #8993a2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.solar-solutions__ideal p {
+  margin: 0;
+  color: #344258;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.solar-solutions__card-divider {
+  height: 1px;
+  margin: 21px 0 17px;
+  background: var(--solar-border);
+}
+
+.solar-solutions__highlights {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 48px;
+  margin-bottom: 23px;
+}
+
+.solar-solutions__highlights-icon {
+  display: grid;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff4d6;
+  color: #a87900;
+}
+
+.solar-solutions__highlights p {
+  margin: 1px 0 0;
+  color: #344258;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.solar-solutions__card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid var(--solar-border);
+  color: var(--solar-navy);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.solar-solutions__card-link svg {
+  color: #b98200;
+  transition: transform 0.25s ease;
+}
+
+.solar-solutions__card-link:hover {
+  color: #b98200;
+}
+
+.solar-solutions__card-link:hover svg {
+  transform: translateX(5px);
 }
 
 /* ==========================================================
-   FEATURE ROWS
+   TECHNICAL COMPARISON
 ========================================================== */
 
-.pricing-comparison__row {
-  display: grid;
-
-  grid-template-columns:
-    minmax(250px, 1.55fr)
-    repeat(3, minmax(145px, 1fr));
-
-  min-height: 67px;
-
-  border-bottom: 1px solid var(--border-color);
-
-  transition:
-    background-color 0.25s ease;
+.solar-solutions__comparison {
+  margin-top: 75px;
+  padding: 35px;
+  border: 1px solid var(--solar-border);
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(8, 28, 58, 0.045);
 }
 
-.pricing-comparison__row:last-child {
+.solar-solutions__comparison-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.solar-solutions__comparison-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+  color: #a87900;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.solar-solutions__comparison-header h3 {
+  margin: 0;
+  color: var(--solar-navy);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.solar-solutions__comparison-header p {
+  margin: 9px 0 0;
+  color: var(--solar-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.solar-solutions__comparison-symbol {
+  display: grid;
+  flex: 0 0 53px;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  border-radius: 11px;
+  background: #fff6df;
+  color: #a87900;
+}
+
+.solar-solutions__table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--solar-border);
+  border-radius: 9px;
+}
+
+.solar-solutions__table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.solar-solutions__table thead {
+  background: var(--solar-navy);
+  color: #ffffff;
+}
+
+.solar-solutions__table th,
+.solar-solutions__table td {
+  padding: 17px 19px;
+  border-bottom: 1px solid var(--solar-border);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.solar-solutions__table thead th {
+  border-bottom: 0;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.solar-solutions__table thead th:first-child {
+  width: 25%;
+}
+
+.solar-solutions__table tbody th {
+  color: var(--solar-navy);
+  font-weight: 800;
+}
+
+.solar-solutions__table tbody td {
+  color: #586477;
+  font-weight: 500;
+}
+
+.solar-solutions__table tbody tr:last-child th,
+.solar-solutions__table tbody tr:last-child td {
   border-bottom: 0;
 }
 
-.pricing-comparison__row:hover {
-  background: rgba(255, 178, 0, 0.035);
+.solar-solutions__table tbody tr:nth-child(even) {
+  background: #f8f9fb;
+}
+
+.solar-solutions__table-note {
+  margin: 17px 0 0;
+  color: #8490a0;
+  font-size: 11px;
+  line-height: 1.7;
 }
 
 /* ==========================================================
-   FEATURE
+   BOTTOM CONSULTATION PANEL
 ========================================================== */
 
-.pricing-comparison__feature {
+.solar-solutions__bottom {
   display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 13px 28px;
-
-  border-right: 1px solid var(--border-color);
-
-  color: var(--text-primary);
-
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.pricing-comparison__feature-icon {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 31px;
-  height: 31px;
-
-  flex: 0 0 auto;
-
-  border: 1px solid rgba(255, 178, 0, 0.2);
-
-  border-radius: 9px;
-
-  background: rgba(255, 178, 0, 0.08);
-
-  color: var(--accent-color);
-}
-
-/* ==========================================================
-   CELLS
-========================================================== */
-
-.pricing-comparison__cell {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-right: 1px solid var(--border-color);
-
-  color: var(--text-primary);
-}
-
-.pricing-comparison__cell:last-child {
-  border-right: 0;
-}
-
-.pricing-comparison__cell--featured {
-  position: relative;
-
-  background: rgba(255, 178, 0, 0.035);
-
-  border-left: 1px solid rgba(255, 178, 0, 0.16);
-  border-right: 1px solid rgba(255, 178, 0, 0.16);
-}
-
-/* ==========================================================
-   CHECK / CROSS
-========================================================== */
-
-.pricing-comparison__check,
-.pricing-comparison__cross {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 28px;
-  height: 28px;
-
-  border-radius: 50%;
-}
-
-.pricing-comparison__check {
-  background: rgba(255, 178, 0, 0.13);
-
-  color: var(--accent-color);
-
-  box-shadow:
-    0 5px 15px rgba(255, 178, 0, 0.08);
-}
-
-.pricing-comparison__cross {
-  background: var(--surface-secondary);
-
-  color: var(--text-secondary);
-
-  opacity: 0.55;
-}
-
-/* ==========================================================
-   MOBILE CARDS
-========================================================== */
-
-.pricing-comparison__mobile {
-  display: none;
-}
-
-/* ==========================================================
-   BOTTOM CTA
-========================================================== */
-
-.pricing-comparison__bottom {
-  display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 30px;
-
-  margin-top: 28px;
-
-  padding: 25px 28px;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 178, 0, 0.065),
-      transparent 55%
-    ),
-    var(--surface-primary);
-
-  box-shadow:
-    0 18px 50px rgba(8, 28, 58, 0.06);
-}
-
-.pricing-comparison__bottom-content {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-}
-
-.pricing-comparison__bottom-icon {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 44px;
-  height: 44px;
-
-  flex: 0 0 auto;
-
+  margin-top: 35px;
+  padding: 32px 35px;
   border-radius: 13px;
-
-  background: rgba(255, 178, 0, 0.12);
-
-  color: var(--accent-color);
+  background: var(--solar-navy);
+  box-shadow: 0 15px 35px rgba(8, 28, 58, 0.13);
 }
 
-.pricing-comparison__bottom-content strong {
+.solar-solutions__bottom-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.solar-solutions__bottom-icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 178, 0, 0.13);
+  color: var(--solar-gold);
+}
+
+.solar-solutions__bottom-label {
   display: block;
-
-  color: var(--text-primary);
-
-  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--solar-gold);
+  font-size: 9px;
   font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
-.pricing-comparison__bottom-content p {
-  max-width: 700px;
+.solar-solutions__bottom-content h3 {
+  max-width: 570px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+}
 
-  margin: 5px 0 0;
-
-  color: var(--text-secondary);
-
+.solar-solutions__bottom-content p {
+  max-width: 600px;
+  margin: 9px 0 0;
+  color: rgba(255, 255, 255, 0.68);
   font-size: 12px;
-
-  line-height: 1.65;
+  line-height: 1.8;
 }
 
-/* ==========================================================
-   CTA BUTTON
-========================================================== */
-
-.pricing-comparison__cta,
-.pricing-comparison__mobile-cta {
+.solar-solutions__bottom-cta {
   display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
   flex: 0 0 auto;
-
-  min-height: 48px;
-
-  padding: 6px 7px 6px 19px;
-
-  border: 1px solid var(--accent-color);
-
-  border-radius: 999px;
-
-  background: var(--accent-color);
-
-  color: #081c3a;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  text-decoration: none;
-
-  box-shadow:
-    0 10px 28px rgba(255, 178, 0, 0.18);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.pricing-comparison__cta:hover,
-.pricing-comparison__mobile-cta:hover {
-  transform: translateY(-3px);
-
-  background: #ffc329;
-
-  border-color: #ffc329;
-
-  color: #081c3a;
-
-  box-shadow:
-    0 15px 35px rgba(255, 178, 0, 0.28);
-}
-
-.pricing-comparison__cta-icon {
-  display: inline-flex;
-
   align-items: center;
   justify-content: center;
+  gap: 15px;
+  min-height: 49px;
+  padding: 0 21px;
+  border: 1px solid var(--solar-gold);
+  border-radius: 5px;
+  background: var(--solar-gold);
+  color: var(--solar-navy);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
 
-  width: 34px;
-  height: 34px;
-
-  border-radius: 50%;
-
-  background: rgba(8, 28, 58, 0.12);
+.solar-solutions__bottom-cta:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--solar-gold);
 }
 
 /* ==========================================================
-   DARK MODE
+   RESPONSIVE - LAPTOP
 ========================================================== */
 
-[data-theme="dark"] .pricing-comparison {
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(255, 178, 0, 0.07),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(255, 178, 0, 0.055),
-      transparent 30%
-    ),
-    var(--bg-primary);
-}
-
-[data-theme="dark"] .pricing-comparison__table-wrap {
-  background: #0b2342;
-
-  border-color: rgba(255, 255, 255, 0.10);
-
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.30);
-}
-
-[data-theme="dark"] .pricing-comparison__feature-heading {
-  background: rgba(255, 255, 255, 0.025);
-
-  border-color: rgba(255, 255, 255, 0.09);
-}
-
-[data-theme="dark"] .pricing-comparison__plan-heading {
-  background: rgba(255, 255, 255, 0.015);
-
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .pricing-comparison__plan-heading--featured {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 178, 0, 0.15),
-      rgba(255, 178, 0, 0.035)
-    );
-
-  border-color: rgba(255, 178, 0, 0.30);
-}
-
-[data-theme="dark"] .pricing-comparison__row {
-  border-color: rgba(255, 255, 255, 0.075);
-}
-
-[data-theme="dark"] .pricing-comparison__feature {
-  border-color: rgba(255, 255, 255, 0.075);
-}
-
-[data-theme="dark"] .pricing-comparison__cell {
-  border-color: rgba(255, 255, 255, 0.075);
-}
-
-[data-theme="dark"] .pricing-comparison__cell--featured {
-  background: rgba(255, 178, 0, 0.045);
-
-  border-color: rgba(255, 178, 0, 0.18);
-}
-
-[data-theme="dark"] .pricing-comparison__bottom {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 178, 0, 0.09),
-      rgba(255, 255, 255, 0.015)
-    ),
-    #0b2342;
-
-  border-color: rgba(255, 255, 255, 0.10);
-
-  box-shadow:
-    0 25px 65px rgba(0, 0, 0, 0.28);
-}
-
-[data-theme="dark"] .pricing-comparison__cross {
-  background: rgba(255, 255, 255, 0.045);
-
-  color: #b8c3d0;
-}
-
-/* ==========================================================
-   LARGE DESKTOP
-========================================================== */
-
-@media (min-width: 1400px) {
-  .pricing-comparison {
-    padding: 140px 0;
+@media (max-width: 1100px) {
+  .solar-solutions {
+    padding: 90px 0 85px;
   }
 
-  .pricing-comparison__table-head {
-    min-height: 138px;
-  }
-
-  .pricing-comparison__row {
-    min-height: 72px;
-  }
-}
-
-/* ==========================================================
-   TABLET / LAPTOP
-========================================================== */
-
-@media (max-width: 1199.98px) {
-  .pricing-comparison {
-    padding: 105px 0;
-  }
-
-  .pricing-comparison__table-head,
-  .pricing-comparison__row {
-    grid-template-columns:
-      minmax(220px, 1.5fr)
-      repeat(3, minmax(120px, 1fr));
-  }
-
-  .pricing-comparison__feature {
-    padding-left: 20px;
-    padding-right: 20px;
-
-    font-size: 12px;
-  }
-
-  .pricing-comparison__feature-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .pricing-comparison__plan-heading strong {
-    font-size: 15px;
-  }
-}
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media (max-width: 991.98px) {
-  .pricing-comparison {
-    padding: 90px 0;
-  }
-
-  .pricing-comparison__header {
-    margin-bottom: 45px;
-  }
-
-  .pricing-comparison__intro {
-    font-size: 15px;
-  }
-
-  .pricing-comparison__table-wrap {
-    overflow-x: auto;
-
-    border-radius: 21px;
-  }
-
-  .pricing-comparison__table-head,
-  .pricing-comparison__row {
-    min-width: 760px;
-  }
-
-  .pricing-comparison__bottom {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  .pricing-comparison__cta {
-    width: 100%;
-  }
-}
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 767.98px) {
-  .pricing-comparison {
-    padding: 75px 0;
-  }
-
-  .pricing-comparison__header {
-    margin-bottom: 35px;
-  }
-
-  .pricing-comparison__eyebrow {
-    font-size: 9px;
-
-    letter-spacing: 0.13em;
-  }
-
-  .pricing-comparison__eyebrow-line {
-    width: 20px;
-  }
-
-  .pricing-comparison__title {
-    font-size: clamp(2rem, 9vw, 2.7rem);
-
-    line-height: 1.12;
-
-    letter-spacing: -0.035em;
-  }
-
-  .pricing-comparison__intro {
-    margin-top: 16px;
-
-    font-size: 14px;
-
-    line-height: 1.75;
-  }
-
-  /*
-    Mobile cards replace the large comparison matrix.
-  */
-
-  .pricing-comparison__table-wrap {
-    display: none;
-  }
-
-  .pricing-comparison__mobile {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-  }
-
-  .pricing-comparison__mobile-card {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 23px 19px;
-
-    border: 1px solid var(--border-color);
-
-    border-radius: 22px;
-
-    background: var(--surface-primary);
-
-    box-shadow:
-      0 18px 45px rgba(8, 28, 58, 0.07);
-
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease,
-      border-color 0.3s ease;
-  }
-
-  .pricing-comparison__mobile-card--featured {
-    border-color: rgba(255, 178, 0, 0.48);
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255, 178, 0, 0.09),
-        transparent 45%
-      ),
-      var(--surface-primary);
-
-    box-shadow:
-      0 20px 55px rgba(255, 178, 0, 0.10);
-  }
-
-  .pricing-comparison__mobile-badge {
-    position: absolute;
-
-    top: 0;
-    right: 20px;
-
-    padding: 6px 11px;
-
-    border-radius: 0 0 9px 9px;
-
-    background: var(--accent-color);
-
-    color: #081c3a;
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: 0.05em;
-
-    text-transform: uppercase;
-  }
-
-  .pricing-comparison__mobile-head {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
+  .solar-solutions__cards {
     gap: 15px;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid var(--border-color);
   }
 
-  .pricing-comparison__mobile-head h3 {
-    margin: 0;
-
-    color: var(--text-primary);
-
-    font-size: 21px;
-    font-weight: 800;
+  .solar-solutions__card {
+    padding: 25px 20px;
   }
 
-  .pricing-comparison__mobile-head p {
-    margin: 5px 0 0;
-
-    color: var(--text-secondary);
-
-    font-size: 11px;
+  .solar-solutions__description {
+    min-height: 145px;
   }
 
-  .pricing-comparison__mobile-icon {
-    display: inline-flex;
+  .solar-solutions__comparison {
+    padding: 27px;
+  }
+}
 
-    align-items: center;
-    justify-content: center;
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
 
-    width: 40px;
-    height: 40px;
-
-    flex: 0 0 auto;
-
-    border-radius: 12px;
-
-    background: rgba(255, 178, 0, 0.12);
-
-    color: var(--accent-color);
+@media (max-width: 850px) {
+  .solar-solutions__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .pricing-comparison__mobile-list {
-    padding: 15px 0 8px;
+  .solar-solutions__card:last-child {
+    grid-column: 1 / -1;
   }
 
-  .pricing-comparison__mobile-feature {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 8px 0;
+  .solar-solutions__description {
+    min-height: auto;
   }
 
-  .pricing-comparison__mobile-feature > span {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 24px;
-    height: 24px;
-
-    flex: 0 0 auto;
-
-    border-radius: 50%;
-
-    background: rgba(255, 178, 0, 0.12);
-
-    color: var(--accent-color);
-  }
-
-  .pricing-comparison__mobile-feature p {
-    margin: 0;
-
-    color: var(--text-primary);
-
-    font-size: 12px;
-
-    line-height: 1.5;
-  }
-
-  .pricing-comparison__mobile-feature--disabled {
-    opacity: 0.48;
-  }
-
-  .pricing-comparison__mobile-feature--disabled
-    > span {
-    background: var(--surface-secondary);
-
-    color: var(--text-secondary);
-  }
-
-  .pricing-comparison__mobile-cta {
-    width: 100%;
-  }
-
-  .pricing-comparison__bottom {
-    margin-top: 22px;
-
-    padding: 20px;
-
-    border-radius: 18px;
-  }
-
-  .pricing-comparison__bottom-content {
+  .solar-solutions__bottom {
     align-items: flex-start;
+    flex-direction: column;
   }
 
-  .pricing-comparison__bottom-icon {
-    width: 38px;
-    height: 38px;
+  .solar-solutions__bottom-cta {
+    align-self: flex-start;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE - MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+  .solar-solutions {
+    padding: 72px 0 65px;
   }
 
-  .pricing-comparison__bottom-content strong {
+  .solar-solutions__header {
+    margin-bottom: 36px;
+  }
+
+  .solar-solutions__eyebrow {
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .solar-solutions__eyebrow span:first-child,
+  .solar-solutions__eyebrow span:last-child {
+    width: 19px;
+  }
+
+  .solar-solutions__title {
+    font-size: 33px;
+    letter-spacing: -1.1px;
+  }
+
+  .solar-solutions__intro {
+    margin-top: 15px;
     font-size: 13px;
+    line-height: 1.8;
   }
 
-  .pricing-comparison__bottom-content p {
+  .solar-solutions__cards {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .solar-solutions__card:last-child {
+    grid-column: auto;
+  }
+
+  .solar-solutions__card {
+    padding: 25px 22px;
+  }
+
+  .solar-solutions__card-top {
+    margin-bottom: 21px;
+  }
+
+  .solar-solutions__card-heading h3 {
+    font-size: 21px;
+  }
+
+  .solar-solutions__description {
+    font-size: 12px;
+  }
+
+  .solar-solutions__ideal {
+    min-height: auto;
+  }
+
+  .solar-solutions__comparison {
+    margin-top: 48px;
+    padding: 22px 16px;
+  }
+
+  .solar-solutions__comparison-header {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .solar-solutions__comparison-header h3 {
+    font-size: 21px;
+  }
+
+  .solar-solutions__comparison-header p {
+    font-size: 12px;
+  }
+
+  .solar-solutions__comparison-symbol {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .solar-solutions__table th,
+  .solar-solutions__table td {
+    padding: 14px 13px;
     font-size: 11px;
   }
-}
 
-/* ==========================================================
-   SMALL MOBILE
-========================================================== */
-
-@media (max-width: 420px) {
-  .pricing-comparison {
-    padding: 65px 0;
+  .solar-solutions__table-note {
+    font-size: 10px;
   }
 
-  .pricing-comparison__title {
-    font-size: 1.9rem;
+  .solar-solutions__bottom {
+    gap: 22px;
+    margin-top: 22px;
+    padding: 25px 20px;
   }
 
-  .pricing-comparison__mobile-card {
-    padding: 20px 16px;
-
-    border-radius: 19px;
+  .solar-solutions__bottom-content {
+    gap: 12px;
   }
 
-  .pricing-comparison__mobile-head h3 {
-    font-size: 19px;
+  .solar-solutions__bottom-icon {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
   }
 
-  .pricing-comparison__mobile-feature p {
+  .solar-solutions__bottom-content h3 {
+    font-size: 17px;
+  }
+
+  .solar-solutions__bottom-content p {
     font-size: 11px;
   }
 
-  .pricing-comparison__bottom {
-    padding: 17px;
-  }
-
-  .pricing-comparison__bottom-content {
-    gap: 10px;
-  }
-}
-
-/* ==========================================================
-   EXTRA SMALL DEVICES
-========================================================== */
-
-@media (max-width: 359.98px) {
-  .pricing-comparison__eyebrow-line {
-    display: none;
-  }
-
-  .pricing-comparison__title {
-    font-size: 1.75rem;
-  }
-
-  .pricing-comparison__mobile-card {
-    padding: 17px 13px;
-  }
-
-  .pricing-comparison__mobile-feature p {
-    font-size: 10.5px;
+  .solar-solutions__bottom-cta {
+    width: 100%;
   }
 }
 
@@ -1075,14 +700,10 @@
 ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .pricing-comparison *,
-  .pricing-comparison *::before,
-  .pricing-comparison *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-
-    transition-duration: 0.01ms !important;
-
-    scroll-behavior: auto !important;
+  .solar-solutions__card,
+  .solar-solutions__card-link,
+  .solar-solutions__card-link svg,
+  .solar-solutions__bottom-cta {
+    transition: none;
   }
 }

@@ -89,13 +89,13 @@ export const servicesLinks = [
 // ================================
 
 export const contactInfo = {
-  phone: "+971 XX XXX XXXX",
+  phone: "+971 50 665 3664",
 
-  email: "info@shasarsolar.com",
+  email: "Shasartech@gmail.com",
 
-  address: "Dubai, United Arab Emirates",
+  address: "Saeed Khalid Building, Office #05, Saeed Port Deira, Dubai, United Arab Emirates",
 
-  workingHours: "Monday – Saturday | 8:00 AM – 6:00 PM",
+  workingHours: "Monday – Saturday | 9:00 AM – 6:00 PM",
 };
 
 // ================================
