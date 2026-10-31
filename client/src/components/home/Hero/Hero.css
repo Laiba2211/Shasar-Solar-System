@@ -1,39 +1,44 @@
+
 /* ==========================================================
    SHASAR SOLAR SYSTEM
    HERO SECTION
    PART 4.4.3A
+   PREMIUM RESPONSIVE + LIGHT/DARK THEME
 ========================================================== */
 
-/* =========================
-   HERO SECTION
-========================= */
+
+/* ==========================================================
+   01. HERO SECTION
+========================================================== */
 
 .hero {
   position: relative;
-  width: 100%;
-  min-height: 20vh;
-  overflow: hidden;
+  isolation: isolate;
   display: flex;
   align-items: center;
-  isolation: isolate;
+  width: 100%;
+  min-height: 85vh;
+  overflow: hidden;
+  padding: 120px 0 80px;
   background: var(--background);
 }
 
-/* =========================
-   BACKGROUND VIDEO
-========================= */
 
-/* =========================
-   BACKGROUND VIDEO
-========================= */
+/* ==========================================================
+   02. HERO BACKGROUND IMAGE / VIDEO
+========================================================== */
+
 .hero__video {
   position: absolute;
   inset: 0;
+  z-index: -3;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center center;
-  z-index: -3;
+
   pointer-events: none;
 
   transform: scale(1.01);
@@ -43,759 +48,698 @@
     contrast(1.06)
     saturate(1.08);
 
-  transition:
-    transform .8s ease,
-    filter .4s ease;
+  animation: heroVideoMove 22s ease-in-out infinite alternate;
 
   will-change: transform;
 }
 
-/* =========================
-   OVERLAY
-========================= */
+@keyframes heroVideoMove {
+  from {
+    transform: scale(1.01);
+  }
+
+  to {
+    transform: scale(1.04);
+  }
+}
+
+
+/* ==========================================================
+   03. HERO OVERLAY
+========================================================== */
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: -2;
+  pointer-events: none;
   transition: background .35s ease;
 }
 
-/* Dark Theme */
+
+/* DARK THEME */
+
+[data-theme="dark"] .hero__overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(8, 28, 58, .88) 0%,
+    rgba(8, 28, 58, .72) 38%,
+    rgba(8, 28, 58, .50) 68%,
+    rgba(8, 28, 58, .30) 100%
+  );
+}
 
 
-  [data-theme="dark"] .hero__overlay{
+/* LIGHT THEME */
 
-      background:
-      linear-gradient(
-          90deg,
-          rgba(8,28,58,.72) 0%,
-          rgba(8,28,58,.58) 38%,
-          rgba(8,28,58,.42) 68%,
-          rgba(8,28,58,.24) 100%
-      );
+[data-theme="light"] .hero__overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .88) 0%,
+    rgba(255, 255, 255, .70) 40%,
+    rgba(255, 255, 255, .42) 72%,
+    rgba(255, 255, 255, .20) 100%
+  );
+}
 
-  }
 
-/* Light Theme */
-
-  [data-theme="light"] .hero__overlay{
-
-      background:
-      linear-gradient(
-          90deg,
-          rgba(255,255,255,.56) 0%,
-          rgba(255,255,255,.34) 40%,
-          rgba(255,255,255,.16) 72%,
-          rgba(255,255,255,.06) 100%
-      );
-
-  }
-
-/* =========================
-   CONTAINER
-========================= */
+/* ==========================================================
+   04. HERO CONTAINER
+========================================================== */
 
 .hero__container {
-
   position: relative;
   z-index: 5;
   width: 100%;
-
 }
 
 .hero__content-wrapper {
-
-  max-width: 720px;
   width: 100%;
-
+  max-width: 760px;
 }
 
 .hero-content {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 
+  animation: heroFade .9s ease both;
 }
 
-/* =========================
-   BADGE
-========================= */
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================
+   05. HERO BADGE
+========================================================== */
 
 .hero-badge {
-
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 
   width: fit-content;
 
   padding: 12px 22px;
-
   margin-bottom: 28px;
 
+  border: 1px solid rgba(255, 178, 0, .35);
   border-radius: 999px;
 
-  border: 1px solid rgba(255,178,0,.25);
+  background: rgba(255, 178, 0, .10);
 
   color: var(--primary);
 
-  background: rgba(255,178,0,.08);
-
-  font-weight: 500;
-
+  font-size: .95rem;
+  font-weight: 600;
   letter-spacing: .3px;
 
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
+  box-shadow: 0 10px 30px rgba(255, 178, 0, .12);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+.hero-badge:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
 }
 
 .hero-badge svg {
-
   flex-shrink: 0;
-
 }
 
-/* =========================
-   TITLE
-========================= */
 
-.hero-title{
+/* ==========================================================
+   06. HERO TITLE
+========================================================== */
 
-    font-size: clamp(1rem,5vw,3.8rem);
+.hero-title {
+  max-width: 760px;
 
-    font-weight: 850;
+  margin: 0 0 26px;
 
-    line-height: 1.05;
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 850;
 
-    letter-spacing: -2px;
+  line-height: 1.08;
+  letter-spacing: -2px;
 
-    color: var(--text-primary);
+  color: var(--text-primary);
 
-    margin-bottom: 28px;
+  text-wrap: balance;
 
-    max-width: 760px;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.18);
-
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .12);
 }
 
 .hero-title span {
+  background: linear-gradient(
+    90deg,
+    #ffb200,
+    #ffd55c
+  );
 
-  color: var(--primary);
+  background-clip: text;
+  -webkit-background-clip: text;
 
+  color: transparent;
 }
 
-/* =========================
-   DESCRIPTION
-========================= */
 
-.hero-description{
+/* ==========================================================
+   07. HERO DESCRIPTION
+========================================================== */
 
-    max-width: 640px;
+.hero-description {
+  max-width: 640px;
 
-    font-size: 1.12rem;
+  margin: 0 0 36px;
 
-    line-height: 1.9;
+  font-size: 1.12rem;
+  line-height: 1.85;
 
-    /* color: var(--text-secondary); */
+  color: var(--text-secondary);
 
-    margin-bottom: 42px;
-
-    text-shadow:
-        0 1px 8px rgba(0,0,0,.12);
-
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .08);
 }
 
-/* =========================
-   BUTTON GROUP
-========================= */
+
+/* ==========================================================
+   08. HERO BUTTONS
+========================================================== */
 
 .hero-buttons {
-
   display: flex;
-
   align-items: center;
-
+  flex-wrap: wrap;
   gap: 18px;
 
-  flex-wrap: wrap;
-
   margin-bottom: 45px;
-
 }
 
-/* Shared Button */
-
 .hero-btn {
+  position: relative;
 
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 10px;
 
-  text-decoration: none;
+  overflow: hidden;
 
   padding: 16px 34px;
 
   border-radius: 999px;
 
+  font-size: 1rem;
   font-weight: 700;
 
-  transition:
-      transform .35s ease,
-      box-shadow .35s ease,
-      background .35s ease,
-      color .35s ease;
+  text-decoration: none;
 
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease,
+    color .35s ease;
 }
 
-/* Primary */
+
+/* BUTTON SHINE */
+
+.hero-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, .25),
+    transparent
+  );
+
+  transition: left .6s ease;
+}
+
+.hero-btn:hover::before {
+  left: 120%;
+}
+
+
+/* PRIMARY BUTTON */
 
 .hero-btn-primary {
-
   background: var(--primary);
+  color: #111111;
 
-  color: #111;
-
-  box-shadow: 0 14px 35px rgba(255,178,0,.22);
-
+  box-shadow: 0 16px 35px rgba(255, 178, 0, .25);
 }
 
 .hero-btn-primary:hover {
-
   transform: translateY(-4px);
 
-  box-shadow: 0 20px 45px rgba(255,178,0,.35);
+  color: #111111;
 
+  box-shadow: 0 22px 50px rgba(255, 178, 0, .35);
 }
 
-/* Secondary */
+
+/* SECONDARY BUTTON */
 
 .hero-btn-secondary {
-
   background: transparent;
 
   color: var(--text-primary);
 
   border: 1px solid var(--border-color);
-
 }
 
 .hero-btn-secondary:hover {
-
   transform: translateY(-4px);
 
+  background: rgba(255, 178, 0, .08);
 }
 
-/* =========================
-   ICON SIZE
-========================= */
+
+/* BUTTON ICONS */
 
 .hero-btn svg {
-
   width: 18px;
-
   height: 18px;
-
+  flex-shrink: 0;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1200px) {
-
-  .hero-title {
-
-    max-width: 620px;
-
-  }
-
-}
-
-@media (max-width: 991px) {
-
-  .hero {
-
-    min-height: auto;
-
-    padding: 150px 0 90px;
-
-  }
-
-  .hero__content-wrapper {
-
-    margin-inline: auto;
-
-  }
-
-  .hero-content {
-
-    text-align: center;
-
-    align-items: center;
-
-  }
-
-  .hero-description {
-
-    margin-inline: auto;
-
-  }
-
-  .hero-buttons {
-
-    justify-content: center;
-
-  }
-
-}
-
-@media (max-width: 767px) {
-
-  .hero-title {
-
-    font-size: clamp(2.5rem,8vw,3.5rem);
-
-    letter-spacing: -1px;
-
-  }
-
-  .hero-description {
-
-    font-size: 1rem;
-
-    line-height: 1.8;
-
-  }
-
-}
-
-@media (max-width: 576px) {
-
-  .hero {
-
-    padding: 130px 0 70px;
-
-  }
-
-  .hero-buttons {
-
-    flex-direction: column;
-
-    width: 100%;
-
-  }
-
-  .hero-btn {
-
-    width: 100%;
-
-  }
-
-  .hero-badge {
-
-    font-size: .9rem;
-
-    padding: 10px 18px;
-
-  }
-
-}
 
 /* ==========================================================
-   PREMIUM HERO POLISH
-==========================================================*/
+   09. HERO PREMIUM STATS
+========================================================== */
 
-/* =========================
-   PREMIUM STATS
-========================= */
+.hero-stats {
+  display: grid;
 
-.hero-stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    width:100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 100%;
 }
 
-.hero-stat-card{
+.hero-stat-card {
+  position: relative;
 
-    position:relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
-    overflow:hidden;
+  overflow: hidden;
 
-    display:flex;
+  min-width: 0;
 
-    align-items:center;
+  padding: 20px 18px;
 
-    gap:16px;
+  border-radius: 18px;
 
-    padding:18px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
-    border-radius:18px;
-
-    backdrop-filter:blur(24px);
-
-    transition:
+  transition:
     transform .35s ease,
     background .35s ease,
     border-color .35s ease,
     box-shadow .35s ease;
+}
+
+
+/* DARK STATS */
+
+[data-theme="dark"] .hero-stat-card {
+  background: rgba(255, 255, 255, .08);
+
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+
+/* LIGHT STATS */
+
+[data-theme="light"] .hero-stat-card {
+  background: rgba(255, 255, 255, .82);
+
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+
+/* STATS HOVER */
+
+.hero-stat-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--primary);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .12);
+}
+
+
+/* GOLD ACCENT */
+
+.hero-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: var(--primary);
+}
+
+
+/* STAT ICON */
+
+.hero-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: rgba(255, 178, 0, .14);
+
+  color: var(--primary);
+}
+
+
+/* STAT CONTENT */
+
+.hero-stat-content {
+  min-width: 0;
+}
+
+.hero-stat-content h3 {
+  margin: 0;
+
+  font-size: 1.2rem;
+  font-weight: 750;
+
+  color: var(--text-primary);
+}
+
+.hero-stat-content p {
+  margin: 5px 0 0;
+
+  font-size: .85rem;
+  line-height: 1.4;
+
+  color: var(--text-secondary);
+}
+
+
+/* ==========================================================
+   10. DARK THEME TEXT VISIBILITY
+========================================================== */
+
+[data-theme="dark"] .hero-description {
+  color: rgba(255, 255, 255, .86);
+}
+
+[data-theme="dark"] .hero-title {
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   11. LIGHT THEME TEXT VISIBILITY
+========================================================== */
+
+[data-theme="light"] .hero-description {
+  color: #333333;
+}
+
+[data-theme="light"] .hero-title {
+  color: #111111;
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE - LARGE LAPTOP
+========================================================== */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero__content-wrapper {
+    max-width: 680px;
+  }
+
+  .hero-title {
+    max-width: 650px;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
 }
 
-[data-theme="dark"] .hero-stat-card{
 
-    background:rgba(255,255,255,.06);
+/* ==========================================================
+   13. RESPONSIVE - TABLET
+========================================================== */
 
-    border:1px solid rgba(255,255,255,.08);
+@media (max-width: 991px) {
 
-}
+  .hero {
+    min-height: auto;
+    padding: 150px 0 90px;
+  }
 
-[data-theme="light"] .hero-stat-card{
+  .hero__content-wrapper {
+    max-width: 760px;
+    margin-inline: auto;
+  }
 
-    background:rgba(255,255,255,.65);
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
 
-    border:1px solid rgba(0,0,0,.08);
+  .hero-title {
+    max-width: 720px;
+  }
 
-}
+  .hero-description {
+    margin-inline: auto;
+  }
 
-.hero-stat-card:hover{
+  .hero-buttons {
+    justify-content: center;
+  }
 
-    transform:translateY(-8px);
-
-    border-color:var(--primary);
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-
-}
-
-.hero-stat-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:12px;
-
-    height:100%;
-
-    background:var(--primary);
+  .hero__video {
+    object-position: center top;
+  }
 
 }
 
-.hero-stat-icon{
 
-    width:40px;  
+/* ==========================================================
+   14. RESPONSIVE - SMALL TABLET
+========================================================== */
 
-    height:40px;
+@media (max-width: 767px) {
 
-    border-radius:14px;
+  .hero {
+    padding: 135px 0 80px;
+  }
 
-    background:rgba(255,178,0,.12);
+  .hero-title {
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+    letter-spacing: -1.3px;
+    line-height: 1.12;
+  }
 
-    display:flex;
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 
-    justify-content:center;
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 
-    align-items:center;
+  .hero-stat-card {
+    padding: 17px 14px;
+  }
 
-    color:var(--primary);
-
-    flex-shrink:0;
-
-}
-
-.hero-stat-content h3{
-
-    margin:0;
-
-    font-size:1.2rem;
-
-    font-weight:700;
-
-    color:var(--text-primary);
-
-}
-
-.hero-stat-content p{
-
-    margin:4px 0 0;
-
-    font-size:.88rem;
-
-    color:var(--text-secondary);
+  .hero-stat-content h3 {
+    font-size: 1.1rem;
+  }
 
 }
 
-/* =========================
-   CONTENT ANIMATION
-========================= */
 
-.hero-content{
+/* ==========================================================
+   15. RESPONSIVE - MOBILE
+========================================================== */
 
-    animation:heroFade .9s ease;
+@media (max-width: 576px) {
 
-}
+  .hero {
+    padding: 125px 0 65px;
+  }
 
-@keyframes heroFade{
+  .hero__content-wrapper {
+    width: 100%;
+  }
 
-    from{
+  .hero-badge {
+    gap: 8px;
 
-        opacity:0;
+    padding: 10px 16px;
 
-        transform:translateY(30px);
+    margin-bottom: 22px;
 
-    }
+    font-size: .85rem;
+  }
 
-    to{
+  .hero-title {
+    font-size: clamp(2.1rem, 9vw, 2.8rem);
 
-        opacity:1;
+    letter-spacing: -1px;
 
-        transform:none;
+    line-height: 1.13;
 
-    }
+    margin-bottom: 20px;
+  }
 
-}
+  .hero-description {
+    font-size: .95rem;
+    line-height: 1.75;
 
-/* =========================
-   BADGE
-========================= */
+    margin-bottom: 28px;
+  }
 
-.hero-badge{
+  .hero-buttons {
+    flex-direction: column;
 
-    box-shadow:0 10px 30px rgba(255,178,0,.12);
+    width: 100%;
 
-    transition:.35s ease;
+    gap: 13px;
 
-}
+    margin-bottom: 35px;
+  }
 
-.hero-badge:hover{
+  .hero-btn {
+    width: 100%;
 
-    transform:translateY(-3px);
+    padding: 15px 24px;
+  }
 
-    border-color:var(--primary);
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
-}
+  .hero-stat-card {
+    padding: 16px;
+  }
 
-/* =========================
-   TITLE
-========================= */
+  .hero-stat-icon {
+    width: 44px;
+    height: 44px;
+  }
 
-.hero-title{
+  .hero-stat-content h3 {
+    font-size: 1.1rem;
+  }
 
-    text-wrap:balance;
+  .hero-stat-content p {
+    font-size: .85rem;
+  }
 
-}
-
-.hero-title span{
-
-    background:linear-gradient(
-    90deg,
-    #ffb200,
-    #ffd55c
-    );
-
-    background-clip:text;
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.hero-btn{
-
-    position:relative;
-
-    overflow:hidden;
+  .hero__video {
+    object-position: 55% center;
+  }
 
 }
 
-.hero-btn::before{
 
-    content:"";
+/* ==========================================================
+   16. EXTRA SMALL MOBILE
+========================================================== */
 
-    position:absolute;
+@media (max-width: 380px) {
 
-    top:0;
+  .hero {
+    padding: 115px 0 55px;
+  }
 
-    left:-120%;
+  .hero-title {
+    font-size: 2rem;
+  }
 
-    width:100%;
+  .hero-badge {
+    font-size: .78rem;
+    padding: 9px 13px;
+  }
 
-    height:100%;
-
-    background:
-
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.25),
-    transparent
-    );
-
-    transition:.6s;
-
-}
-
-.hero-btn:hover::before{
-
-    left:120%;
+  .hero-stat-card {
+    gap: 12px;
+  }
 
 }
 
-.hero-btn-primary{
 
-    box-shadow:
-
-    0 16px 35px rgba(255,178,0,.25);
-
-}
-
-.hero-btn-primary:hover{
-
-    box-shadow:
-
-    0 22px 50px rgba(255,178,0,.35);
-
-}
-
-.hero-btn-secondary:hover{
-
-    background:rgba(255,178,0,.08);
-
-}
-
-/* =========================
-   VIDEO
-========================= */
-
-.hero__video{
-
-    animation: heroVideoMove 22s ease-in-out infinite alternate;
-
-}
-
-@keyframes heroVideoMove{
-
-    from{
-
-        transform: scale(1.01);
-
-    }
-
-    to{
-
-        transform: scale(1.04);
-
-    }
-
-}
-
-    
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1200px){
-
-.hero-stats{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.hero-stats{
-
-grid-template-columns:1fr;
-
-}
-
-.hero-stat-card{
-
-padding:16px;
-
-}
-
-}
-
-@media(max-width:576px){
-
-.hero-stat-card{
-
-text-align:left;
-
-}
-
-.hero-stat-icon{
-
-width:46px;
-
-height:46px;
-
-}
-
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce){
-
-*{
-
-animation:none !important;
-
-transition:none !important;
-
-scroll-behavior:auto !important;
-
-}
-
-.hero__video{
-
-transform:none;
-
-}
-
-}
-@media (max-width:991px){
-
-.hero__video{
-
-    object-position:center top;
-
-}
-
-}
-
-@media(max-width:576px){
-
-.hero__video{
-
-    object-position:55% center;
-
-}
+/* ==========================================================
+   17. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero *,
+  .hero *::before,
+  .hero *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero__video {
+    transform: none;
+  }
 
 }

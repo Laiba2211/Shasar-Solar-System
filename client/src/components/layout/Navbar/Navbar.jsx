@@ -1,8 +1,11 @@
+
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
+
+import useTheme from "../../../hooks/useTheme";
 
 import NavbarBrand from "./NavbarBrand";
 import NavbarMenu from "./NavbarMenu";
@@ -13,6 +16,14 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
+  // ==========================================
+  // Navbar Theme Only
+  // ==========================================
+  const { theme } = useTheme();
+
+  // ==========================================
+  // Close Mobile Menu
+  // ==========================================
   const closeMenu = () => {
     setMenuOpen(false);
   };
@@ -43,7 +54,7 @@ const Navbar = () => {
   }, []);
 
   // ==========================================
-  // Lock Body Scroll
+  // Lock Body Scroll When Menu Opens
   // ==========================================
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -54,12 +65,16 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <header>
+    <header
+      className="navbar-wrapper"
+      data-theme={theme}
+    >
+
       {/* ==========================================
-          NAVBAR
+          MAIN NAVBAR
       ========================================== */}
-      <nav className="navbar">
-        <div className="container-fluid">
+      <nav className="navbar custom-navbar">
+        <div className="container-fluid navbar-container">
 
           {/* Logo */}
           <NavbarBrand />
@@ -106,6 +121,7 @@ const Navbar = () => {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
+
               {/* Mobile Menu */}
               <NavbarMenu
                 mobile
@@ -120,10 +136,12 @@ const Navbar = () => {
               >
                 Get a Quote
               </button>
+
             </motion.aside>
           </>
         )}
       </AnimatePresence>
+
     </header>
   );
 };

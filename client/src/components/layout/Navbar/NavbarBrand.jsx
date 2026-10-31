@@ -1,18 +1,15 @@
-import { SunMedium } from "lucide-react";
+import useTheme from "../../../hooks/useTheme";
 
 const NavbarBrand = () => {
+  const { isDark } = useTheme();
+
   return (
     <a href="/" className="navbar-brand custom-brand">
-
-      <div className="brand-icon">
-        <SunMedium size={18} />
-      </div>
-
-      <div className="brand-content">
-        <span className="brand-title">SHASAR</span>
-        <span className="brand-subtitle">SOLAR</span>
-      </div>
-
+      <img
+        src={isDark ? "/Shasar_logo_dark.png" : "/Shasar_logo.png"}
+        alt="Shasar Solar Energy System"
+        className="brand-logo"
+      />
     </a>
   );
 };

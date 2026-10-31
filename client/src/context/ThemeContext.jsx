@@ -2,6 +2,7 @@
 import { createContext, useEffect, useMemo, useState } from "react";
 
 export const ThemeContext = createContext(null);
+
 const STORAGE_KEY = "shasar-theme-v2";
 
 export const ThemeProvider = ({ children }) => {
